@@ -3,10 +3,30 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9885CE3421C6719B00900C9F /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9885CE3321C6719B00900C9F /* Onboarding.storyboard */; };
+		9885CE3721C6784800900C9F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE3621C6784800900C9F /* OnboardingViewController.swift */; };
+		9885CE3A21C6785A00900C9F /* OnboardingCountryChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE3921C6785A00900C9F /* OnboardingCountryChooserViewController.swift */; };
+		9885CE3C21C6786400900C9F /* OnboardingLocationServicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE3B21C6786400900C9F /* OnboardingLocationServicesViewController.swift */; };
+		9885CE3E21C6786C00900C9F /* OnboardingLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE3D21C6786C00900C9F /* OnboardingLoadingViewController.swift */; };
+		9885CE4221C67A6500900C9F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE4121C67A6500900C9F /* Storage.swift */; };
+		9885CE4421C67B6B00900C9F /* OdeonStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE4321C67B6B00900C9F /* OdeonStorage.swift */; };
+		9885CE4721C67D8F00900C9F /* Cinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE4621C67D8F00900C9F /* Cinema.swift */; };
+		9885CE4A21C67EFF00900C9F /* ListCinemasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE4921C67EFF00900C9F /* ListCinemasResponse.swift */; };
+		9885CE4E21C67FCA00900C9F /* DictionaryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE4D21C67FCA00900C9F /* DictionaryStorage.swift */; };
+		9885CE5021C6824E00900C9F /* FilmAttributesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE4F21C6824E00900C9F /* FilmAttributesResponse.swift */; };
+		9885CE5221C6829400900C9F /* PerformanceAttributesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE5121C6829400900C9F /* PerformanceAttributesResponse.swift */; };
+		9885CE5421C682D700900C9F /* ListFilmsResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE5321C682D700900C9F /* ListFilmsResponse.swift */; };
+		9885CE5621C682FB00900C9F /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE5521C682FB00900C9F /* Film.swift */; };
+		9885CE5821C6840600900C9F /* Offer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE5721C6840600900C9F /* Offer.swift */; };
+		9885CE5A21C684D100900C9F /* Certificate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE5921C684D100900C9F /* Certificate.swift */; };
+		9885CE5C21C689F500900C9F /* FilmDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE5B21C689F500900C9F /* FilmDetails.swift */; };
+		9885CE5E21C68A7900900C9F /* DataWrapperGenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE5D21C68A7900900C9F /* DataWrapperGenericResponse.swift */; };
+		9885CE6021C68B7A00900C9F /* FilmTimes.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE5F21C68B7A00900C9F /* FilmTimes.swift */; };
+		9885CE6221C68BB200900C9F /* Performance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE6121C68BB200900C9F /* Performance.swift */; };
 		98F3708C21C6705A002D4E7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3708B21C6705A002D4E7C /* AppDelegate.swift */; };
 		98F3708E21C6705A002D4E7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3708D21C6705A002D4E7C /* ViewController.swift */; };
 		98F3709121C6705A002D4E7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F3708F21C6705A002D4E7C /* Main.storyboard */; };
@@ -26,6 +46,26 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		9885CE3321C6719B00900C9F /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
+		9885CE3621C6784800900C9F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		9885CE3921C6785A00900C9F /* OnboardingCountryChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCountryChooserViewController.swift; sourceTree = "<group>"; };
+		9885CE3B21C6786400900C9F /* OnboardingLocationServicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLocationServicesViewController.swift; sourceTree = "<group>"; };
+		9885CE3D21C6786C00900C9F /* OnboardingLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingLoadingViewController.swift; sourceTree = "<group>"; };
+		9885CE4121C67A6500900C9F /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
+		9885CE4321C67B6B00900C9F /* OdeonStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdeonStorage.swift; sourceTree = "<group>"; };
+		9885CE4621C67D8F00900C9F /* Cinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinema.swift; sourceTree = "<group>"; };
+		9885CE4921C67EFF00900C9F /* ListCinemasResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCinemasResponse.swift; sourceTree = "<group>"; };
+		9885CE4D21C67FCA00900C9F /* DictionaryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryStorage.swift; sourceTree = "<group>"; };
+		9885CE4F21C6824E00900C9F /* FilmAttributesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmAttributesResponse.swift; sourceTree = "<group>"; };
+		9885CE5121C6829400900C9F /* PerformanceAttributesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceAttributesResponse.swift; sourceTree = "<group>"; };
+		9885CE5321C682D700900C9F /* ListFilmsResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListFilmsResponse.swift; sourceTree = "<group>"; };
+		9885CE5521C682FB00900C9F /* Film.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		9885CE5721C6840600900C9F /* Offer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Offer.swift; sourceTree = "<group>"; };
+		9885CE5921C684D100900C9F /* Certificate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Certificate.swift; sourceTree = "<group>"; };
+		9885CE5B21C689F500900C9F /* FilmDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmDetails.swift; sourceTree = "<group>"; };
+		9885CE5D21C68A7900900C9F /* DataWrapperGenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataWrapperGenericResponse.swift; sourceTree = "<group>"; };
+		9885CE5F21C68B7A00900C9F /* FilmTimes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmTimes.swift; sourceTree = "<group>"; };
+		9885CE6121C68BB200900C9F /* Performance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Performance.swift; sourceTree = "<group>"; };
 		98F3708821C6705A002D4E7C /* Odeon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Odeon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F3708B21C6705A002D4E7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98F3708D21C6705A002D4E7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -56,6 +96,104 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9885CE3121C6713A00900C9F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9885CE4021C67A5000900C9F /* Storage */,
+				9885CE3F21C67A4A00900C9F /* Networking */,
+				9885CE3221C6713F00900C9F /* Onboarding */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		9885CE3221C6713F00900C9F /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				9885CE3521C6783700900C9F /* View Controllers */,
+				9885CE3321C6719B00900C9F /* Onboarding.storyboard */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		9885CE3521C6783700900C9F /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				9885CE3821C6784B00900C9F /* Pages */,
+				9885CE3621C6784800900C9F /* OnboardingViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		9885CE3821C6784B00900C9F /* Pages */ = {
+			isa = PBXGroup;
+			children = (
+				9885CE3921C6785A00900C9F /* OnboardingCountryChooserViewController.swift */,
+				9885CE3B21C6786400900C9F /* OnboardingLocationServicesViewController.swift */,
+				9885CE3D21C6786C00900C9F /* OnboardingLoadingViewController.swift */,
+			);
+			path = Pages;
+			sourceTree = "<group>";
+		};
+		9885CE3F21C67A4A00900C9F /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				9885CE4821C67EF500900C9F /* Responses */,
+				9885CE4521C67D6F00900C9F /* Models */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
+		9885CE4021C67A5000900C9F /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				9885CE4121C67A6500900C9F /* Storage.swift */,
+				9885CE4321C67B6B00900C9F /* OdeonStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		9885CE4521C67D6F00900C9F /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				9885CE4621C67D8F00900C9F /* Cinema.swift */,
+				9885CE5521C682FB00900C9F /* Film.swift */,
+				9885CE5721C6840600900C9F /* Offer.swift */,
+				9885CE5921C684D100900C9F /* Certificate.swift */,
+				9885CE5B21C689F500900C9F /* FilmDetails.swift */,
+				9885CE5F21C68B7A00900C9F /* FilmTimes.swift */,
+				9885CE6121C68BB200900C9F /* Performance.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		9885CE4821C67EF500900C9F /* Responses */ = {
+			isa = PBXGroup;
+			children = (
+				9885CE4921C67EFF00900C9F /* ListCinemasResponse.swift */,
+				9885CE4F21C6824E00900C9F /* FilmAttributesResponse.swift */,
+				9885CE5121C6829400900C9F /* PerformanceAttributesResponse.swift */,
+				9885CE5321C682D700900C9F /* ListFilmsResponse.swift */,
+				9885CE5D21C68A7900900C9F /* DataWrapperGenericResponse.swift */,
+			);
+			path = Responses;
+			sourceTree = "<group>";
+		};
+		9885CE4B21C67FA900900C9F /* Modules */ = {
+			isa = PBXGroup;
+			children = (
+				9885CE4C21C67FB100900C9F /* Storage */,
+			);
+			path = Modules;
+			sourceTree = "<group>";
+		};
+		9885CE4C21C67FB100900C9F /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				9885CE4D21C67FCA00900C9F /* DictionaryStorage.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
 		98F3707F21C6705A002D4E7C = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +215,7 @@
 		98F3708A21C6705A002D4E7C /* Odeon */ = {
 			isa = PBXGroup;
 			children = (
+				9885CE3121C6713A00900C9F /* Modules */,
 				98F3708B21C6705A002D4E7C /* AppDelegate.swift */,
 				98F3708D21C6705A002D4E7C /* ViewController.swift */,
 				98F3708F21C6705A002D4E7C /* Main.storyboard */,
@@ -90,6 +229,7 @@
 		98F3709F21C6705B002D4E7C /* OdeonTests */ = {
 			isa = PBXGroup;
 			children = (
+				9885CE4B21C67FA900900C9F /* Modules */,
 				98F370A021C6705B002D4E7C /* OdeonTests.swift */,
 				98F370A221C6705B002D4E7C /* Info.plist */,
 			);
@@ -154,7 +294,7 @@
 				};
 			};
 			buildConfigurationList = 98F3708321C6705A002D4E7C /* Build configuration list for PBXProject "Odeon" */;
-			compatibilityVersion = "Xcode 9.3";
+			compatibilityVersion = "Xcode 10.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -180,6 +320,7 @@
 				98F3709621C6705B002D4E7C /* LaunchScreen.storyboard in Resources */,
 				98F3709321C6705B002D4E7C /* Assets.xcassets in Resources */,
 				98F3709121C6705A002D4E7C /* Main.storyboard in Resources */,
+				9885CE3421C6719B00900C9F /* Onboarding.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,8 +338,26 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9885CE3A21C6785A00900C9F /* OnboardingCountryChooserViewController.swift in Sources */,
+				9885CE4221C67A6500900C9F /* Storage.swift in Sources */,
+				9885CE6021C68B7A00900C9F /* FilmTimes.swift in Sources */,
 				98F3708E21C6705A002D4E7C /* ViewController.swift in Sources */,
+				9885CE4721C67D8F00900C9F /* Cinema.swift in Sources */,
+				9885CE3C21C6786400900C9F /* OnboardingLocationServicesViewController.swift in Sources */,
+				9885CE6221C68BB200900C9F /* Performance.swift in Sources */,
+				9885CE3721C6784800900C9F /* OnboardingViewController.swift in Sources */,
+				9885CE5221C6829400900C9F /* PerformanceAttributesResponse.swift in Sources */,
+				9885CE3E21C6786C00900C9F /* OnboardingLoadingViewController.swift in Sources */,
 				98F3708C21C6705A002D4E7C /* AppDelegate.swift in Sources */,
+				9885CE5821C6840600900C9F /* Offer.swift in Sources */,
+				9885CE4421C67B6B00900C9F /* OdeonStorage.swift in Sources */,
+				9885CE4A21C67EFF00900C9F /* ListCinemasResponse.swift in Sources */,
+				9885CE5021C6824E00900C9F /* FilmAttributesResponse.swift in Sources */,
+				9885CE5421C682D700900C9F /* ListFilmsResponse.swift in Sources */,
+				9885CE5C21C689F500900C9F /* FilmDetails.swift in Sources */,
+				9885CE5621C682FB00900C9F /* Film.swift in Sources */,
+				9885CE5E21C68A7900900C9F /* DataWrapperGenericResponse.swift in Sources */,
+				9885CE5A21C684D100900C9F /* Certificate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -207,6 +366,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				98F370A121C6705B002D4E7C /* OdeonTests.swift in Sources */,
+				9885CE4E21C67FCA00900C9F /* DictionaryStorage.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -361,15 +521,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y7J92F92X4;
 				INFOPLIST_FILE = Odeon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = uk.sherlo.Odeon;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.sherlo.odeon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -378,15 +540,17 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Y7J92F92X4;
 				INFOPLIST_FILE = Odeon/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = uk.sherlo.Odeon;
+				PRODUCT_BUNDLE_IDENTIFIER = uk.sherlo.odeon;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
