@@ -16,6 +16,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if let window = window {
+            let viewController = ProfileViewController.create()
+            viewController.structureMapper = TemporaryStructureMapper()
+            
+            window.rootViewController = TransparentNavigationViewController(rootViewController: viewController)
+        }
+        
         return true
     }
 

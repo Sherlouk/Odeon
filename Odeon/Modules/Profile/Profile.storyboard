@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="MvL-Ap-iVm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Profile View Controller-->
+        <scene sceneID="WgY-Up-5vs">
+            <objects>
+                <viewController extendedLayoutIncludesOpaqueBars="YES" automaticallyAdjustsScrollViewInsets="NO" id="MvL-Ap-iVm" customClass="ProfileViewController" customModule="Odeon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="JNG-da-2Yx">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0jq-kR-cz8">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="617"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NTe-uE-bfH">
+                                <rect key="frame" x="0.0" y="617" width="375" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nqd-LD-76w">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="50"/>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="O4p-NO-Psh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                        <color key="tintColor" name="PrimaryText"/>
+                                        <state key="normal" title="CALL TO ACTION"/>
+                                    </button>
+                                    <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEY-f6-zW4">
+                                        <rect key="frame" x="0.0" y="50" width="375" height="0.0"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" name="FlatButtonBackground"/>
+                                <constraints>
+                                    <constraint firstItem="Nqd-LD-76w" firstAttribute="top" secondItem="NTe-uE-bfH" secondAttribute="top" id="4XK-Re-Oty"/>
+                                    <constraint firstAttribute="trailing" secondItem="Nqd-LD-76w" secondAttribute="trailing" id="IUU-S5-lr5"/>
+                                    <constraint firstItem="aEY-f6-zW4" firstAttribute="leading" secondItem="NTe-uE-bfH" secondAttribute="leading" id="PWo-a7-c6Z"/>
+                                    <constraint firstItem="aEY-f6-zW4" firstAttribute="top" secondItem="Nqd-LD-76w" secondAttribute="bottom" id="TO7-8g-lbj"/>
+                                    <constraint firstItem="Nqd-LD-76w" firstAttribute="leading" secondItem="NTe-uE-bfH" secondAttribute="leading" id="Zgr-e2-sk4"/>
+                                    <constraint firstAttribute="trailing" secondItem="aEY-f6-zW4" secondAttribute="trailing" id="b4W-3T-cmu"/>
+                                    <constraint firstAttribute="bottom" secondItem="aEY-f6-zW4" secondAttribute="bottom" id="id8-aQ-7Cu"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" name="PrimaryBackground"/>
+                        <constraints>
+                            <constraint firstItem="0jq-kR-cz8" firstAttribute="trailing" secondItem="PN3-Il-CxR" secondAttribute="trailing" id="6Bk-e9-pQP"/>
+                            <constraint firstItem="0jq-kR-cz8" firstAttribute="leading" secondItem="PN3-Il-CxR" secondAttribute="leading" id="WJx-qW-L3L"/>
+                            <constraint firstItem="NTe-uE-bfH" firstAttribute="leading" secondItem="JNG-da-2Yx" secondAttribute="leading" id="WtX-JX-isA"/>
+                            <constraint firstItem="PN3-Il-CxR" firstAttribute="bottom" secondItem="Nqd-LD-76w" secondAttribute="bottom" id="YZF-PK-SyN"/>
+                            <constraint firstAttribute="trailing" secondItem="NTe-uE-bfH" secondAttribute="trailing" id="Zbm-cK-wMN"/>
+                            <constraint firstItem="0jq-kR-cz8" firstAttribute="top" secondItem="JNG-da-2Yx" secondAttribute="top" id="fp3-Nv-mY5"/>
+                            <constraint firstItem="NTe-uE-bfH" firstAttribute="top" secondItem="0jq-kR-cz8" secondAttribute="bottom" id="igD-tb-zjB"/>
+                            <constraint firstAttribute="bottom" secondItem="NTe-uE-bfH" secondAttribute="bottom" id="v52-iJ-hCR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="PN3-Il-CxR"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="1Qo-Ab-Jmq"/>
+                    <connections>
+                        <outlet property="tableView" destination="0jq-kR-cz8" id="Dzy-ir-3Kq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="0hg-vb-NlM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="752.79999999999995" y="80.50974512743629"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="FlatButtonBackground">
+            <color red="0.99607843137254903" green="0.51764705882352946" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryBackground">
+            <color red="0.11372549019607843" green="0.11372549019607843" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryText">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
