@@ -41,7 +41,9 @@ class ProfileStretchyHeaderView: GSKStretchyHeaderView, ConfigurableCell {
     
     func setupGradientView() {
         let gradientLayer = CAGradientLayer()
-        gradientLayer.frame = bounds
+        
+        let screenWidth = UIScreen.main.bounds.width
+        gradientLayer.frame = CGRect(origin: .zero, size: CGSize(width: screenWidth, height: screenWidth))
         
         gradientLayer.colors = [
             UIColor.clear.cgColor,

@@ -17,6 +17,8 @@ class TransparentNavigationViewController: UINavigationController {
         navigationBar.setBackgroundImage(emptyImage, for: .default)
         navigationBar.shadowImage = emptyImage
         navigationBar.isTranslucent = true
+        
+        navigationBar.tintColor = .white
     }
     
     // MARK: - Status Bar

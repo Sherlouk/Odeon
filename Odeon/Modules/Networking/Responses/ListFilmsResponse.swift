@@ -11,7 +11,7 @@ import Foundation
 struct ListFilmsResponse: Codable {
     
     struct Data: Codable {
-        let films: [Film]
+        let films: [OdeonFilm]
     }
     
     let data: Data

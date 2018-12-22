@@ -19,13 +19,16 @@ class ProfileViewController: UIViewController {
     
     // MARK: - Create
     
-    class func create() -> ProfileViewController {
+    class func create(with mapper: TemporaryStructureMapper) -> ProfileViewController {
         let storyboard = UIStoryboard(name: "Profile", bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController() as? ProfileViewController
         
-        assert(viewController != nil, "Initial View Controller Not Set or Invalid Cast")
+        guard let viewController = storyboard.instantiateInitialViewController() as? ProfileViewController else {
+            fatalError("Initial View Controller Not Set or Invalid Cast")
+        }
         
-        return viewController!
+        viewController.structureMapper = mapper
+        
+        return viewController
     }
     
     // MARK: - Lifecycle
@@ -38,14 +41,14 @@ class ProfileViewController: UIViewController {
         setupNavigationBar()
         
         let headerViewModel = ProfileStretchyHeaderViewModel(
-            title: "The Grinch",
-            description: "(2018)",
-            imageURL: URL(string: "https://m.media-amazon.com/images/M/MV5BYjEzMmMwNTUtNmQxOS00N2UzLTliNGUtNDU4NjkwMTZmYWRhXkEyXkFqcGdeQWtlbGFyc2Vu._V1_CR8,0,1419,798_AL_UY268_CR2,0,477,268_AL_.jpg")!,
-            tagTitle: "ANIMATED"
+            title: structureMapper.film.movieDetails.original_title,
+            description: "(0000)",
+            imageURL: URL(string: "https://image.tmdb.org/t/p/original/\(structureMapper.film.movieDetails.backdrop_path ?? "")")!,
+            tagTitle: structureMapper.film.movieDetails.genres.first?.name ?? "UNKNOWN"
         )
         
         setupStretchyHeader(viewModel: headerViewModel)
-        setupRefreshControl()
+//        setupRefreshControl()
     }
     
     // MARK: - Table View

@@ -10,6 +10,8 @@ import Foundation
 
 struct FilmDetails: Codable {
     
+    // ODEON
+    
     let plot: String
     let customerAdvice: String
     let director: String

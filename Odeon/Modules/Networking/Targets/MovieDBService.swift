@@ -12,6 +12,7 @@ import Moya
 enum MovieDBService {
     
     case searchMovie(query: String, year: Int)
+    case getMovieDetails(movieID: Int)
     
 }
 
@@ -24,6 +25,7 @@ extension MovieDBService: TargetType {
     var path: String {
         switch self {
         case .searchMovie: return "search/movie"
+        case .getMovieDetails(let movieID): return "movie/\(movieID)"
         }
     }
     
@@ -45,6 +47,10 @@ extension MovieDBService: TargetType {
                 "query": query,
                 "year": year,
                 "primary_release_year": year
+            ], encoding: URLEncoding.queryString)
+        default:
+            return .requestParameters(parameters: [
+                "api_key": apiKey
             ], encoding: URLEncoding.queryString)
         }
     }

@@ -8,11 +8,22 @@
 
 import Foundation
 
-struct TemporaryStructureMapper {
+class TemporaryStructureMapper {
     
     typealias ItemTypeTuple = (itemType: ProfileItemType, object: Any?)
     
+    let film: FilmFetcher.Film
+    var cachedStructure: [ItemTypeTuple]?
+    
+    init(film: FilmFetcher.Film) {
+        self.film = film
+    }
+    
     var struture: [ItemTypeTuple] {
+        
+        if let cached = cachedStructure {
+            return cached
+        }
         
         let reviewOne = ProfileReviewViewModel(
             revieweeName: "James Sherlock",
@@ -21,7 +32,7 @@ struct TemporaryStructureMapper {
             halfRating: 5,
             reviewDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar elit ante, sed commodo purus rutrum vitae. Aliquam vel tellus tincidunt, mattis magna consectetur, efficitur ante. Sed neque eros, volutpat eu luctus in, ultricies in lectus."
         )
-        
+
         let reviewTwo = ProfileReviewViewModel(
             revieweeName: "John Smith",
             reviewwImageURL: URL(string: "https://google.com/")!,
@@ -29,20 +40,25 @@ struct TemporaryStructureMapper {
             halfRating: 6,
             reviewDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar elit ante, sed commodo purus rutrum vitae. Aliquam vel tellus tincidunt, mattis magna consectetur, efficitur ante. Sed neque eros, volutpat eu luctus in, ultricies in lectus."
         )
+
+        let description = film.movieDetails.overview ?? "\(film.odeonFilmDetails.plot)\n\n\(film.odeonFilmDetails.customerAdvice)"
         
-        return [
+        let structure: [ItemTypeTuple] = [
             (.rating, nil),
-            (.movieInformation, nil),
             (.paragraph, nil),
-            (.button, ProfileButtonViewModel(buttonText: "SEE FULL BIOGRAPHY", buttonAction: { })),
+            (.movieInformation, nil),
             (.title, ProfileTitleViewModel(title: "Cast", buttonText: nil, buttonAction: nil)),
             (.scroller, nil),
             (.title, ProfileTitleViewModel(title: "Reviews", buttonText: "SEE ALL", buttonAction: { })),
             (.review, reviewOne),
             (.review, reviewTwo),
+            (.button, ProfileButtonViewModel(buttonText: "SEE ALL REVIEWS", buttonAction: { })),
             (.title, ProfileTitleViewModel(title: "Photogallery", buttonText: nil, buttonAction: nil)),
             (.gallery, nil)
         ]
+        
+        self.cachedStructure = structure
+        return structure
         
     }
     

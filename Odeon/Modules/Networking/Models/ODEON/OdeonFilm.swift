@@ -8,7 +8,7 @@
 
 import Foundation
 
-struct Film: Codable {
+struct OdeonFilm: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id = "filmMasterId"

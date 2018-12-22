@@ -42,13 +42,33 @@ class HomeViewController: UIViewController {
         
         provider.requestDecode(.topFilms) { (result: Result<ListFilmsResponse, MoyaError>) in
             
-            self.activityIndicator.stopAnimating()
-            sender.isHidden = false
-            
             switch result {
             case .success(let response):
-                let film = response.data.films.first
-                print(film)
+                if let film = response.data.films.first {
+                    print("Found ODEON film")
+                    
+                    FilmFetcher(film: film).fetch(completion: { result in
+                        
+                        self.activityIndicator.stopAnimating()
+                        sender.isHidden = false
+                        
+                        switch result {
+                        case .failure(let error):
+                            print(error)
+                            
+                        case .success(let film2):
+                            print(film2)
+                            
+                            let vc = ProfileViewController.create(with: TemporaryStructureMapper(film: film2))
+                            self.navigationController?.pushViewController(vc, animated: true)
+                            
+                        }
+                        
+                    })
+                } else {
+                    print("No ODEON film")
+                }
+                
                 
             case .failure(let error):
                 print(error)
