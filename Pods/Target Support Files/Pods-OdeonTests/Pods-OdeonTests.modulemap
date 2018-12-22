@@ -1,0 +1,6 @@
+framework module Pods_OdeonTests {
+  umbrella header "Pods-OdeonTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

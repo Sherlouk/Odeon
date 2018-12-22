@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Cgk-E7-iAE">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home View Controller-->
+        <scene sceneID="wfc-Gu-gbM">
+            <objects>
+                <viewController id="Cgk-E7-iAE" customClass="HomeViewController" customModule="Odeon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="CeI-eD-1Aa">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1T1-Dc-bcg">
+                                <rect key="frame" x="162" y="318.5" width="51" height="30"/>
+                                <state key="normal" title="Launch">
+                                    <color key="titleColor" name="PrimaryText"/>
+                                </state>
+                                <connections>
+                                    <action selector="didPressLaunch:" destination="Cgk-E7-iAE" eventType="touchUpInside" id="upo-tw-pk7"/>
+                                </connections>
+                            </button>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="ec9-f6-tmx">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" name="PrimaryBackground"/>
+                        <constraints>
+                            <constraint firstItem="1T1-Dc-bcg" firstAttribute="centerX" secondItem="CeI-eD-1Aa" secondAttribute="centerX" id="DeX-Ba-Cpp"/>
+                            <constraint firstItem="ec9-f6-tmx" firstAttribute="centerY" secondItem="CeI-eD-1Aa" secondAttribute="centerY" id="E8m-5l-MW5"/>
+                            <constraint firstItem="1T1-Dc-bcg" firstAttribute="centerY" secondItem="CeI-eD-1Aa" secondAttribute="centerY" id="IZ3-fr-FCm"/>
+                            <constraint firstItem="ec9-f6-tmx" firstAttribute="centerX" secondItem="CeI-eD-1Aa" secondAttribute="centerX" id="P4f-sv-85m"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="3YH-Y5-Flu"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="ec9-f6-tmx" id="zbf-HT-n1J"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bMX-ZY-Wsa" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="52" y="162"/>
+        </scene>
+    </scenes>
+    <resources>
+        <namedColor name="PrimaryBackground">
+            <color red="0.11372549019607843" green="0.11372549019607843" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="PrimaryText">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

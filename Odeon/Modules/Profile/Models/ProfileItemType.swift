@@ -17,13 +17,10 @@ enum ProfileItemType: CaseIterable {
     case paragraph
     case review
     case rating
-    case header
     case movieInformation
     
     var nibName: String {
         switch self {
-        case .header:
-            return "ProfileHeaderTableViewCell"
         case .rating:
             return "ProfileRatingTableViewCell"
         case .review:

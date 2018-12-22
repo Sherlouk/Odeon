@@ -30,8 +30,6 @@
 		9885CE6821C6D57200900C9F /* MovieInformationTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE6621C6D57200900C9F /* MovieInformationTableViewCell.swift */; };
 		9885CE6921C6D57200900C9F /* MovieInformationTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 9885CE6721C6D57200900C9F /* MovieInformationTableViewCell.xib */; };
 		98E8833421CD9B360001C019 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8833321CD9B360001C019 /* ProfileViewController.swift */; };
-		98E8833A21CD9BDF0001C019 /* ProfileHeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8833821CD9BDF0001C019 /* ProfileHeaderTableViewCell.swift */; };
-		98E8833B21CD9BDF0001C019 /* ProfileHeaderTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98E8833921CD9BDF0001C019 /* ProfileHeaderTableViewCell.xib */; };
 		98E8833F21CD9D310001C019 /* ProfileRatingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8833D21CD9D310001C019 /* ProfileRatingTableViewCell.swift */; };
 		98E8834021CD9D310001C019 /* ProfileRatingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98E8833E21CD9D310001C019 /* ProfileRatingTableViewCell.xib */; };
 		98E8834421CD9F340001C019 /* ProfileReviewTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8834221CD9F340001C019 /* ProfileReviewTableViewCell.swift */; };
@@ -60,12 +58,22 @@
 		98E8838121CDBD3C0001C019 /* GlobalDefinitions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8838021CDBD3C0001C019 /* GlobalDefinitions.swift */; };
 		98E8838321CDBF700001C019 /* ProfileReviewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8838221CDBF700001C019 /* ProfileReviewViewModel.swift */; };
 		98E8838521CDC0350001C019 /* ProfileButtonViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8838421CDC0350001C019 /* ProfileButtonViewModel.swift */; };
+		98E8838821CE64DE0001C019 /* ProfileStretchyHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8838721CE64DE0001C019 /* ProfileStretchyHeaderView.swift */; };
+		98E8838A21CE65050001C019 /* ProfileStretchyHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98E8838921CE65050001C019 /* ProfileStretchyHeaderView.xib */; };
+		98E8838C21CE8D0E0001C019 /* ProfileStretchyHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8838B21CE8D0E0001C019 /* ProfileStretchyHeaderViewModel.swift */; };
+		98E8838F21CEA34D0001C019 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E8838E21CEA34D0001C019 /* Home.storyboard */; };
+		98E8839121CEA3A30001C019 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8839021CEA3A30001C019 /* HomeViewController.swift */; };
+		98E8839421CEA4AD0001C019 /* OdeonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8839321CEA4AD0001C019 /* OdeonService.swift */; };
+		98E8839721CEA9E20001C019 /* MoyaProvider+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8839621CEA9E20001C019 /* MoyaProvider+Extensions.swift */; };
+		98E8839921CEBB700001C019 /* MovieDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8839821CEBB700001C019 /* MovieDBService.swift */; };
 		98F3708C21C6705A002D4E7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3708B21C6705A002D4E7C /* AppDelegate.swift */; };
 		98F3708E21C6705A002D4E7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3708D21C6705A002D4E7C /* ViewController.swift */; };
 		98F3709121C6705A002D4E7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F3708F21C6705A002D4E7C /* Main.storyboard */; };
 		98F3709321C6705B002D4E7C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 98F3709221C6705B002D4E7C /* Assets.xcassets */; };
 		98F3709621C6705B002D4E7C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F3709421C6705B002D4E7C /* LaunchScreen.storyboard */; };
 		98F370A121C6705B002D4E7C /* OdeonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F370A021C6705B002D4E7C /* OdeonTests.swift */; };
+		DDC27C7F3FEAE95FFD28F3D2 /* Pods_Odeon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 333B253293A41BACF69FD862 /* Pods_Odeon.framework */; };
+		EA532ACBFCCD159FD2663877 /* Pods_OdeonTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 966644FC68611BCF86BE3D4D /* Pods_OdeonTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -79,6 +87,12 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		0558931B3A6AAFE81890492E /* Pods-Odeon.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Odeon.debug.xcconfig"; path = "Target Support Files/Pods-Odeon/Pods-Odeon.debug.xcconfig"; sourceTree = "<group>"; };
+		333B253293A41BACF69FD862 /* Pods_Odeon.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Odeon.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		452BF808E471A131758FA41A /* Pods-OdeonTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OdeonTests.release.xcconfig"; path = "Target Support Files/Pods-OdeonTests/Pods-OdeonTests.release.xcconfig"; sourceTree = "<group>"; };
+		4F169A725452FFE6BCA72CA5 /* Pods-Odeon.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Odeon.release.xcconfig"; path = "Target Support Files/Pods-Odeon/Pods-Odeon.release.xcconfig"; sourceTree = "<group>"; };
+		8E7E3B4DBDCCC9EECA503E40 /* Pods-OdeonTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-OdeonTests.debug.xcconfig"; path = "Target Support Files/Pods-OdeonTests/Pods-OdeonTests.debug.xcconfig"; sourceTree = "<group>"; };
+		966644FC68611BCF86BE3D4D /* Pods_OdeonTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_OdeonTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9885CE3321C6719B00900C9F /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		9885CE3621C6784800900C9F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		9885CE3921C6785A00900C9F /* OnboardingCountryChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCountryChooserViewController.swift; sourceTree = "<group>"; };
@@ -102,8 +116,6 @@
 		9885CE6621C6D57200900C9F /* MovieInformationTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieInformationTableViewCell.swift; sourceTree = "<group>"; };
 		9885CE6721C6D57200900C9F /* MovieInformationTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovieInformationTableViewCell.xib; sourceTree = "<group>"; };
 		98E8833321CD9B360001C019 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
-		98E8833821CD9BDF0001C019 /* ProfileHeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderTableViewCell.swift; sourceTree = "<group>"; };
-		98E8833921CD9BDF0001C019 /* ProfileHeaderTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileHeaderTableViewCell.xib; sourceTree = "<group>"; };
 		98E8833D21CD9D310001C019 /* ProfileRatingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRatingTableViewCell.swift; sourceTree = "<group>"; };
 		98E8833E21CD9D310001C019 /* ProfileRatingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileRatingTableViewCell.xib; sourceTree = "<group>"; };
 		98E8834221CD9F340001C019 /* ProfileReviewTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileReviewTableViewCell.swift; sourceTree = "<group>"; };
@@ -132,6 +144,14 @@
 		98E8838021CDBD3C0001C019 /* GlobalDefinitions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalDefinitions.swift; sourceTree = "<group>"; };
 		98E8838221CDBF700001C019 /* ProfileReviewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileReviewViewModel.swift; sourceTree = "<group>"; };
 		98E8838421CDC0350001C019 /* ProfileButtonViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileButtonViewModel.swift; sourceTree = "<group>"; };
+		98E8838721CE64DE0001C019 /* ProfileStretchyHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStretchyHeaderView.swift; sourceTree = "<group>"; };
+		98E8838921CE65050001C019 /* ProfileStretchyHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileStretchyHeaderView.xib; sourceTree = "<group>"; };
+		98E8838B21CE8D0E0001C019 /* ProfileStretchyHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStretchyHeaderViewModel.swift; sourceTree = "<group>"; };
+		98E8838E21CEA34D0001C019 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		98E8839021CEA3A30001C019 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		98E8839321CEA4AD0001C019 /* OdeonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdeonService.swift; sourceTree = "<group>"; };
+		98E8839621CEA9E20001C019 /* MoyaProvider+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Extensions.swift"; sourceTree = "<group>"; };
+		98E8839821CEBB700001C019 /* MovieDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBService.swift; sourceTree = "<group>"; };
 		98F3708821C6705A002D4E7C /* Odeon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Odeon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F3708B21C6705A002D4E7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98F3708D21C6705A002D4E7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +169,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DDC27C7F3FEAE95FFD28F3D2 /* Pods_Odeon.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -156,15 +177,26 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EA532ACBFCCD159FD2663877 /* Pods_OdeonTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8F365268C3843C2D76328D83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				333B253293A41BACF69FD862 /* Pods_Odeon.framework */,
+				966644FC68611BCF86BE3D4D /* Pods_OdeonTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9885CE3121C6713A00900C9F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				98E8838D21CEA3430001C019 /* Home */,
 				98E8836A21CDA50C0001C019 /* Extensions */,
 				9885CE6321C6D4F500900C9F /* Profile */,
 				9885CE4021C67A5000900C9F /* Storage */,
@@ -205,6 +237,8 @@
 		9885CE3F21C67A4A00900C9F /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				98E8839521CEA9D20001C019 /* Extensions */,
+				98E8839221CEA49A0001C019 /* Targets */,
 				9885CE4821C67EF500900C9F /* Responses */,
 				9885CE4521C67D6F00900C9F /* Models */,
 			);
@@ -277,6 +311,7 @@
 		9885CE6421C6D51100900C9F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				98E8838621CE64A60001C019 /* Stretchy Header */,
 				98E8836421CDA2E60001C019 /* Gallery Cell */,
 				98E8835F21CDA2BD0001C019 /* Gallery Container */,
 				98E8835A21CDA24D0001C019 /* Button */,
@@ -286,7 +321,6 @@
 				98E8834621CDA0950001C019 /* Paragraph with Title */,
 				98E8834121CD9F250001C019 /* Review */,
 				98E8833C21CD9D250001C019 /* Rating */,
-				98E8833721CD9BBD0001C019 /* Header */,
 				9885CE6521C6D52200900C9F /* Movie Information */,
 			);
 			path = Views;
@@ -299,15 +333,6 @@
 				9885CE6721C6D57200900C9F /* MovieInformationTableViewCell.xib */,
 			);
 			path = "Movie Information";
-			sourceTree = "<group>";
-		};
-		98E8833721CD9BBD0001C019 /* Header */ = {
-			isa = PBXGroup;
-			children = (
-				98E8833821CD9BDF0001C019 /* ProfileHeaderTableViewCell.swift */,
-				98E8833921CD9BDF0001C019 /* ProfileHeaderTableViewCell.xib */,
-			);
-			path = Header;
 			sourceTree = "<group>";
 		};
 		98E8833C21CD9D250001C019 /* Rating */ = {
@@ -429,12 +454,50 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		98E8838621CE64A60001C019 /* Stretchy Header */ = {
+			isa = PBXGroup;
+			children = (
+				98E8838721CE64DE0001C019 /* ProfileStretchyHeaderView.swift */,
+				98E8838921CE65050001C019 /* ProfileStretchyHeaderView.xib */,
+				98E8838B21CE8D0E0001C019 /* ProfileStretchyHeaderViewModel.swift */,
+			);
+			path = "Stretchy Header";
+			sourceTree = "<group>";
+		};
+		98E8838D21CEA3430001C019 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				98E8838E21CEA34D0001C019 /* Home.storyboard */,
+				98E8839021CEA3A30001C019 /* HomeViewController.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		98E8839221CEA49A0001C019 /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				98E8839321CEA4AD0001C019 /* OdeonService.swift */,
+				98E8839821CEBB700001C019 /* MovieDBService.swift */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		98E8839521CEA9D20001C019 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				98E8839621CEA9E20001C019 /* MoyaProvider+Extensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
 		98F3707F21C6705A002D4E7C = {
 			isa = PBXGroup;
 			children = (
 				98F3708A21C6705A002D4E7C /* Odeon */,
 				98F3709F21C6705B002D4E7C /* OdeonTests */,
 				98F3708921C6705A002D4E7C /* Products */,
+				D5ED17D6B5A3AE310DFCBF2E /* Pods */,
+				8F365268C3843C2D76328D83 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -471,6 +534,17 @@
 			path = OdeonTests;
 			sourceTree = "<group>";
 		};
+		D5ED17D6B5A3AE310DFCBF2E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0558931B3A6AAFE81890492E /* Pods-Odeon.debug.xcconfig */,
+				4F169A725452FFE6BCA72CA5 /* Pods-Odeon.release.xcconfig */,
+				8E7E3B4DBDCCC9EECA503E40 /* Pods-OdeonTests.debug.xcconfig */,
+				452BF808E471A131758FA41A /* Pods-OdeonTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -478,9 +552,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 98F370A521C6705B002D4E7C /* Build configuration list for PBXNativeTarget "Odeon" */;
 			buildPhases = (
+				64EA5534B9A6865C0681FB81 /* [CP] Check Pods Manifest.lock */,
 				98F3708421C6705A002D4E7C /* Sources */,
 				98F3708521C6705A002D4E7C /* Frameworks */,
 				98F3708621C6705A002D4E7C /* Resources */,
+				B6E4AC377D976948695B7912 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -495,6 +571,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 98F370A821C6705B002D4E7C /* Build configuration list for PBXNativeTarget "OdeonTests" */;
 			buildPhases = (
+				1C734867C4DD95B8D47DE6C2 /* [CP] Check Pods Manifest.lock */,
 				98F3709821C6705B002D4E7C /* Sources */,
 				98F3709921C6705B002D4E7C /* Frameworks */,
 				98F3709A21C6705B002D4E7C /* Resources */,
@@ -556,8 +633,10 @@
 				98E8836821CDA2F80001C019 /* GalleryImageCollectionViewCell.xib in Resources */,
 				98E8834021CD9D310001C019 /* ProfileRatingTableViewCell.xib in Resources */,
 				9885CE6921C6D57200900C9F /* MovieInformationTableViewCell.xib in Resources */,
+				98E8838F21CEA34D0001C019 /* Home.storyboard in Resources */,
 				98F3709621C6705B002D4E7C /* LaunchScreen.storyboard in Resources */,
 				98E8836321CDA2D10001C019 /* ProfileGalleryContainerTableViewCell.xib in Resources */,
+				98E8838A21CE65050001C019 /* ProfileStretchyHeaderView.xib in Resources */,
 				98E8834F21CDA10C0001C019 /* ProfileTitleTableViewCell.xib in Resources */,
 				98E8835921CDA1DD0001C019 /* ScrollerImageCollectionViewCell.xib in Resources */,
 				98F3709321C6705B002D4E7C /* Assets.xcassets in Resources */,
@@ -565,7 +644,6 @@
 				98E8837821CDA8810001C019 /* Profile.storyboard in Resources */,
 				98F3709121C6705A002D4E7C /* Main.storyboard in Resources */,
 				9885CE3421C6719B00900C9F /* Onboarding.storyboard in Resources */,
-				98E8833B21CD9BDF0001C019 /* ProfileHeaderTableViewCell.xib in Resources */,
 				98E8834521CD9F340001C019 /* ProfileReviewTableViewCell.xib in Resources */,
 				98E8835E21CDA2590001C019 /* ProfileButtonTableViewCell.xib in Resources */,
 			);
@@ -579,6 +657,83 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1C734867C4DD95B8D47DE6C2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-OdeonTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		64EA5534B9A6865C0681FB81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Odeon-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B6E4AC377D976948695B7912 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Odeon/Pods-Odeon-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/GSKStretchyHeaderView/GSKStretchyHeaderView.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
+				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GSKStretchyHeaderView.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Odeon/Pods-Odeon-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		98F3708421C6705A002D4E7C /* Sources */ = {
@@ -601,29 +756,34 @@
 				98E8834E21CDA10C0001C019 /* ProfileTitleTableViewCell.swift in Sources */,
 				98E8838321CDBF700001C019 /* ProfileReviewViewModel.swift in Sources */,
 				98E8837B21CDAD980001C019 /* TransparentNavigationViewController.swift in Sources */,
+				98E8839921CEBB700001C019 /* MovieDBService.swift in Sources */,
+				98E8839421CEA4AD0001C019 /* OdeonService.swift in Sources */,
 				98E8837621CDA62B0001C019 /* TemporaryStructureMapper.swift in Sources */,
 				9885CE6221C68BB200900C9F /* Performance.swift in Sources */,
 				9885CE3721C6784800900C9F /* OnboardingViewController.swift in Sources */,
+				98E8839121CEA3A30001C019 /* HomeViewController.swift in Sources */,
 				9885CE5221C6829400900C9F /* PerformanceAttributesResponse.swift in Sources */,
 				9885CE3E21C6786C00900C9F /* OnboardingLoadingViewController.swift in Sources */,
 				98F3708C21C6705A002D4E7C /* AppDelegate.swift in Sources */,
 				98E8835321CDA19E0001C019 /* HorizontalScrollerTableViewCell.swift in Sources */,
 				98E8836C21CDA5170001C019 /* UITableView+Extensions.swift in Sources */,
 				98E8835D21CDA2590001C019 /* ProfileButtonTableViewCell.swift in Sources */,
+				98E8838821CE64DE0001C019 /* ProfileStretchyHeaderView.swift in Sources */,
 				9885CE5821C6840600900C9F /* Offer.swift in Sources */,
 				9885CE4421C67B6B00900C9F /* OdeonStorage.swift in Sources */,
 				98E8834921CDA0A50001C019 /* ProfileTextTableViewCell.swift in Sources */,
 				98E8835821CDA1DD0001C019 /* ScrollerImageCollectionViewCell.swift in Sources */,
 				98E8838121CDBD3C0001C019 /* GlobalDefinitions.swift in Sources */,
+				98E8838C21CE8D0E0001C019 /* ProfileStretchyHeaderViewModel.swift in Sources */,
 				9885CE4A21C67EFF00900C9F /* ListCinemasResponse.swift in Sources */,
 				98E8834421CD9F340001C019 /* ProfileReviewTableViewCell.swift in Sources */,
-				98E8833A21CD9BDF0001C019 /* ProfileHeaderTableViewCell.swift in Sources */,
 				9885CE5021C6824E00900C9F /* FilmAttributesResponse.swift in Sources */,
 				9885CE5421C682D700900C9F /* ListFilmsResponse.swift in Sources */,
 				9885CE5C21C689F500900C9F /* FilmDetails.swift in Sources */,
 				9885CE5621C682FB00900C9F /* Film.swift in Sources */,
 				98E8837F21CDBD070001C019 /* ProfileTitleViewModel.swift in Sources */,
 				9885CE5E21C68A7900900C9F /* DataWrapperGenericResponse.swift in Sources */,
+				98E8839721CEA9E20001C019 /* MoyaProvider+Extensions.swift in Sources */,
 				9885CE5A21C684D100900C9F /* Certificate.swift in Sources */,
 				98E8838521CDC0350001C019 /* ProfileButtonViewModel.swift in Sources */,
 			);
@@ -786,6 +946,7 @@
 		};
 		98F370A621C6705B002D4E7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0558931B3A6AAFE81890492E /* Pods-Odeon.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -805,6 +966,7 @@
 		};
 		98F370A721C6705B002D4E7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F169A725452FFE6BCA72CA5 /* Pods-Odeon.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -824,6 +986,7 @@
 		};
 		98F370A921C6705B002D4E7C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E7E3B4DBDCCC9EECA503E40 /* Pods-OdeonTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -844,6 +1007,7 @@
 		};
 		98F370AA21C6705B002D4E7C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 452BF808E471A131758FA41A /* Pods-OdeonTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";

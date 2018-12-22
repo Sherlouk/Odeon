@@ -18,8 +18,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         if let window = window {
-            let viewController = ProfileViewController.create()
-            viewController.structureMapper = TemporaryStructureMapper()
+//            let viewController = ProfileViewController.create()
+//            viewController.structureMapper = TemporaryStructureMapper()
+            
+            let viewController = HomeViewController.create()
             
             window.rootViewController = TransparentNavigationViewController(rootViewController: viewController)
         }
