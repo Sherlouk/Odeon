@@ -72,6 +72,10 @@
 		98E883A421CEC51B0001C019 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E883A321CEC51B0001C019 /* MovieDetails.swift */; };
 		98E883A621CF07FD0001C019 /* ProfileTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E883A521CF07FD0001C019 /* ProfileTextViewModel.swift */; };
 		98E883A821CF0AC60001C019 /* ScrollerImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E883A721CF0AC60001C019 /* ScrollerImageViewModel.swift */; };
+		98E883AC21CFB4510001C019 /* ProfileCopyrightTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E883AA21CFB4510001C019 /* ProfileCopyrightTableViewCell.swift */; };
+		98E883AD21CFB4510001C019 /* ProfileCopyrightTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98E883AB21CFB4510001C019 /* ProfileCopyrightTableViewCell.xib */; };
+		98E883B121CFB7550001C019 /* ProfileSocialTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E883AF21CFB7550001C019 /* ProfileSocialTableViewCell.swift */; };
+		98E883B221CFB7550001C019 /* ProfileSocialTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98E883B021CFB7550001C019 /* ProfileSocialTableViewCell.xib */; };
 		98F3708C21C6705A002D4E7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3708B21C6705A002D4E7C /* AppDelegate.swift */; };
 		98F3708E21C6705A002D4E7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3708D21C6705A002D4E7C /* ViewController.swift */; };
 		98F3709121C6705A002D4E7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F3708F21C6705A002D4E7C /* Main.storyboard */; };
@@ -164,6 +168,10 @@
 		98E883A321CEC51B0001C019 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		98E883A521CF07FD0001C019 /* ProfileTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextViewModel.swift; sourceTree = "<group>"; };
 		98E883A721CF0AC60001C019 /* ScrollerImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollerImageViewModel.swift; sourceTree = "<group>"; };
+		98E883AA21CFB4510001C019 /* ProfileCopyrightTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCopyrightTableViewCell.swift; sourceTree = "<group>"; };
+		98E883AB21CFB4510001C019 /* ProfileCopyrightTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileCopyrightTableViewCell.xib; sourceTree = "<group>"; };
+		98E883AF21CFB7550001C019 /* ProfileSocialTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSocialTableViewCell.swift; sourceTree = "<group>"; };
+		98E883B021CFB7550001C019 /* ProfileSocialTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileSocialTableViewCell.xib; sourceTree = "<group>"; };
 		98F3708821C6705A002D4E7C /* Odeon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Odeon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F3708B21C6705A002D4E7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98F3708D21C6705A002D4E7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -320,6 +328,8 @@
 		9885CE6421C6D51100900C9F /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				98E883AE21CFB7480001C019 /* Social */,
+				98E883A921CFB43B0001C019 /* Copyright */,
 				98E8838621CE64A60001C019 /* Stretchy Header */,
 				98E8836421CDA2E60001C019 /* Gallery Cell */,
 				98E8835F21CDA2BD0001C019 /* Gallery Container */,
@@ -532,6 +542,24 @@
 			path = MovieDB;
 			sourceTree = "<group>";
 		};
+		98E883A921CFB43B0001C019 /* Copyright */ = {
+			isa = PBXGroup;
+			children = (
+				98E883AA21CFB4510001C019 /* ProfileCopyrightTableViewCell.swift */,
+				98E883AB21CFB4510001C019 /* ProfileCopyrightTableViewCell.xib */,
+			);
+			path = Copyright;
+			sourceTree = "<group>";
+		};
+		98E883AE21CFB7480001C019 /* Social */ = {
+			isa = PBXGroup;
+			children = (
+				98E883AF21CFB7550001C019 /* ProfileSocialTableViewCell.swift */,
+				98E883B021CFB7550001C019 /* ProfileSocialTableViewCell.xib */,
+			);
+			path = Social;
+			sourceTree = "<group>";
+		};
 		98F3707F21C6705A002D4E7C = {
 			isa = PBXGroup;
 			children = (
@@ -677,9 +705,11 @@
 				9885CE6921C6D57200900C9F /* MovieInformationTableViewCell.xib in Resources */,
 				98E8838F21CEA34D0001C019 /* Home.storyboard in Resources */,
 				98F3709621C6705B002D4E7C /* LaunchScreen.storyboard in Resources */,
+				98E883B221CFB7550001C019 /* ProfileSocialTableViewCell.xib in Resources */,
 				98E8836321CDA2D10001C019 /* ProfileGalleryContainerTableViewCell.xib in Resources */,
 				98E8838A21CE65050001C019 /* ProfileStretchyHeaderView.xib in Resources */,
 				98E8834F21CDA10C0001C019 /* ProfileTitleTableViewCell.xib in Resources */,
+				98E883AD21CFB4510001C019 /* ProfileCopyrightTableViewCell.xib in Resources */,
 				98E8835921CDA1DD0001C019 /* ScrollerImageCollectionViewCell.xib in Resources */,
 				98F3709321C6705B002D4E7C /* Assets.xcassets in Resources */,
 				98E8835421CDA19E0001C019 /* HorizontalScrollerTableViewCell.xib in Resources */,
@@ -797,6 +827,7 @@
 				98E883A621CF07FD0001C019 /* ProfileTextViewModel.swift in Sources */,
 				98E8836721CDA2F80001C019 /* GalleryImageCollectionViewCell.swift in Sources */,
 				9885CE3C21C6786400900C9F /* OnboardingLocationServicesViewController.swift in Sources */,
+				98E883AC21CFB4510001C019 /* ProfileCopyrightTableViewCell.swift in Sources */,
 				98E8837D21CDBCD60001C019 /* ConfigurableCell.swift in Sources */,
 				98E8834E21CDA10C0001C019 /* ProfileTitleTableViewCell.swift in Sources */,
 				98E8838321CDBF700001C019 /* ProfileReviewViewModel.swift in Sources */,
@@ -809,6 +840,7 @@
 				98E8839121CEA3A30001C019 /* HomeViewController.swift in Sources */,
 				9885CE5221C6829400900C9F /* PerformanceAttributesResponse.swift in Sources */,
 				9885CE3E21C6786C00900C9F /* OnboardingLoadingViewController.swift in Sources */,
+				98E883B121CFB7550001C019 /* ProfileSocialTableViewCell.swift in Sources */,
 				98F3708C21C6705A002D4E7C /* AppDelegate.swift in Sources */,
 				98E8835321CDA19E0001C019 /* HorizontalScrollerTableViewCell.swift in Sources */,
 				98E8836C21CDA5170001C019 /* UITableView+Extensions.swift in Sources */,

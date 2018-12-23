@@ -17,6 +17,8 @@ enum ProfileItemType: CaseIterable {
     case paragraph
     case review
     case rating
+    case social
+    case copyright
     case movieInformation
     
     var nibName: String {
@@ -37,6 +39,10 @@ enum ProfileItemType: CaseIterable {
             return "ProfileTitleTableViewCell"
         case .movieInformation:
             return "MovieInformationTableViewCell"
+        case .copyright:
+            return "ProfileCopyrightTableViewCell"
+        case .social:
+            return "ProfileSocialTableViewCell"
         }
     }
     

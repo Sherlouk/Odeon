@@ -45,7 +45,7 @@ class TemporaryStructureMapper {
         
         var castViewModels: [ScrollerImageViewModel]?
         
-        if let initialCast = film.movieDetails.credits?.cast.prefix(5) {
+        if let initialCast = film.movieDetails.credits?.cast.prefix(10) {
             castViewModels = Array(initialCast).map({
                 ScrollerImageViewModel(
                     title: $0.name,
@@ -58,14 +58,17 @@ class TemporaryStructureMapper {
             (.rating, nil),
             (.paragraph, ProfileTextViewModel(title: "Overview", text: description)),
             (.movieInformation, nil),
-            (.title, ProfileTitleViewModel(title: "Cast", buttonText: nil, buttonAction: nil)),
+            (.title, ProfileTitleViewModel(title: "Cast and Crew", buttonText: "SEE ALL", buttonAction: { })),
             (.scroller, castViewModels),
-            (.title, ProfileTitleViewModel(title: "Reviews", buttonText: "SEE ALL", buttonAction: { })),
-            (.review, reviewOne),
-            (.review, reviewTwo),
-            (.button, ProfileButtonViewModel(buttonText: "SEE ALL REVIEWS", buttonAction: { })),
-            (.title, ProfileTitleViewModel(title: "Photogallery", buttonText: nil, buttonAction: nil)),
-            (.gallery, nil)
+            (.title, ProfileTitleViewModel(title: "On The Web", buttonText: nil, buttonAction: nil)),
+            (.social, nil),
+            (.copyright, nil),
+//            (.title, ProfileTitleViewModel(title: "Reviews", buttonText: "SEE ALL", buttonAction: { })),
+//            (.review, reviewOne),
+//            (.review, reviewTwo),
+//            (.button, ProfileButtonViewModel(buttonText: "SEE ALL REVIEWS", buttonAction: { })),
+//            (.title, ProfileTitleViewModel(title: "Photogallery", buttonText: nil, buttonAction: nil)),
+//            (.gallery, nil)
         ]
         
         self.cachedStructure = structure

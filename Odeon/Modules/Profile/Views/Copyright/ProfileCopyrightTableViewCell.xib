@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="175" id="KGk-i7-Jjw" customClass="ProfileCopyrightTableViewCell" customModule="Odeon" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="175"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="174.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="wGy-Ye-92d">
+                        <rect key="frame" x="20" y="30" width="280" height="114.5"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="x3r-Vo-fDO">
+                                <rect key="frame" x="0.0" y="0.0" width="280" height="49.5"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Mba-Bf-cQZ">
+                                        <rect key="frame" x="4" y="0.0" width="272" height="49.5"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logos/TheMovieDB" translatesAutoresizingMaskIntoConstraints="NO" id="SCQ-hX-MeI">
+                                                <rect key="frame" x="0.0" y="9.5" width="33.5" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="PLa-Yo-0qI"/>
+                                                    <constraint firstAttribute="width" secondItem="SCQ-hX-MeI" secondAttribute="height" multiplier="26:23" id="grH-KI-LAC"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This product uses the TMDb API but is not endorsed or certified by TMDb" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GEM-hY-xER">
+                                                <rect key="frame" x="49.5" y="0.0" width="222.5" height="49.5"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" name="Profile/ButtonText"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstItem="SCQ-hX-MeI" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Mba-Bf-cQZ" secondAttribute="top" id="6Db-eP-8NI"/>
+                                            <constraint firstItem="GEM-hY-xER" firstAttribute="leading" secondItem="SCQ-hX-MeI" secondAttribute="trailing" constant="16" id="bnC-ZM-nEc"/>
+                                            <constraint firstItem="GEM-hY-xER" firstAttribute="top" secondItem="Mba-Bf-cQZ" secondAttribute="top" id="cgI-Fk-qbx"/>
+                                            <constraint firstItem="SCQ-hX-MeI" firstAttribute="leading" secondItem="Mba-Bf-cQZ" secondAttribute="leading" id="fQS-xQ-v3t"/>
+                                            <constraint firstAttribute="trailing" secondItem="GEM-hY-xER" secondAttribute="trailing" id="gaV-jh-MA7"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="SCQ-hX-MeI" secondAttribute="bottom" id="lwb-mf-Ox5"/>
+                                            <constraint firstAttribute="bottom" secondItem="GEM-hY-xER" secondAttribute="bottom" id="t0C-wK-e4B"/>
+                                            <constraint firstItem="SCQ-hX-MeI" firstAttribute="centerY" secondItem="Mba-Bf-cQZ" secondAttribute="centerY" id="xTl-at-M0s"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Mba-Bf-cQZ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="x3r-Vo-fDO" secondAttribute="leading" id="F6o-Ry-2gm"/>
+                                    <constraint firstItem="Mba-Bf-cQZ" firstAttribute="centerX" secondItem="x3r-Vo-fDO" secondAttribute="centerX" id="H6G-Ns-dvS"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mba-Bf-cQZ" secondAttribute="bottom" id="bVa-Qe-HHg"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Mba-Bf-cQZ" secondAttribute="trailing" id="sX1-Oc-DaY"/>
+                                    <constraint firstItem="Mba-Bf-cQZ" firstAttribute="top" secondItem="x3r-Vo-fDO" secondAttribute="top" id="vKp-2v-erh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UZn-vo-suz">
+                                <rect key="frame" x="0.0" y="65.5" width="280" height="49"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="oLE-kq-pU8">
+                                        <rect key="frame" x="4" y="0.0" width="272" height="49"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logos/OdeonWhite" translatesAutoresizingMaskIntoConstraints="NO" id="Qdk-4o-w4k">
+                                                <rect key="frame" x="0.0" y="9.5" width="33.5" height="30"/>
+                                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="FYB-Uz-2gU"/>
+                                                    <constraint firstAttribute="width" secondItem="Qdk-4o-w4k" secondAttribute="height" multiplier="26:23" id="tfN-GC-YUy"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="This product uses ODEON private APIs but is not endorsed or certified by ODEON" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0c6-Gx-Ygu">
+                                                <rect key="frame" x="49.5" y="0.0" width="222.5" height="49"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                <color key="textColor" name="Profile/ButtonText"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="trailing" secondItem="0c6-Gx-Ygu" secondAttribute="trailing" id="3cB-2T-xKK"/>
+                                            <constraint firstAttribute="bottom" secondItem="0c6-Gx-Ygu" secondAttribute="bottom" id="DHA-0W-JJN"/>
+                                            <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="Qdk-4o-w4k" secondAttribute="bottom" id="MV9-Ob-nc7"/>
+                                            <constraint firstItem="0c6-Gx-Ygu" firstAttribute="leading" secondItem="Qdk-4o-w4k" secondAttribute="trailing" constant="16" id="OeF-oE-E8H"/>
+                                            <constraint firstItem="Qdk-4o-w4k" firstAttribute="centerY" secondItem="oLE-kq-pU8" secondAttribute="centerY" id="UXF-8y-rd4"/>
+                                            <constraint firstItem="0c6-Gx-Ygu" firstAttribute="top" secondItem="oLE-kq-pU8" secondAttribute="top" id="bqW-qZ-pwH"/>
+                                            <constraint firstItem="Qdk-4o-w4k" firstAttribute="top" relation="greaterThanOrEqual" secondItem="oLE-kq-pU8" secondAttribute="top" id="hVF-R2-5nz"/>
+                                            <constraint firstItem="Qdk-4o-w4k" firstAttribute="leading" secondItem="oLE-kq-pU8" secondAttribute="leading" id="yls-SA-tIH"/>
+                                        </constraints>
+                                    </view>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="oLE-kq-pU8" firstAttribute="centerX" secondItem="UZn-vo-suz" secondAttribute="centerX" id="5vg-Tl-RwL"/>
+                                    <constraint firstItem="oLE-kq-pU8" firstAttribute="top" secondItem="UZn-vo-suz" secondAttribute="top" id="ElZ-8A-cOd"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="oLE-kq-pU8" secondAttribute="trailing" id="JyK-ZX-NoW"/>
+                                    <constraint firstItem="oLE-kq-pU8" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="UZn-vo-suz" secondAttribute="leading" id="Qh4-wC-z26"/>
+                                    <constraint firstAttribute="bottom" secondItem="oLE-kq-pU8" secondAttribute="bottom" id="ta2-i1-J98"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="0c6-Gx-Ygu" firstAttribute="leading" secondItem="GEM-hY-xER" secondAttribute="leading" id="k0k-6R-pev"/>
+                        </constraints>
+                    </stackView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="wGy-Ye-92d" secondAttribute="trailing" constant="20" id="4EQ-6a-3C9"/>
+                    <constraint firstItem="wGy-Ye-92d" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="Err-6M-Vhk"/>
+                    <constraint firstItem="wGy-Ye-92d" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="30" id="fwG-5W-uFh"/>
+                    <constraint firstAttribute="bottom" secondItem="wGy-Ye-92d" secondAttribute="bottom" constant="30" id="iF3-CE-4cv"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" name="PrimaryBackground"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="52.799999999999997" y="175.86206896551727"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="Logos/OdeonWhite" width="1201" height="322"/>
+        <image name="Logos/TheMovieDB" width="312" height="276"/>
+        <namedColor name="PrimaryBackground">
+            <color red="0.11372549019607843" green="0.11372549019607843" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Profile/ButtonText">
+            <color red="0.60392156862745094" green="0.59215686274509804" blue="0.66274509803921566" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

@@ -21,14 +21,14 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile/posterPlaceholder" translatesAutoresizingMaskIntoConstraints="NO" id="68L-sH-S2h">
-                        <rect key="frame" x="20" y="27" width="100" height="145.5"/>
+                        <rect key="frame" x="20" y="27.5" width="100" height="145.5"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="9Mn-uC-7em"/>
                             <constraint firstAttribute="width" secondItem="68L-sH-S2h" secondAttribute="height" multiplier="11:16" id="Ifd-qu-vfF"/>
                         </constraints>
                     </imageView>
                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="lpn-Xq-u6s">
-                        <rect key="frame" x="140" y="20" width="240" height="159.5"/>
+                        <rect key="frame" x="140" y="20.5" width="240" height="160"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IaO-kD-vLd">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="32"/>
@@ -85,16 +85,16 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CW5-8l-TR9">
-                                <rect key="frame" x="0.0" y="64" width="240" height="31.5"/>
+                                <rect key="frame" x="0.0" y="64" width="240" height="32"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Release Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npL-Xi-teq">
-                                        <rect key="frame" x="0.0" y="0.0" width="85" height="31.5"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Release Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="npL-Xi-teq">
+                                        <rect key="frame" x="0.0" y="0.0" width="89" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" name="SecondaryText"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Out Now" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4h-ki-VaV">
-                                        <rect key="frame" x="93" y="0.0" width="56.5" height="31.5"/>
+                                        <rect key="frame" x="97" y="0.0" width="56.5" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" name="PrimaryText"/>
                                         <nil key="highlightedColor"/>
@@ -112,48 +112,52 @@
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="97o-9Z-Lh0">
-                                <rect key="frame" x="0.0" y="95.5" width="240" height="32"/>
+                                <rect key="frame" x="0.0" y="96" width="240" height="32"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Certificate" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NK-RE-tpj">
-                                        <rect key="frame" x="0.0" y="0.0" width="68" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Certificate:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2NK-RE-tpj">
+                                        <rect key="frame" x="0.0" y="0.0" width="72" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" name="SecondaryText"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="12" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Na-bd-JUn">
-                                        <rect key="frame" x="76" y="0.0" width="15" height="32"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <color key="textColor" name="PrimaryText"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1f-yT-jtZ">
-                                        <rect key="frame" x="118" y="6" width="22" height="22"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/Certificates/PG" translatesAutoresizingMaskIntoConstraints="NO" id="Rcd-vI-Gdc">
+                                        <rect key="frame" x="84" y="0.0" width="32" height="32"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="32" id="7Ir-Bn-Hhn"/>
+                                            <constraint firstAttribute="width" secondItem="Rcd-vI-Gdc" secondAttribute="height" multiplier="1:1" id="MXQ-o2-4Ux"/>
+                                        </constraints>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="infoLight" showsTouchWhenHighlighted="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1f-yT-jtZ">
+                                        <rect key="frame" x="80" y="0.0" width="74" height="32"/>
                                         <color key="tintColor" name="Profile/ButtonText"/>
+                                        <inset key="contentEdgeInsets" minX="44" minY="0.0" maxX="8" maxY="0.0"/>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="4Na-bd-JUn" firstAttribute="top" secondItem="97o-9Z-Lh0" secondAttribute="top" id="1Lr-ew-i6m"/>
-                                    <constraint firstItem="d1f-yT-jtZ" firstAttribute="leading" secondItem="4Na-bd-JUn" secondAttribute="trailing" constant="27" id="PWg-ug-Jr0"/>
+                                    <constraint firstItem="d1f-yT-jtZ" firstAttribute="centerY" secondItem="97o-9Z-Lh0" secondAttribute="centerY" id="23C-gT-06K"/>
+                                    <constraint firstItem="d1f-yT-jtZ" firstAttribute="leading" secondItem="Rcd-vI-Gdc" secondAttribute="leading" constant="-4" id="C0y-L8-YgJ"/>
+                                    <constraint firstItem="Rcd-vI-Gdc" firstAttribute="leading" secondItem="2NK-RE-tpj" secondAttribute="trailing" constant="12" id="H7J-hg-Sbv"/>
+                                    <constraint firstItem="d1f-yT-jtZ" firstAttribute="height" secondItem="Rcd-vI-Gdc" secondAttribute="height" id="MDw-84-GA7"/>
+                                    <constraint firstItem="Rcd-vI-Gdc" firstAttribute="centerY" secondItem="97o-9Z-Lh0" secondAttribute="centerY" id="NLH-Zh-cid"/>
                                     <constraint firstItem="2NK-RE-tpj" firstAttribute="leading" secondItem="97o-9Z-Lh0" secondAttribute="leading" id="UrL-cR-L0k"/>
-                                    <constraint firstItem="4Na-bd-JUn" firstAttribute="leading" secondItem="2NK-RE-tpj" secondAttribute="trailing" constant="8" id="cOM-Ft-gGS"/>
                                     <constraint firstAttribute="bottom" secondItem="2NK-RE-tpj" secondAttribute="bottom" id="ecH-7L-e58"/>
-                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="4Na-bd-JUn" secondAttribute="trailing" id="fgi-CK-k61"/>
                                     <constraint firstItem="2NK-RE-tpj" firstAttribute="top" secondItem="97o-9Z-Lh0" secondAttribute="top" id="hVN-o6-rnC"/>
-                                    <constraint firstAttribute="bottom" secondItem="4Na-bd-JUn" secondAttribute="bottom" id="mKd-8M-Zsu"/>
+                                    <constraint firstAttribute="bottom" secondItem="d1f-yT-jtZ" secondAttribute="bottom" id="mjv-Nj-LY1"/>
+                                    <constraint firstItem="d1f-yT-jtZ" firstAttribute="top" secondItem="97o-9Z-Lh0" secondAttribute="top" id="p9T-81-Ole"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="CSy-Y9-WK2">
-                                <rect key="frame" x="0.0" y="127.5" width="240" height="32"/>
+                                <rect key="frame" x="0.0" y="128" width="240" height="32"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Director" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxQ-u2-jm6">
-                                        <rect key="frame" x="0.0" y="0.0" width="52.5" height="32"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="Director:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pxQ-u2-jm6">
+                                        <rect key="frame" x="0.0" y="0.0" width="56.5" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" name="SecondaryText"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Christopher Nolan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fMd-nm-NyI">
-                                        <rect key="frame" x="60.5" y="0.0" width="117.5" height="32"/>
+                                        <rect key="frame" x="64.5" y="0.0" width="117.5" height="32"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <color key="textColor" name="PrimaryText"/>
                                         <nil key="highlightedColor"/>
@@ -191,6 +195,7 @@
         </tableViewCell>
     </objects>
     <resources>
+        <image name="Icons/Certificates/PG" width="584" height="471"/>
         <image name="Profile/posterPlaceholder" width="500" height="735"/>
         <namedColor name="PrimaryBackground">
             <color red="0.11372549019607843" green="0.11372549019607843" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
