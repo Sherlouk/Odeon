@@ -70,6 +70,8 @@
 		98E8839E21CEC3F40001C019 /* ResultsWrapperGenericResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8839D21CEC3F40001C019 /* ResultsWrapperGenericResponse.swift */; };
 		98E883A021CEC41A0001C019 /* FilmSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8839F21CEC41A0001C019 /* FilmSearchResult.swift */; };
 		98E883A421CEC51B0001C019 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E883A321CEC51B0001C019 /* MovieDetails.swift */; };
+		98E883A621CF07FD0001C019 /* ProfileTextViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E883A521CF07FD0001C019 /* ProfileTextViewModel.swift */; };
+		98E883A821CF0AC60001C019 /* ScrollerImageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E883A721CF0AC60001C019 /* ScrollerImageViewModel.swift */; };
 		98F3708C21C6705A002D4E7C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3708B21C6705A002D4E7C /* AppDelegate.swift */; };
 		98F3708E21C6705A002D4E7C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98F3708D21C6705A002D4E7C /* ViewController.swift */; };
 		98F3709121C6705A002D4E7C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98F3708F21C6705A002D4E7C /* Main.storyboard */; };
@@ -160,6 +162,8 @@
 		98E8839D21CEC3F40001C019 /* ResultsWrapperGenericResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ResultsWrapperGenericResponse.swift; sourceTree = "<group>"; };
 		98E8839F21CEC41A0001C019 /* FilmSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmSearchResult.swift; sourceTree = "<group>"; };
 		98E883A321CEC51B0001C019 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
+		98E883A521CF07FD0001C019 /* ProfileTextViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTextViewModel.swift; sourceTree = "<group>"; };
+		98E883A721CF0AC60001C019 /* ScrollerImageViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollerImageViewModel.swift; sourceTree = "<group>"; };
 		98F3708821C6705A002D4E7C /* Odeon.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Odeon.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		98F3708B21C6705A002D4E7C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		98F3708D21C6705A002D4E7C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -364,6 +368,7 @@
 			children = (
 				98E8834721CDA0A50001C019 /* ProfileTextTableViewCell.swift */,
 				98E8834821CDA0A50001C019 /* ProfileTextTableViewCell.xib */,
+				98E883A521CF07FD0001C019 /* ProfileTextViewModel.swift */,
 			);
 			path = "Paragraph with Title";
 			sourceTree = "<group>";
@@ -392,6 +397,7 @@
 			children = (
 				98E8835621CDA1DD0001C019 /* ScrollerImageCollectionViewCell.swift */,
 				98E8835721CDA1DD0001C019 /* ScrollerImageCollectionViewCell.xib */,
+				98E883A721CF0AC60001C019 /* ScrollerImageViewModel.swift */,
 			);
 			path = "Scroller Image with Title";
 			sourceTree = "<group>";
@@ -784,9 +790,11 @@
 				98F3708E21C6705A002D4E7C /* ViewController.swift in Sources */,
 				9885CE6821C6D57200900C9F /* MovieInformationTableViewCell.swift in Sources */,
 				9885CE4721C67D8F00900C9F /* Cinema.swift in Sources */,
+				98E883A821CF0AC60001C019 /* ScrollerImageViewModel.swift in Sources */,
 				98E8833421CD9B360001C019 /* ProfileViewController.swift in Sources */,
 				98E8837221CDA5B70001C019 /* ProfileItemType.swift in Sources */,
 				98E8836221CDA2D10001C019 /* ProfileGalleryContainerTableViewCell.swift in Sources */,
+				98E883A621CF07FD0001C019 /* ProfileTextViewModel.swift in Sources */,
 				98E8836721CDA2F80001C019 /* GalleryImageCollectionViewCell.swift in Sources */,
 				9885CE3C21C6786400900C9F /* OnboardingLocationServicesViewController.swift in Sources */,
 				98E8837D21CDBCD60001C019 /* ConfigurableCell.swift in Sources */,

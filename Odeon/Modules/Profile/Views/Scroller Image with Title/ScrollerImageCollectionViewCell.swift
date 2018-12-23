@@ -8,11 +8,21 @@
 
 import UIKit
 
-class ScrollerImageCollectionViewCell: UICollectionViewCell {
-
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+class ScrollerImageCollectionViewCell: UICollectionViewCell, ConfigurableCell {
+    
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var mainImageView: UIImageView!
+    
+    func configure(with object: Any?) {
+        
+        guard let viewModel = object as? ScrollerImageViewModel else {
+            assertionFailure("Object could not be cast to correct view model")
+            return
+        }
+        
+        titleLabel.text = viewModel.title
+        mainImageView.kf.setImage(with: viewModel.imageURL)
+        
     }
 
 }

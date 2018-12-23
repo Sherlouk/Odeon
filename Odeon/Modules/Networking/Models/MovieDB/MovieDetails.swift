@@ -15,10 +15,37 @@ struct MovieDetails: Codable {
         let name: String
     }
     
+    struct ExternalIds: Codable {
+        let imdb_id: String?
+        let facebook_id: String?
+        let instagram_id: String?
+        let twitter_id: String?
+    }
+    
+    struct Credits: Codable {
+        struct CastMember: Codable {
+            let id: Int
+            let character: String
+            let name: String
+            let profile_path: String?
+        }
+        
+        struct CrewMember: Codable {
+            let id: Int
+            let job: String
+            let name: String
+            let department: String
+            let profile_path: String?
+        }
+        
+        let cast: [CastMember]
+        let crew: [CrewMember]
+    }
+    
     // https://developers.themoviedb.org/3/movies/get-movie-details
     
     let backdrop_path: String?
-    let original_title: String
+    let title: String
     let overview: String?
     let tagline: String?
     
@@ -29,5 +56,7 @@ struct MovieDetails: Codable {
     let imdb_id: String?
     let homepage: URL?
     let genres: [Genre]
+    let external_ids: ExternalIds?
+    let credits: Credits?
     
 }

@@ -43,12 +43,23 @@ class TemporaryStructureMapper {
 
         let description = film.movieDetails.overview ?? "\(film.odeonFilmDetails.plot)\n\n\(film.odeonFilmDetails.customerAdvice)"
         
+        var castViewModels: [ScrollerImageViewModel]?
+        
+        if let initialCast = film.movieDetails.credits?.cast.prefix(5) {
+            castViewModels = Array(initialCast).map({
+                ScrollerImageViewModel(
+                    title: $0.name,
+                    imageURL: URL(string: "https://image.tmdb.org/t/p/original/\($0.profile_path ?? "")")
+                )
+            })
+        }
+        
         let structure: [ItemTypeTuple] = [
             (.rating, nil),
-            (.paragraph, nil),
+            (.paragraph, ProfileTextViewModel(title: "Overview", text: description)),
             (.movieInformation, nil),
             (.title, ProfileTitleViewModel(title: "Cast", buttonText: nil, buttonAction: nil)),
-            (.scroller, nil),
+            (.scroller, castViewModels),
             (.title, ProfileTitleViewModel(title: "Reviews", buttonText: "SEE ALL", buttonAction: { })),
             (.review, reviewOne),
             (.review, reviewTwo),

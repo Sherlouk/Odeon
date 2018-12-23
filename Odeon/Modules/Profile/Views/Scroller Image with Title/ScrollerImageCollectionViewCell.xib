@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -13,33 +14,34 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="ScrollerImageCollectionViewCell" customModule="Odeon" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="150" height="243"/>
+            <rect key="frame" x="0.0" y="0.0" width="150" height="330"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                <rect key="frame" x="0.0" y="0.0" width="150" height="243"/>
+                <rect key="frame" x="0.0" y="0.0" width="150" height="330"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Se-NK-yBZ">
-                        <rect key="frame" x="0.0" y="0.0" width="150" height="150"/>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Se-NK-yBZ">
+                        <rect key="frame" x="0.0" y="0.0" width="150" height="187.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="2Se-NK-yBZ" secondAttribute="height" multiplier="1:1" id="5R6-T6-tto"/>
+                            <constraint firstAttribute="width" secondItem="2Se-NK-yBZ" secondAttribute="height" multiplier="2:2.5" id="5R6-T6-tto"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
-                                <integer key="value" value="4"/>
+                                <integer key="value" value="5"/>
                             </userDefinedRuntimeAttribute>
                         </userDefinedRuntimeAttributes>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1p2-WM-7lo">
-                        <rect key="frame" x="0.0" y="170" width="150" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Full Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1p2-WM-7lo">
+                        <rect key="frame" x="0.0" y="199.5" width="150" height="19.5"/>
+                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="16"/>
+                        <color key="textColor" name="Profile/PrimaryText"/>
                         <nil key="highlightedColor"/>
                     </label>
                 </subviews>
             </view>
+            <color key="backgroundColor" name="PrimaryBackground"/>
             <constraints>
-                <constraint firstItem="1p2-WM-7lo" firstAttribute="top" secondItem="2Se-NK-yBZ" secondAttribute="bottom" constant="20" id="KCa-hn-E6X"/>
+                <constraint firstItem="1p2-WM-7lo" firstAttribute="top" secondItem="2Se-NK-yBZ" secondAttribute="bottom" constant="12" id="KCa-hn-E6X"/>
                 <constraint firstItem="2Se-NK-yBZ" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="SPT-rC-O5Y"/>
                 <constraint firstItem="1p2-WM-7lo" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="ZgX-l7-9wY"/>
                 <constraint firstAttribute="trailing" secondItem="2Se-NK-yBZ" secondAttribute="trailing" id="cIT-Id-5QG"/>
@@ -48,8 +50,20 @@
                 <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="1p2-WM-7lo" secondAttribute="bottom" id="zTz-j7-6QL"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
-            <size key="customSize" width="150" height="243"/>
-            <point key="canvasLocation" x="137.59999999999999" y="160.56971514242881"/>
+            <size key="customSize" width="150" height="330"/>
+            <connections>
+                <outlet property="mainImageView" destination="2Se-NK-yBZ" id="gPN-zd-f25"/>
+                <outlet property="titleLabel" destination="1p2-WM-7lo" id="CAN-gN-Nl6"/>
+            </connections>
+            <point key="canvasLocation" x="137.59999999999999" y="199.70014992503749"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <namedColor name="PrimaryBackground">
+            <color red="0.11372549019607843" green="0.11372549019607843" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Profile/PrimaryText">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
 </document>

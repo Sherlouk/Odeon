@@ -41,10 +41,10 @@ class ProfileViewController: UIViewController {
         setupNavigationBar()
         
         let headerViewModel = ProfileStretchyHeaderViewModel(
-            title: structureMapper.film.movieDetails.original_title,
+            title: structureMapper.film.movieDetails.title,
             description: "(0000)",
             imageURL: URL(string: "https://image.tmdb.org/t/p/original/\(structureMapper.film.movieDetails.backdrop_path ?? "")")!,
-            tagTitle: structureMapper.film.movieDetails.genres.first?.name ?? "UNKNOWN"
+            tags: structureMapper.film.movieDetails.genres.map({ $0.name })
         )
         
         setupStretchyHeader(viewModel: headerViewModel)
@@ -68,8 +68,12 @@ class ProfileViewController: UIViewController {
     
     func setupNavigationBar() {
         
-        let item = UIBarButtonItem(title: "Test", style: .done, target: nil, action: nil)
-        navigationItem.rightBarButtonItem = item
+        guard let controller = navigationController as? TransparentNavigationViewController else {
+            return
+        }
+        
+        navigationItem.leftBarButtonItem = controller.backButton
+        navigationItem.rightBarButtonItem = controller.shareButton
         
     }
     

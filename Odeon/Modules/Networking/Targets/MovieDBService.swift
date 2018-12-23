@@ -18,6 +18,8 @@ enum MovieDBService {
 
 extension MovieDBService: TargetType {
     
+    // TODO: Pass through device language locale to translate responses?
+    
     var baseURL: URL {
         return URL(string: "https://api.themoviedb.org/3/")!
     }
@@ -48,9 +50,10 @@ extension MovieDBService: TargetType {
                 "year": year,
                 "primary_release_year": year
             ], encoding: URLEncoding.queryString)
-        default:
+        case .getMovieDetails:
             return .requestParameters(parameters: [
-                "api_key": apiKey
+                "api_key": apiKey,
+                "append_to_response": ["credits", "external_ids"].joined(separator: ",")
             ], encoding: URLEncoding.queryString)
         }
     }

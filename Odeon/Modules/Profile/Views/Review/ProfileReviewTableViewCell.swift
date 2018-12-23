@@ -47,8 +47,8 @@ class ProfileReviewTableViewCell: UITableViewCell, ConfigurableCell {
         
         // Collect and validate assets
         
-        let fullImage = UIImage(named: "Star/filled")?.withRenderingMode(.alwaysTemplate)
-        let halfImage = UIImage(named: "Star/half")?.withRenderingMode(.alwaysTemplate)
+        let fullImage = UIImage(named: "Icons/Star/filled")?.withRenderingMode(.alwaysTemplate)
+        let halfImage = UIImage(named: "Icons/Star/half")?.withRenderingMode(.alwaysTemplate)
         
         assert(fullImage != nil)
         assert(halfImage != nil)

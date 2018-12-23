@@ -6,7 +6,7 @@
 //  Copyright © 2018 Sherlouk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 typealias VoidClosure = () -> Void
 
@@ -16,4 +16,12 @@ func assertNotNil(_ condition: @autoclosure () -> Optional<Any>, file: StaticStr
         assertionFailure(file: file, line: line)
     }
     
+}
+
+var trueUnlessReduceMotionEnabled: Bool {
+    if UIAccessibility.isReduceMotionEnabled {
+        return false
+    }
+    
+    return true
 }

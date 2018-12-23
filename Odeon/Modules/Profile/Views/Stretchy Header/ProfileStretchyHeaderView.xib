@@ -27,22 +27,28 @@
                         <constraint firstAttribute="width" secondItem="5eG-nm-J50" secondAttribute="height" multiplier="1:1" id="Dm7-bj-QLY"/>
                     </constraints>
                 </view>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="TcK-IE-f6D">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="375"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="TcK-IE-f6D" secondAttribute="height" multiplier="1:1" id="tjc-PN-OL4"/>
+                    </constraints>
+                </view>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Film Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9vb-Up-J37">
                     <rect key="frame" x="141.5" y="341" width="92.5" height="24"/>
                     <fontDescription key="fontDescription" type="system" pointSize="20"/>
                     <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Fh2-aI-mos">
-                    <rect key="frame" x="20" y="330" width="84" height="25"/>
-                    <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="12"/>
-                    <inset key="contentEdgeInsets" minX="10" minY="5" maxX="10" maxY="5"/>
-                    <state key="normal" title="ANIMATED">
-                        <color key="titleColor" red="1" green="1" blue="1" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                    </state>
-                </button>
+                <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="gaA-ZZ-64R">
+                    <rect key="frame" x="20" y="325" width="200" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="200" placeholder="YES" id="hrG-79-WaZ"/>
+                        <constraint firstAttribute="height" constant="30" placeholder="YES" id="pIY-SU-dfc"/>
+                    </constraints>
+                </stackView>
                 <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="OcX-U8-tNk">
-                    <rect key="frame" x="20" y="284.5" width="176" height="33.5"/>
+                    <rect key="frame" x="20" y="281.5" width="176" height="33.5"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Film Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcq-f4-M9f">
                             <rect key="frame" x="0.0" y="0.0" width="128" height="33.5"/>
@@ -72,13 +78,16 @@
             <color key="backgroundColor" name="PrimaryBackground"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="5eG-nm-J50" secondAttribute="trailing" id="AjF-NQ-0hg"/>
-                <constraint firstAttribute="bottom" secondItem="OcX-U8-tNk" secondAttribute="bottom" constant="57" id="CL8-N1-qVs"/>
-                <constraint firstAttribute="bottom" secondItem="Fh2-aI-mos" secondAttribute="bottom" constant="20" id="WFe-vA-ZnK"/>
-                <constraint firstItem="Fh2-aI-mos" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="XA6-Uu-NRB"/>
+                <constraint firstItem="gaA-ZZ-64R" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="20" id="C6A-eg-2y2"/>
+                <constraint firstItem="TcK-IE-f6D" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="ITZ-VI-qJN"/>
+                <constraint firstItem="TcK-IE-f6D" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Poq-XZ-4jV"/>
+                <constraint firstItem="gaA-ZZ-64R" firstAttribute="top" secondItem="OcX-U8-tNk" secondAttribute="bottom" constant="10" id="QSP-bm-tpu"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gaA-ZZ-64R" secondAttribute="bottom" constant="20" id="S0g-0G-lJp"/>
                 <constraint firstAttribute="bottom" secondItem="qHY-1n-o3h" secondAttribute="bottom" id="a8c-18-rws"/>
                 <constraint firstAttribute="trailing" secondItem="qHY-1n-o3h" secondAttribute="trailing" id="dUr-4I-yKa"/>
                 <constraint firstItem="qHY-1n-o3h" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fXM-Gb-7VC"/>
                 <constraint firstAttribute="bottom" secondItem="9vb-Up-J37" secondAttribute="bottom" constant="10" id="heY-tW-S7b"/>
+                <constraint firstItem="TcK-IE-f6D" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="mrS-TO-ISh"/>
                 <constraint firstItem="5eG-nm-J50" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="pzF-ge-MWd"/>
                 <constraint firstItem="9vb-Up-J37" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="sGK-70-2dP"/>
                 <constraint firstItem="qHY-1n-o3h" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="us2-7d-pA0"/>
@@ -90,8 +99,9 @@
             <connections>
                 <outlet property="backgroundImageView" destination="qHY-1n-o3h" id="oXK-xw-nS8"/>
                 <outlet property="gradientView" destination="5eG-nm-J50" id="y5G-1p-75y"/>
+                <outlet property="navigationGradientView" destination="TcK-IE-f6D" id="yZz-Vj-mJR"/>
                 <outlet property="secondaryLabel" destination="b4I-OA-gBs" id="Z0P-eR-zpo"/>
-                <outlet property="tagButton" destination="Fh2-aI-mos" id="iHv-CM-1br"/>
+                <outlet property="tagStackView" destination="gaA-ZZ-64R" id="YiB-sp-nql"/>
                 <outlet property="titleContainerView" destination="OcX-U8-tNk" id="GPZ-Uo-Gqz"/>
                 <outlet property="titleLabel" destination="Vcq-f4-M9f" id="kKG-lb-Ufp"/>
                 <outlet property="titleNavigationBarLabel" destination="9vb-Up-J37" id="GwX-qn-1An"/>

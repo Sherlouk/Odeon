@@ -64,35 +64,35 @@
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="8Jj-Df-n4w">
                         <rect key="frame" x="192" y="29.5" width="108" height="20"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star/filled" translatesAutoresizingMaskIntoConstraints="NO" id="M9K-Ss-fKA">
+                            <imageView userInteractionEnabled="NO" tag="1" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/Star/filled" translatesAutoresizingMaskIntoConstraints="NO" id="M9K-Ss-fKA">
                                 <rect key="frame" x="0.0" y="0.0" width="20" height="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="M9K-Ss-fKA" secondAttribute="height" multiplier="1:1" id="EBw-g0-c22"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star/filled" translatesAutoresizingMaskIntoConstraints="NO" id="MRh-FF-4jG">
+                            <imageView userInteractionEnabled="NO" tag="2" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/Star/filled" translatesAutoresizingMaskIntoConstraints="NO" id="MRh-FF-4jG">
                                 <rect key="frame" x="22" y="0.0" width="20" height="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MRh-FF-4jG" secondAttribute="height" multiplier="1:1" id="4TG-3u-Qil"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star/half" translatesAutoresizingMaskIntoConstraints="NO" id="MW3-9c-gDD">
+                            <imageView userInteractionEnabled="NO" tag="3" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/Star/half" translatesAutoresizingMaskIntoConstraints="NO" id="MW3-9c-gDD">
                                 <rect key="frame" x="44" y="0.0" width="20" height="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="MW3-9c-gDD" secondAttribute="height" multiplier="1:1" id="kee-xH-yfA"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star/empty" translatesAutoresizingMaskIntoConstraints="NO" id="3FX-5P-YmF">
+                            <imageView userInteractionEnabled="NO" tag="4" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/Star/empty" translatesAutoresizingMaskIntoConstraints="NO" id="3FX-5P-YmF">
                                 <rect key="frame" x="66" y="0.0" width="20" height="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="3FX-5P-YmF" secondAttribute="height" multiplier="1:1" id="2sC-JZ-Nls"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Star/empty" translatesAutoresizingMaskIntoConstraints="NO" id="sSS-aW-2Nz">
+                            <imageView userInteractionEnabled="NO" tag="5" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/Star/empty" translatesAutoresizingMaskIntoConstraints="NO" id="sSS-aW-2Nz">
                                 <rect key="frame" x="88" y="0.0" width="20" height="20"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -153,9 +153,9 @@
         </tableViewCell>
     </objects>
     <resources>
-        <image name="Star/empty" width="100" height="100"/>
-        <image name="Star/filled" width="100" height="100"/>
-        <image name="Star/half" width="100" height="100"/>
+        <image name="Icons/Star/empty" width="100" height="100"/>
+        <image name="Icons/Star/filled" width="100" height="100"/>
+        <image name="Icons/Star/half" width="100" height="100"/>
         <namedColor name="PrimaryBackground">
             <color red="0.11372549019607843" green="0.11372549019607843" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

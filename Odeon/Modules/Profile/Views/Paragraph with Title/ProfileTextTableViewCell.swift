@@ -8,17 +8,21 @@
 
 import UIKit
 
-class ProfileTextTableViewCell: UITableViewCell {
+class ProfileTextTableViewCell: UITableViewCell, ConfigurableCell {
 
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var descriptionLabel: UILabel!
+    
+    func configure(with object: Any?) {
+        
+        guard let viewModel = object as? ProfileTextViewModel else {
+            assertionFailure("Object could not be cast to correct view model")
+            return
+        }
+        
+        titleLabel.text = viewModel.title
+        descriptionLabel.text = viewModel.text
+        
     }
     
 }

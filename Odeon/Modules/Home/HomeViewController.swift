@@ -40,7 +40,7 @@ class HomeViewController: UIViewController {
         
         let provider = MoyaProvider<OdeonService>()
         
-        provider.requestDecode(.topFilms) { (result: Result<ListFilmsResponse, MoyaError>) in
+        provider.requestDecode(.comingSoonFilms) { (result: Result<ListFilmsResponse, MoyaError>) in
             
             switch result {
             case .success(let response):
