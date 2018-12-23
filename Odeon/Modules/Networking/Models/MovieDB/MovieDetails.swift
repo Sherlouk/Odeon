@@ -45,6 +45,7 @@ struct MovieDetails: Codable {
     // https://developers.themoviedb.org/3/movies/get-movie-details
     
     let backdrop_path: String?
+    let poster_path: String?
     let title: String
     let overview: String?
     let tagline: String?
@@ -58,5 +59,6 @@ struct MovieDetails: Codable {
     let genres: [Genre]
     let external_ids: ExternalIds?
     let credits: Credits?
+    let release_date: DateWrapper<YearDayMonthDashed>
     
 }

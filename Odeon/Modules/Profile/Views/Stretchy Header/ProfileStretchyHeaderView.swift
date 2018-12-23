@@ -110,7 +110,7 @@ class ProfileStretchyHeaderView: GSKStretchyHeaderView, ConfigurableCell {
         button.layer.borderColor = UIColor.white.withAlphaComponent(0.4).cgColor
         button.layer.cornerRadius = 5
         button.contentEdgeInsets = UIEdgeInsets(top: 5, left: 10, bottom: 5, right: 10)
-        button.titleLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
+        button.titleLabel?.font = UIFont.systemFont(ofSize: 12, weight: .medium)
         button.setTitle(title, for: .normal)
         button.setTitleColor(UIColor.white.withAlphaComponent(0.6), for: .normal)
         

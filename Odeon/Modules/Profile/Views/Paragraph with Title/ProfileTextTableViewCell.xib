@@ -34,7 +34,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8WM-VH-vqB">
-                        <rect key="frame" x="20" y="60" width="280" height="104.5"/>
+                        <rect key="frame" x="20" y="56" width="280" height="116.5"/>
                         <string key="text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas a maximus mi, ut lacinia elit. Maecenas facilisis turpis a felis porta, in suscipit turpis pulvinar. Aliquam euismod dui ut tortor finibus, et consectetur dui tristique.</string>
                         <fontDescription key="fontDescription" type="system" pointSize="16"/>
                         <color key="textColor" name="Profile/SecondaryText"/>
@@ -42,7 +42,7 @@
                     </label>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8WM-VH-vqB" secondAttribute="bottom" constant="20" id="6dC-5i-cZ1"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="8WM-VH-vqB" secondAttribute="bottom" constant="12" id="6dC-5i-cZ1"/>
                     <constraint firstItem="0xC-eD-kQ7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="20" id="DsH-Uo-BN3"/>
                     <constraint firstItem="SKe-ls-2sf" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="GPe-fN-F47"/>
                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="0xC-eD-kQ7" secondAttribute="trailing" constant="20" id="I60-pe-dK6"/>
@@ -50,7 +50,7 @@
                     <constraint firstItem="0xC-eD-kQ7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="PlG-Sg-H4g"/>
                     <constraint firstItem="8WM-VH-vqB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="20" id="WqA-m3-ScH"/>
                     <constraint firstAttribute="trailing" secondItem="SKe-ls-2sf" secondAttribute="trailing" constant="20" id="l96-GZ-bsl"/>
-                    <constraint firstItem="8WM-VH-vqB" firstAttribute="top" secondItem="0xC-eD-kQ7" secondAttribute="bottom" constant="16" id="tR5-M5-qst"/>
+                    <constraint firstItem="8WM-VH-vqB" firstAttribute="top" secondItem="0xC-eD-kQ7" secondAttribute="bottom" constant="12" id="tR5-M5-qst"/>
                     <constraint firstItem="SKe-ls-2sf" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="ymT-vm-GNr"/>
                 </constraints>
             </tableViewCellContentView>

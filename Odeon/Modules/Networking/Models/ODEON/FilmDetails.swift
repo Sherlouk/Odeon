@@ -19,6 +19,8 @@ struct FilmDetails: Codable {
     let runningTime: String
     let language: String
     let country: String
+    let certificate: Certificate
+    let releaseDate: String
     let sites: [Int]
     
 }

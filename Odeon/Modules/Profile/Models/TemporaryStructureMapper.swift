@@ -54,10 +54,19 @@ class TemporaryStructureMapper {
             })
         }
         
+        let movieInformation = MovieInformationViewModel(
+            runningTime: Int(film.odeonFilmDetails.runningTime) ?? 0,
+            language: film.odeonFilmDetails.language,
+            releaseDate: film.movieDetails.release_date.date,
+            certificate: film.odeonFilmDetails.certificate,
+            director: film.odeonFilmDetails.director,
+            posterImageURL: URL(string: "https://image.tmdb.org/t/p/original/\(film.movieDetails.poster_path ?? "")")!
+        )
+        
         let structure: [ItemTypeTuple] = [
-            (.rating, nil),
+            (.rating, ProfileRatingViewModel(reviewCount: film.movieDetails.vote_count, reviewAverage: film.movieDetails.vote_average)),
             (.paragraph, ProfileTextViewModel(title: "Overview", text: description)),
-            (.movieInformation, nil),
+            (.movieInformation, movieInformation),
             (.title, ProfileTitleViewModel(title: "Cast and Crew", buttonText: "SEE ALL", buttonAction: { })),
             (.scroller, castViewModels),
             (.title, ProfileTitleViewModel(title: "On The Web", buttonText: nil, buttonAction: nil)),

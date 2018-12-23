@@ -21,7 +21,19 @@ class ProfileTextTableViewCell: UITableViewCell, ConfigurableCell {
         }
         
         titleLabel.text = viewModel.title
-        descriptionLabel.text = viewModel.text
+        
+        let paragraphStyle = NSMutableParagraphStyle()
+        paragraphStyle.lineHeightMultiple = 1.3
+        paragraphStyle.lineSpacing = 1
+        
+        descriptionLabel.attributedText = NSAttributedString(
+            string: viewModel.text,
+            attributes: [
+                .font: descriptionLabel.font,
+                .foregroundColor: descriptionLabel.textColor,
+                .paragraphStyle: paragraphStyle
+            ]
+        )
         
     }
     

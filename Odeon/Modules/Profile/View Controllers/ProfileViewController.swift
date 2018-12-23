@@ -42,7 +42,7 @@ class ProfileViewController: UIViewController {
         
         let headerViewModel = ProfileStretchyHeaderViewModel(
             title: structureMapper.film.movieDetails.title,
-            description: "(0000)",
+            description: "(\(structureMapper.film.movieDetails.release_date.year))",
             imageURL: URL(string: "https://image.tmdb.org/t/p/original/\(structureMapper.film.movieDetails.backdrop_path ?? "")")!,
             tags: structureMapper.film.movieDetails.genres.map({ $0.name })
         )
