@@ -35,7 +35,18 @@
                                         <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
                                         <color key="tintColor" name="PrimaryText"/>
                                         <state key="normal" title="VIEW SHOWINGS"/>
+                                        <connections>
+                                            <action selector="didTapCallToAction" destination="MvL-Ap-iVm" eventType="touchUpInside" id="K9x-bR-Qt8"/>
+                                        </connections>
                                     </button>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Icons/forward" translatesAutoresizingMaskIntoConstraints="NO" id="2Tl-iP-ohb">
+                                        <rect key="frame" x="335" y="15" width="20" height="20"/>
+                                        <color key="tintColor" name="Profile/PrimaryText"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="2Tl-iP-ohb" secondAttribute="height" multiplier="1:1" id="L6o-m1-AUp"/>
+                                            <constraint firstAttribute="width" constant="20" id="shP-HY-EtS"/>
+                                        </constraints>
+                                    </imageView>
                                     <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aEY-f6-zW4">
                                         <rect key="frame" x="0.0" y="50" width="375" height="0.0"/>
                                         <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -44,7 +55,9 @@
                                 <color key="backgroundColor" name="FlatButtonBackground"/>
                                 <constraints>
                                     <constraint firstItem="Nqd-LD-76w" firstAttribute="top" secondItem="NTe-uE-bfH" secondAttribute="top" id="4XK-Re-Oty"/>
+                                    <constraint firstAttribute="trailing" secondItem="2Tl-iP-ohb" secondAttribute="trailing" constant="20" id="80T-qu-8WK"/>
                                     <constraint firstAttribute="trailing" secondItem="Nqd-LD-76w" secondAttribute="trailing" id="IUU-S5-lr5"/>
+                                    <constraint firstItem="2Tl-iP-ohb" firstAttribute="centerY" secondItem="Nqd-LD-76w" secondAttribute="centerY" id="LOC-vd-rj9"/>
                                     <constraint firstItem="aEY-f6-zW4" firstAttribute="leading" secondItem="NTe-uE-bfH" secondAttribute="leading" id="PWo-a7-c6Z"/>
                                     <constraint firstItem="aEY-f6-zW4" firstAttribute="top" secondItem="Nqd-LD-76w" secondAttribute="bottom" id="TO7-8g-lbj"/>
                                     <constraint firstItem="Nqd-LD-76w" firstAttribute="leading" secondItem="NTe-uE-bfH" secondAttribute="leading" id="Zgr-e2-sk4"/>
@@ -68,6 +81,8 @@
                     </view>
                     <navigationItem key="navigationItem" id="1Qo-Ab-Jmq"/>
                     <connections>
+                        <outlet property="ctaButton" destination="Nqd-LD-76w" id="b41-bH-Mjo"/>
+                        <outlet property="ctaContainerView" destination="NTe-uE-bfH" id="IJi-Jb-Jj0"/>
                         <outlet property="tableView" destination="0jq-kR-cz8" id="Dzy-ir-3Kq"/>
                     </connections>
                 </viewController>
@@ -77,6 +92,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="Icons/forward" width="90" height="90"/>
         <namedColor name="FlatButtonBackground">
             <color red="0.99607843137254903" green="0.51764705882352946" blue="0.36078431372549019" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
@@ -84,6 +100,9 @@
             <color red="0.11372549019607843" green="0.11372549019607843" blue="0.15294117647058825" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PrimaryText">
+            <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="Profile/PrimaryText">
             <color red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>

@@ -8,18 +8,31 @@
 
 import Foundation
 
-class TemporaryStructureMapper {
+class FilmDetailsStructureMapper: ProfileStructureMapper {
     
     typealias ItemTypeTuple = (itemType: ProfileItemType, object: Any?)
     
     let film: FilmFetcher.Film
     var cachedStructure: [ItemTypeTuple]?
+    var stretchyHeaderViewModel: ProfileStretchyHeaderViewModel?
     
     init(film: FilmFetcher.Film) {
         self.film = film
+        setStretchyHeader()
     }
     
-    var struture: [ItemTypeTuple] {
+    func setStretchyHeader() {
+        
+        stretchyHeaderViewModel = ProfileStretchyHeaderViewModel(
+            title: film.movieDetails.title,
+            description: "(\(film.movieDetails.release_date.year))",
+            imageURL: film.movieDetails.backdrop_path.makeURL()!,
+            tags: film.movieDetails.genres.map({ $0.name })
+        )
+        
+    }
+    
+    var structure: [ItemTypeTuple] {
         
         if let cached = cachedStructure {
             return cached
@@ -49,10 +62,11 @@ class TemporaryStructureMapper {
             castViewModels = Array(initialCast).map({
                 ScrollerImageViewModel(
                     title: $0.name,
-                    imageURL: URL(string: "https://image.tmdb.org/t/p/original/\($0.profile_path ?? "")")
+                    imageURL: $0.profile_path.makeURL()
                 )
             })
         }
+        
         
         let movieInformation = MovieInformationViewModel(
             runningTime: Int(film.odeonFilmDetails.runningTime) ?? 0,
@@ -60,7 +74,7 @@ class TemporaryStructureMapper {
             releaseDate: film.movieDetails.release_date.date,
             certificate: film.odeonFilmDetails.certificate,
             director: film.odeonFilmDetails.director,
-            posterImageURL: URL(string: "https://image.tmdb.org/t/p/original/\(film.movieDetails.poster_path ?? "")")!
+            posterImageURL: film.movieDetails.poster_path.makeURL()!
         )
         
         let structure: [ItemTypeTuple] = [

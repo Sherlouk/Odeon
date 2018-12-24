@@ -9,7 +9,7 @@
 import UIKit
 import Kingfisher
 
-class MovieInformationTableViewCell: UITableViewCell, ConfigurableCell {
+class MovieInformationTableViewCell: UITableViewCell, ConfigurableCell, ProfileActionTrigger {
 
     @IBOutlet var posterImageView: UIImageView!
     @IBOutlet var directorLabel: UILabel!
@@ -19,6 +19,7 @@ class MovieInformationTableViewCell: UITableViewCell, ConfigurableCell {
     @IBOutlet var runningTimeLabel: UILabel!
     
     var certificate: Certificate?
+    weak var actionHandler: ProfileActionHandler?
     
     func configure(with object: Any?) {
         
@@ -64,7 +65,7 @@ class MovieInformationTableViewCell: UITableViewCell, ConfigurableCell {
             return
         }
         
-        print("Open URL: \(url)")
+        actionHandler?.handleAction(action: .openURL(url: url))
         
     }
     

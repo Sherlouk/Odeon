@@ -27,7 +27,7 @@ struct MovieDetails: Codable {
             let id: Int
             let character: String
             let name: String
-            let profile_path: String?
+            let profile_path: MDBImageURL
         }
         
         struct CrewMember: Codable {
@@ -44,8 +44,8 @@ struct MovieDetails: Codable {
     
     // https://developers.themoviedb.org/3/movies/get-movie-details
     
-    let backdrop_path: String?
-    let poster_path: String?
+    let backdrop_path: MDBImageURL
+    let poster_path: MDBImageURL
     let title: String
     let overview: String?
     let tagline: String?
@@ -59,6 +59,6 @@ struct MovieDetails: Codable {
     let genres: [Genre]
     let external_ids: ExternalIds?
     let credits: Credits?
-    let release_date: DateWrapper<YearDayMonthDashed>
+    let release_date: DateWrapper<YearMonthDayDashed>
     
 }

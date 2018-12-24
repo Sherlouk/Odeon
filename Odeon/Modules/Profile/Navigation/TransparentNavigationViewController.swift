@@ -39,8 +39,8 @@ class TransparentNavigationViewController: UINavigationController {
         button.addTarget(self, action: #selector(didTapBack), for: .touchUpInside)
         
         let imageView = UIImageView(image: UIImage(named: "Icons/back"))
-        imageView.frame.origin = CGPoint(x: 5, y: 5)
-        imageView.frame.size = CGSize(width: 34, height: 34)
+        imageView.frame.origin = CGPoint(x: 5, y: 10)
+        imageView.frame.size = CGSize(width: 24, height: 24)
         imageView.contentMode = .scaleAspectFit
         button.addSubview(imageView)
         

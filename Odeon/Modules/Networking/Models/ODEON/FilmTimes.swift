@@ -11,7 +11,7 @@ import Foundation
 struct FilmTimes: Codable {
     
     struct Day: Codable {
-        let date: String // TODO: make this date
+        let date: DateWrapper<YearMonthDayDashed>
         let performances: [Performance]
     }
     

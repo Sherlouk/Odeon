@@ -14,12 +14,22 @@ struct Performance: Codable {
         case id = "performanceId"
         case time = "performanceTime"
         case attributes
+        case filmAttributes
         case status
+        case screenName
+    }
+    
+    enum Status: String, Codable {
+        case locked
+        case soldOut = "soldout"
+        case normal
     }
     
     let id: String
     let time: String
     let attributes: String
-    let status: String // TODO: make this enum
+    let filmAttributes: String
+    let status: Status
+    let screenName: String
     
 }

@@ -49,7 +49,7 @@ protocol DateFormat {
     static var dateFormat: String { get }
 }
 
-struct YearDayMonthDashed: DateFormat {
+struct YearMonthDayDashed: DateFormat {
     static var dateFormat: String {
         return "yyyy-MM-dd"
     }

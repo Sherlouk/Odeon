@@ -8,8 +8,9 @@
 
 import UIKit
 import Moya
-import Result
-
+import enum Result.Result
+import PromiseKit
+import Squawk
 // TODO: THIS IS A TEMPORARY VIEW CONTROLLER
 
 class HomeViewController: UIViewController {
@@ -25,10 +26,24 @@ class HomeViewController: UIViewController {
     }
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
+    var preload: OdeonPreloadFetcher.Preload!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        
+        activityIndicator.startAnimating()
+        
+        // this is all temp garbage until I get a better bootloading/home setup
+        firstly {
+            OdeonPreloadFetcher().fetch()
+        }.done { preload in
+            self.preload = preload
+            self.activityIndicator.stopAnimating()
+        }.catch { error in
+            Squawk.shared.show(config: Squawk.Configuration(text: error.localizedDescription))
+        }
+        
         // Do any additional setup after loading the view.
     }
     
@@ -40,13 +55,13 @@ class HomeViewController: UIViewController {
         
         let provider = MoyaProvider<OdeonService>()
         
-        provider.requestDecode(.comingSoonFilms) { (result: Result<ListFilmsResponse, MoyaError>) in
+        provider.requestDecode(.topFilms) { (result: Result<ListFilmsResponse, MoyaError>) in
             
             switch result {
             case .success(let response):
                 if let film = response.data.films.first {
-                    print("Found ODEON film")
-                    
+                    print("Found ODEON film... \(film.id)")
+                    print(film.convertAttributes(using: self.preload.filmAttributes))
                     FilmFetcher(film: film).fetch(completion: { result in
                         
                         self.activityIndicator.stopAnimating()
@@ -57,9 +72,11 @@ class HomeViewController: UIViewController {
                             print(error)
                             
                         case .success(let film2):
-                            print(film2)
-                            
-                            let vc = ProfileViewController.create(with: TemporaryStructureMapper(film: film2))
+//                            print(film2)
+                            print("Completed downloading movie...")
+                            let vc = ProfileViewController.create(with: FilmDetailsStructureMapper(film: film2))
+                            vc.film = film2
+                            vc.preload = self.preload
                             self.navigationController?.pushViewController(vc, animated: true)
                             
                         }

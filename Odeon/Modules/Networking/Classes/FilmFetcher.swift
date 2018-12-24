@@ -13,6 +13,7 @@ import Result
 class FilmFetcher: Cancellable {
     
     struct Film {
+        let id: String
         let odeonFilmDetails: FilmDetails
         let movieDetails: MovieDetails
     }
@@ -65,6 +66,7 @@ class FilmFetcher: Cancellable {
                                 
                             case .success(let movieDBMovieResponse):
                                 completion(.success(Film(
+                                    id: self.odeonFilmID,
                                     odeonFilmDetails: odeonResponse.data,
                                     movieDetails: movieDBMovieResponse
                                 )))

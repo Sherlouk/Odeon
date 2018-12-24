@@ -38,14 +38,14 @@ struct OdeonFilm: Codable {
     let attributes: String?
     let offers: [Offer]
     
-    func convertAttributes(using response: FilmAttributesResponse) -> [FilmAttributesResponse.Attributes] {
+    func convertAttributes(using odeonAttributes: [FilmAttributesResponse.Attributes]) -> [FilmAttributesResponse.Attributes] {
         guard let attributes = attributes?.components(separatedBy: ",") else {
             return []
         }
         
-        return attributes.compactMap({ attribute -> FilmAttributesResponse.Attributes? in
-            return response.data.first(where: { $0.id == Int(attribute) })
-        })
+        return odeonAttributes.filter { attribute -> Bool in
+            attributes.contains(String(attribute.id))
+        }
     }
     
 }

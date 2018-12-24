@@ -8,7 +8,8 @@
 
 import Foundation
 import Moya
-import Result
+import PromiseKit
+import enum Result.Result
 
 extension MoyaProvider {
     
@@ -56,7 +57,26 @@ extension MoyaProvider {
         
     }
     
-    
+    @discardableResult
+    func requestDecodePromise<T>(_ target: Target, type: T.Type? = nil) -> Promise<T> where T: Decodable {
+        
+        return Promise<T> { resolver in
+            
+            requestDecode(target) { (result: Result<T, MoyaError>) in
+                
+                switch result {
+                case .failure(let error):
+                    resolver.reject(error)
+                    
+                case .success(let value):
+                    resolver.fulfill(value)
+                }
+                
+            }
+            
+        }
+        
+    }
     
     
 }
