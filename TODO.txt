@@ -1,0 +1,36 @@
+# To Do List
+
+- Home
+- Cast Profiles
+- Search
+  - Movies
+  - Cast
+- Cinema Picker
+  - From film UI
+  - Favourites/Saved Cinemas
+  - Order by Nearest (https://stackoverflow.com/a/33304446/3425636)
+- Movie Reviews
+- Trailer Playback
+- Ticket Chooser (based on seats selected)
+- Confirmation Screen
+  - List seats, screen, film, time, cinema, price breakdown etc
+- "My Tickets" e-Tickets (barcode, etc)
+- Crew and Cast "See All"
+- Certificate Information Popup (API for latest information?)
+- Setup/Bootloader/Onboarding
+- Proper error handling run with Squawk
+- UI beautification run
+  - Better loading screens
+  - Nicer animations/transitions
+
+- Checkout the ODEON app, see what else they have
+- Any other data in MovieDB or APIs I'm not using that I could render?
+- Review other cinema apps, see what they have?
+  - Maybe have multi-cinema support? or no...
+
+North Star ideas:
+- Facebook Friends
+  - "They watched this"
+  - "They're watching this show, why not book?"
+    - Show seats
+- Tinder-esque Discovery?
