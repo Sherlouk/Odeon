@@ -8,6 +8,7 @@
 
 import UIKit
 import Moya
+import Squawk
 
 class SeatChooserViewController: UIViewController, StoryboardLoadable {
 
@@ -18,14 +19,30 @@ class SeatChooserViewController: UIViewController, StoryboardLoadable {
     struct ViewModel {
         let performanceID: String
         let siteID: String
+        let film: FilmFetcher.Film
     }
     
     struct SeatWrapper {
-        let seat: BookingInit.Section.SeatsData.Seat
+        let seat: SeatsData.Seat
         let section: BookingInit.Section
     }
     
+    @IBOutlet var loadingIndicatorView: UIActivityIndicatorView!
+    
+    @IBOutlet var headerImageView: UIImageView!
+    @IBOutlet var filmTitleLabel: UILabel!
+    @IBOutlet var seatKeyIconImageViews: [UIImageView]!
+    
     @IBOutlet var collectionView: UICollectionView!
+    
+    @IBOutlet var screenLabel: UILabel!
+    @IBOutlet var cinemaLabel: UILabel!
+    @IBOutlet var screeningInfoContainerView: UIView!
+    
+    @IBOutlet var ctaContainerView: UIView!
+    @IBOutlet var ctaButton: UIButton!
+    @IBOutlet var ctaIndicatorImageView: UIImageView!
+    
     var viewModel: ViewModel!
     var bookingInit: BookingInit?
     
@@ -38,6 +55,9 @@ class SeatChooserViewController: UIViewController, StoryboardLoadable {
 
         setupNavigationBar()
         setupCollectionView()
+        setupCallToAction()
+        setupHeader()
+        setupKey()
         loadSeatData()
     }
     
@@ -53,6 +73,24 @@ class SeatChooserViewController: UIViewController, StoryboardLoadable {
         
     }
     
+    // MARK: - Header
+    
+    func setupHeader() {
+        filmTitleLabel.text = viewModel.film.movieDetails.title
+        headerImageView.kf.setImage(with: viewModel.film.movieDetails.backdrop_path.makeURL())
+    }
+    
+    // MARK: - Chair Key
+    
+    func setupKey() {
+        seatKeyIconImageViews.forEach {
+            $0.image = $0.image?.withRenderingMode(.alwaysTemplate)
+            
+            let tintColor = $0.tintColor
+            $0.tintColor = tintColor
+        }
+    }
+    
     // MARK: - Collection View
     
     func setupCollectionView() {
@@ -63,6 +101,9 @@ class SeatChooserViewController: UIViewController, StoryboardLoadable {
     // MARK: - Loading
     
     func loadSeatData() {
+        screeningInfoContainerView.isHidden = true
+        loadingIndicatorView.startAnimating()
+        
         let provider = MoyaProvider<OdeonService>()
         
         let request: OdeonService = .bookingInit(
@@ -76,7 +117,7 @@ class SeatChooserViewController: UIViewController, StoryboardLoadable {
             self.bookingInit = data.data
             self.reloadData()
         }.catch { error in
-            print(error)
+            Squawk.shared.showError(error: error, protectedView: self.ctaButton)
         }
     }
     
@@ -85,14 +126,98 @@ class SeatChooserViewController: UIViewController, StoryboardLoadable {
             return
         }
         
+        // Update Screening Information
+        screeningInfoContainerView.isHidden = false
+        cinemaLabel.text = bookingInit.headerData.cinemaName
+        screenLabel.text = bookingInit.headerData.screenName
+        
         // Update Layout
         if let layout = collectionView.collectionViewLayout as? SeatChooserCollectionViewLayout {
             layout.bookingInit = bookingInit
         }
         
+        // Remove the activity indicator
+        loadingIndicatorView.stopAnimating()
+        
         // Apply Changes
         collectionView.reloadData()
         collectionView.collectionViewLayout.invalidateLayout()
+    }
+    
+    // MARK: - Call to Action
+    
+    var ctaGradientLayer: CAGradientLayer?
+    
+    func setupCallToAction() {
+        let layer = CAGradientLayer()
+        layer.frame = ctaContainerView.bounds
+        
+        layer.colors = [
+            UIColor(red: 254 / 255, green: 132 / 255, blue: 92 / 255, alpha: 1).cgColor,
+            UIColor(red: 253 / 255, green: 88 / 255, blue: 94 / 255, alpha: 1).cgColor,
+            UIColor(red: 189 / 255, green: 63 / 255, blue: 117 / 255, alpha: 1).cgColor
+        ]
+        
+        layer.locations = [
+            NSNumber(value: 0),
+            NSNumber(value: 0.5),
+            NSNumber(value: 1)
+        ]
+        
+        layer.startPoint = CGPoint(x: 0, y: 0)
+        layer.endPoint = CGPoint(x: 1, y: 0)
+        
+        ctaGradientLayer = layer
+        ctaContainerView.layer.insertSublayer(layer, at: 0)
+        updateCallToActionButtonText(initial: true)
+    }
+    
+    func updateCallToActionButtonText(initial: Bool = false) {
+        let seatsSelected = collectionView.indexPathsForSelectedItems?.isEmpty == false
+        
+        if seatsSelected {
+            ctaButton.setTitle("CHOOSE TICKETS", for: .normal)
+            ctaButton.setTitleColor(UIColor(named: "Profile/PrimaryText"), for: .normal)
+            ctaButton.isEnabled = true
+        } else {
+            ctaButton.setTitle("SELECT YOUR SEATS", for: .normal)
+            ctaButton.setTitleColor(UIColor(named: "Profile/PrimaryText")?.withAlphaComponent(0.6), for: .normal)
+            ctaButton.isEnabled = false
+        }
+        
+        UIView.transition(
+            with: ctaButton,
+            duration: trueUnlessReduceMotionEnabled && !initial ? 0.3 : 0,
+            options: [ .beginFromCurrentState ],
+            animations: {
+                self.ctaIndicatorImageView.alpha = seatsSelected ? 1 : 0
+            },
+            completion: nil
+        )
+    }
+    
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        ctaGradientLayer?.frame = ctaContainerView.bounds
+    }
+    
+    @IBAction func didTapCallToAction() {
+        
+        guard let selectedItems = collectionView.indexPathsForSelectedItems, !selectedItems.isEmpty else {
+            Squawk.shared.showError(title: "Please select your seat first", protectedView: ctaButton)
+            return
+        }
+        
+        let seats = selectedItems.compactMap({ indexPath in
+            bookingInit?.sections[indexPath.section].seatsString.seats[indexPath.item]
+        })
+        
+        guard seats.count == selectedItems.count else {
+            Squawk.shared.showError(title: "Something went wrong", protectedView: ctaButton)
+            return
+        }
+        
+        print("Let's go...")
     }
     
 }
@@ -121,133 +246,27 @@ extension SeatChooserViewController: UICollectionViewDataSource, UICollectionVie
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("[SEAT CHOOSER] Selected: \(indexPath)")
-        print(collectionView.indexPathsForSelectedItems ?? [])
-        
-//        if let cell = collectionView.cellForItem(at: indexPath) as? SeatOptionCollectionViewCell {
-//            cell.seatImageView.tintColor = UIColor.red
-//        }
+        updateCallToActionButtonText()
     }
     
     func collectionView(_ collectionView: UICollectionView, didDeselectItemAt indexPath: IndexPath) {
-        print("[SEAT CHOOSER] Deselected: \(indexPath)")
-        print(collectionView.indexPathsForSelectedItems ?? [])        
-//        if let cell = collectionView.cellForItem(at: indexPath) as? SeatOptionCollectionViewCell {
-//            cell.seatImageView.tintColor = UIColor.white
-//        }
+        updateCallToActionButtonText()
     }
     
-}
-
-class SeatChooserCollectionViewLayout: UICollectionViewLayout {
-    
-    // MARK: - Cache
-    
-    private var contentWidth: CGFloat = 0
-    private var contentHeight: CGFloat = 0
-    
-    private var itemCache = [UICollectionViewLayoutAttributes]()
-    
-    // MARK: - Configuration
-    
-    @IBInspectable var rowSpacing: CGFloat = 10
-    @IBInspectable var seatSpacing: CGFloat = 5
-    
-    // MARK: - Data
-    
-    var columnCount: CGFloat = 0
-    var bookingInit: BookingInit? {
-        didSet {
-            if let seats = bookingInit?.sections.flatMap({ $0.seatsString.seats }) {
-                
-                var maxWidth = 0
-                var seatWidth = 0
-                
-                for seat in seats {
-                    let maxX = seat.x + seat.width
-                    
-                    if maxX > maxWidth {
-                        maxWidth = maxX
-                        seatWidth = seat.width
-                    }
-                }
-                
-                columnCount = (CGFloat(maxWidth) / CGFloat(seatWidth)) - 1
-            }
-        }
-    }
-    
-    // MARK: - Content Size
-    
-    override var collectionViewContentSize: CGSize {
-        return CGSize(width: contentWidth, height: contentHeight)
-    }
-    
-    // MARK: - Layout Attributes
-    
-    override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {
-        return itemCache.filter({ $0.frame.intersects(rect) })
-    }
-    
-    override func layoutAttributesForItem(at indexPath: IndexPath) -> UICollectionViewLayoutAttributes? {
-        return itemCache.first(where: { $0.indexPath == indexPath })
-    }
-    
-    // MARK: - Invalidate Layout
-    
-    override func shouldInvalidateLayout(forBoundsChange newBounds: CGRect) -> Bool {
-        if let oldWidth = collectionView?.bounds.width {
-            return oldWidth != newBounds.width
+    func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
+        let section = bookingInit?.sections[indexPath.section]
+        
+        guard let seat = section?.seatsString.seats[indexPath.item] else {
+            Squawk.shared.showError(title: "Something went wrong", protectedView: ctaButton)
+            return false
         }
         
-        return false
-    }
-    
-    override func invalidateLayout() {
-        super.invalidateLayout()
         
-        itemCache = []
-        contentWidth = 0
-        contentHeight = 0
-    }
-    
-    // MARK: - Prepare
-    
-    override func prepare() {
-        guard let collectionView = collectionView, let bookingInit = bookingInit else {
-            return
+        guard seat.isBookable else {
+            return false
         }
         
-        let horizontalInset = collectionView.contentInset.left + collectionView.contentInset.right
-        let seatSpacingTotal = (columnCount - 1) * seatSpacing
-        let usableWidth = collectionView.bounds.width - horizontalInset - seatSpacingTotal
-        let seatWidth = usableWidth / columnCount
-        
-        print("[SEAT CHOOSER] Setting seat width to \(seatWidth)")
-        
-        for (sectionIndex, section) in bookingInit.sections.enumerated() {
-            for (seatIndex, seat) in section.seatsString.seats.enumerated() {
-                
-                let indexPath = IndexPath(item: seatIndex, section: sectionIndex)
-                let attributes = UICollectionViewLayoutAttributes(forCellWith: indexPath)
-                
-                let column = seat.x / seat.width
-                let row = seat.y / seat.height
-                
-                attributes.frame = CGRect(
-                    x: CGFloat(column - 1) * (seatWidth + seatSpacing),
-                    y: CGFloat(row - 1) * (seatWidth + rowSpacing),
-                    width: seatWidth,
-                    height: seatWidth
-                )
-                
-                contentWidth = max(contentWidth, attributes.frame.maxX)
-                contentHeight = max(contentHeight, attributes.frame.maxY)
-                
-                itemCache.append(attributes)
-                
-            }
-        }
+        return true
     }
     
 }

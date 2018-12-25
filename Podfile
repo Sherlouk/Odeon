@@ -48,10 +48,16 @@ target 'Odeon' do
   # https://github.com/CRAnimation/CRRefresh - Pull-to-Refresh
   # https://github.com/wojteklu/Watchdog - Main-Thread Blocking Prevention
   # https://github.com/scottrhoyt/SwiftyTextTable - Handy Console Output Tool
+  # https://github.com/saitjr/STLoadingGroup - Activity Indicator
+  # https://github.com/ninjaprox/NVActivityIndicatorView - Activity Indicator
 
   # Reminders
   # Loading Indicator
   # Animations/Transitions
+  # Haptic Feedback
+  # Localization
+  # Debugging Output
+  # Maps with Clustering
 
   target 'OdeonTests' do
     inherit! :search_paths

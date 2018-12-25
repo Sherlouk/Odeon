@@ -38,21 +38,21 @@ class FilmDetailsStructureMapper: ProfileStructureMapper {
             return cached
         }
         
-        let reviewOne = ProfileReviewViewModel(
-            revieweeName: "James Sherlock",
-            reviewwImageURL: URL(string: "https://google.com/")!,
-            reviewDate: Date(),
-            halfRating: 5,
-            reviewDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar elit ante, sed commodo purus rutrum vitae. Aliquam vel tellus tincidunt, mattis magna consectetur, efficitur ante. Sed neque eros, volutpat eu luctus in, ultricies in lectus."
-        )
-
-        let reviewTwo = ProfileReviewViewModel(
-            revieweeName: "John Smith",
-            reviewwImageURL: URL(string: "https://google.com/")!,
-            reviewDate: Date(),
-            halfRating: 6,
-            reviewDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar elit ante, sed commodo purus rutrum vitae. Aliquam vel tellus tincidunt, mattis magna consectetur, efficitur ante. Sed neque eros, volutpat eu luctus in, ultricies in lectus."
-        )
+//        let reviewOne = ProfileReviewViewModel(
+//            revieweeName: "James Sherlock",
+//            reviewwImageURL: URL(string: "https://google.com/")!,
+//            reviewDate: Date(),
+//            halfRating: 5,
+//            reviewDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar elit ante, sed commodo purus rutrum vitae. Aliquam vel tellus tincidunt, mattis magna consectetur, efficitur ante. Sed neque eros, volutpat eu luctus in, ultricies in lectus."
+//        )
+//
+//        let reviewTwo = ProfileReviewViewModel(
+//            revieweeName: "John Smith",
+//            reviewwImageURL: URL(string: "https://google.com/")!,
+//            reviewDate: Date(),
+//            halfRating: 6,
+//            reviewDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar elit ante, sed commodo purus rutrum vitae. Aliquam vel tellus tincidunt, mattis magna consectetur, efficitur ante. Sed neque eros, volutpat eu luctus in, ultricies in lectus."
+//        )
 
         let description = film.movieDetails.overview ?? "\(film.odeonFilmDetails.plot)\n\n\(film.odeonFilmDetails.customerAdvice)"
         

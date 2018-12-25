@@ -157,7 +157,11 @@ class ShowChooserViewController: UIViewController {
         }
         
         let viewController = SeatChooserViewController.create()
-        viewController.viewModel = .init(performanceID: performance.id, siteID: viewModel.siteID)
+        viewController.viewModel = .init(
+            performanceID: performance.id,
+            siteID: viewModel.siteID,
+            film: viewModel.film
+        )
         
         navigationController?.pushViewController(viewController, animated: trueUnlessReduceMotionEnabled)
     }
