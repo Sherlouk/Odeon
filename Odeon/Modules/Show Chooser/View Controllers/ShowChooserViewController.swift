@@ -152,7 +152,12 @@ class ShowChooserViewController: UIViewController {
     }
 
     @IBAction func didTapCallToAction() {
+        guard let performance = performance else {
+            return
+        }
+        
         let viewController = SeatChooserViewController.create()
+        viewController.viewModel = .init(performanceID: performance.id, siteID: viewModel.siteID)
         
         navigationController?.pushViewController(viewController, animated: trueUnlessReduceMotionEnabled)
     }

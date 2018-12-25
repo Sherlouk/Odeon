@@ -61,7 +61,6 @@ class HomeViewController: UIViewController {
             case .success(let response):
                 if let film = response.data.films.first {
                     print("Found ODEON film... \(film.id)")
-                    print(film.convertAttributes(using: self.preload.filmAttributes))
                     FilmFetcher(film: film).fetch(completion: { result in
                         
                         self.activityIndicator.stopAnimating()
