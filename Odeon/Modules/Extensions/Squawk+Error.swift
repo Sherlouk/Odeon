@@ -7,6 +7,8 @@
 //
 
 import Squawk
+import enum Moya.MoyaError
+import class Moya.Response
 
 extension Squawk {
     
@@ -28,6 +30,13 @@ extension Squawk {
             
             return error.localizedDescription
         }()
+        
+        // Debugging snippet for identifying invalid JSON errors
+//        if let moyaError = error as? MoyaError {
+//            if let data = moyaError.response?.data {
+//                print(String(data: data, encoding: .utf8))
+//            }
+//        }
         
         showError(title: message, protectedView: protectedView)
     }

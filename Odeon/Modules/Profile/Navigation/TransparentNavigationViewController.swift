@@ -49,7 +49,11 @@ class TransparentNavigationViewController: UINavigationController {
     }()
     
     @objc func didTapBack() {
-        popViewController(animated: trueUnlessReduceMotionEnabled)
+        if viewControllers.count == 1 {
+            dismiss(animated: trueUnlessReduceMotionEnabled, completion: nil)
+        } else {
+            popViewController(animated: trueUnlessReduceMotionEnabled)
+        }
     }
     
     // MARK: - Share Button

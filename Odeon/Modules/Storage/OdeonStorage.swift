@@ -27,4 +27,15 @@ class OdeonStorage {
         set { storage.set(newValue, forKey: #function) }
     }
     
+    var userChosenCinema: Int? {
+        get {
+            if storage.object(forKey: #function) != nil {
+                return storage.integer(forKey: #function)
+            }
+            
+            return nil
+        }
+        set { storage.set(newValue, forKey: #function) }
+    }
+    
 }

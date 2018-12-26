@@ -48,7 +48,6 @@
         <!--Onboarding Country Chooser View Controller-->
         <scene sceneID="y9x-6Z-Gpp">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="IcV-g4-1wi" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="OnboardingPageCountry" id="KhC-wo-F6Q" customClass="OnboardingCountryChooserViewController" customModule="Odeon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WoF-U9-KRS">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
@@ -110,13 +109,40 @@
                     </view>
                     <size key="freeformSize" width="375" height="333.5"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="IcV-g4-1wi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="743" y="248"/>
+        </scene>
+        <!--Temporary Loader-->
+        <scene sceneID="dkj-dg-Tls">
+            <objects>
+                <viewController storyboardIdentifier="TempLoader" title="Temporary Loader" id="ayz-Dv-dla" customClass="TempLoadingViewController" customModule="Odeon" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zd7-Ih-xNu">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" animating="YES" style="whiteLarge" translatesAutoresizingMaskIntoConstraints="NO" id="mYt-ZE-1Jt">
+                                <rect key="frame" x="169" y="315" width="37" height="37"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" name="PrimaryBackground"/>
+                        <constraints>
+                            <constraint firstItem="mYt-ZE-1Jt" firstAttribute="centerY" secondItem="zd7-Ih-xNu" secondAttribute="centerY" id="VSR-Qc-Gyz"/>
+                            <constraint firstItem="mYt-ZE-1Jt" firstAttribute="centerX" secondItem="zd7-Ih-xNu" secondAttribute="centerX" id="ekS-IG-SkX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gYi-n8-qSl"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="mYt-ZE-1Jt" id="WoP-DP-eue"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ULz-kw-AcH" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1410" y="-413"/>
         </scene>
         <!--Onboarding Location Services View Controller-->
         <scene sceneID="Cny-Ys-SdR">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="YoY-7b-R0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="OnboardingPageLocation" id="Sdq-0w-w5f" customClass="OnboardingLocationServicesViewController" customModule="Odeon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="gAw-2y-uz4">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
@@ -177,13 +203,13 @@
                     </view>
                     <size key="freeformSize" width="375" height="333.5"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YoY-7b-R0l" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1455" y="247"/>
         </scene>
         <!--Onboarding Loading View Controller-->
         <scene sceneID="cqI-EQ-cdZ">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="URR-S2-mcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="OnboardingPageLoading" id="KBl-Mu-4KT" customClass="OnboardingLoadingViewController" customModule="Odeon" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XPl-8l-SOb">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="333.5"/>
@@ -235,6 +261,7 @@ Please wait…</string>
                     </view>
                     <size key="freeformSize" width="375" height="333.5"/>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="URR-S2-mcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2150" y="246"/>
         </scene>

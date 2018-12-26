@@ -8,7 +8,6 @@
 
 import Foundation
 import Moya
-//import Result
 import PromiseKit
 
 class OdeonPreloadFetcher {
@@ -25,13 +24,13 @@ class OdeonPreloadFetcher {
         let provider = MoyaProvider<OdeonService>()
         
         return when(fulfilled:
-             provider.requestDecodePromise(.allCinemas, type: ListCinemasResponse.self),
+             provider.requestDecodePromise(.allCinemas, type: [Cinema].self),
              provider.requestDecodePromise(.filmAttributes, type: FilmAttributesResponse.self),
              provider.requestDecodePromise(.performanceAttributes, type: PerformanceAttributesResponse.self)
         ).map({ cinemas, filmAttributes, performanceAttributes in
             
             Preload(
-                cinemas: cinemas.cinema,
+                cinemas: cinemas,
                 filmAttributes: filmAttributes.data,
                 performanceAttributes: performanceAttributes.data
             )

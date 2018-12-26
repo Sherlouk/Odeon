@@ -9,7 +9,7 @@
 import Foundation
 import Moya
 
-enum OdeonBaseURL {
+enum OdeonBaseURL: String {
     
     case UK
     case ireland
@@ -17,13 +17,25 @@ enum OdeonBaseURL {
     var baseURL: URL {
         switch self {
         case .UK: return URL(string: "https://api.odeon.co.uk/android-3.6.0/")!
-        case .ireland: return URL(string: "https://api.odeoncinemas.ie/android-3.6.0/")!
+//        case .ireland: return URL(string: "https://api.odeoncinemas.ie/android-3.6.0/")!
+        case .ireland: return URL(string: "https://api.odeon.co.uk/android-3.6.0/")!
+        }
+        
+        // I have been unable to identify the v2BaseURL for users in Ireland which means cinema IDs
+        // can not be mapped for Irish cinemas. For that reason despite your option, it just uses UK
+        // Until I can figure that issue out (but I wanted to demonstrate that you "could" switch.
+    }
+    
+    var v2BaseURL: URL {
+        switch self {
+        case .UK: return URL(string: "https://www.odeon.co.uk/api/uk/v2/")!
+        case .ireland: return URL(string: "https://www.odeon.co.uk/api/uk/v2/")!
         }
     }
     
     static var current: OdeonBaseURL {
-        // TODO: Make this user-configurable
-        return .UK
+        let rawValue = OdeonStorage().userChosenCountry ?? UK.rawValue
+        return OdeonBaseURL(rawValue: rawValue) ?? .UK
     }
     
 }
@@ -54,12 +66,16 @@ enum OdeonService {
 extension OdeonService: TargetType {
     
     var baseURL: URL {
-        return OdeonBaseURL.current.baseURL
+        switch self {
+        case .allCinemas: return OdeonBaseURL.current.v2BaseURL
+        default: return OdeonBaseURL.current.baseURL
+        }
+        
     }
     
     var path: String {
         switch self {
-        case .allCinemas: return "api/all-cinemas"
+        case .allCinemas: return "cinemas.json"
         case .allActiveFilms: return "api/all-current-active-films"
         case .filmAttributes: return "api/film-attributes"
         case .performanceAttributes: return "api/performance-attributes"

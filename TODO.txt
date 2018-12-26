@@ -1,8 +1,11 @@
 # To Do List
 
 - Home
+  - New, Recommended, Top Movies (API)
+  - Coming Soon
+    - Ordered by date of release, preview should have poster image, title and release day
 - Cast Profiles
-- Search
+- Search (LOW PRI, Complexity, Unnecessary Day One, Not from ODEON anyway)
   - Movies
   - Cast
 - Cinema Picker
@@ -11,6 +14,10 @@
   - Order by Nearest (https://stackoverflow.com/a/33304446/3425636)
 - Movie Reviews
 - Trailer Playback
+- "On The Web" links
+- Slot Chooser Improvements
+  - Localise the time (12/24hr)
+  - Mention attributes (Hard of hearing, etc)
 - Ticket Chooser (based on seats selected)
 - Confirmation Screen
   - List seats, screen, film, time, cinema, price breakdown etc
@@ -22,11 +29,18 @@
 - UI beautification run
   - Better loading screens
   - Nicer animations/transitions
+- Refactoring
+  - FilmFetcher is a mess
+  - "Profile" is really just a list that can be a number of things
 
 - Checkout the ODEON app, see what else they have
 - Any other data in MovieDB or APIs I'm not using that I could render?
 - Review other cinema apps, see what they have?
   - Maybe have multi-cinema support? or no...
+
+Known Bugs:
+- Edge Swipe Gesture broken?
+- Some cinema screens are a bit broken (that page needs a lot of work tbh)
 
 North Star ideas:
 - Facebook Friends

@@ -22,6 +22,15 @@
 		982957CE21D294B300AA0EF3 /* SeatsData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957CD21D294B300AA0EF3 /* SeatsData.swift */; };
 		982957D121D297E700AA0EF3 /* SeatChooserCollectionViewLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957D021D297E700AA0EF3 /* SeatChooserCollectionViewLayout.swift */; };
 		982957D321D29F7A00AA0EF3 /* Squawk+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957D221D29F7A00AA0EF3 /* Squawk+Error.swift */; };
+		982957D621D3A16900AA0EF3 /* CinemaListing.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 982957D521D3A16900AA0EF3 /* CinemaListing.storyboard */; };
+		982957D921D3A64600AA0EF3 /* CinemaListingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957D821D3A64600AA0EF3 /* CinemaListingViewController.swift */; };
+		982957DC21D3C68100AA0EF3 /* CinemaListingTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957DB21D3C68100AA0EF3 /* CinemaListingTableViewCell.swift */; };
+		982957DE21D3C9FF00AA0EF3 /* Decodable+EmptyString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957DD21D3C9FF00AA0EF3 /* Decodable+EmptyString.swift */; };
+		982957E021D3EAD000AA0EF3 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957DF21D3EAD000AA0EF3 /* SettingsViewController.swift */; };
+		982957E221D3EADE00AA0EF3 /* MembersViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957E121D3EADE00AA0EF3 /* MembersViewController.swift */; };
+		982957E421D3EF8400AA0EF3 /* TempLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957E321D3EF8400AA0EF3 /* TempLoadingViewController.swift */; };
+		982957E621D40F6100AA0EF3 /* OdeonLuxeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957E521D40F6100AA0EF3 /* OdeonLuxeViewController.swift */; };
+		982957E821D4151400AA0EF3 /* UIViewController+Dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957E721D4151400AA0EF3 /* UIViewController+Dismiss.swift */; };
 		9885CE3421C6719B00900C9F /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9885CE3321C6719B00900C9F /* Onboarding.storyboard */; };
 		9885CE3721C6784800900C9F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE3621C6784800900C9F /* OnboardingViewController.swift */; };
 		9885CE3A21C6785A00900C9F /* OnboardingCountryChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE3921C6785A00900C9F /* OnboardingCountryChooserViewController.swift */; };
@@ -30,7 +39,6 @@
 		9885CE4221C67A6500900C9F /* Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE4121C67A6500900C9F /* Storage.swift */; };
 		9885CE4421C67B6B00900C9F /* OdeonStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE4321C67B6B00900C9F /* OdeonStorage.swift */; };
 		9885CE4721C67D8F00900C9F /* Cinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE4621C67D8F00900C9F /* Cinema.swift */; };
-		9885CE4A21C67EFF00900C9F /* ListCinemasResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE4921C67EFF00900C9F /* ListCinemasResponse.swift */; };
 		9885CE4E21C67FCA00900C9F /* DictionaryStorage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE4D21C67FCA00900C9F /* DictionaryStorage.swift */; };
 		9885CE5021C6824E00900C9F /* FilmAttributesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE4F21C6824E00900C9F /* FilmAttributesResponse.swift */; };
 		9885CE5221C6829400900C9F /* PerformanceAttributesResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE5121C6829400900C9F /* PerformanceAttributesResponse.swift */; };
@@ -143,6 +151,15 @@
 		982957CD21D294B300AA0EF3 /* SeatsData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatsData.swift; sourceTree = "<group>"; };
 		982957D021D297E700AA0EF3 /* SeatChooserCollectionViewLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SeatChooserCollectionViewLayout.swift; sourceTree = "<group>"; };
 		982957D221D29F7A00AA0EF3 /* Squawk+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Squawk+Error.swift"; sourceTree = "<group>"; };
+		982957D521D3A16900AA0EF3 /* CinemaListing.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CinemaListing.storyboard; sourceTree = "<group>"; };
+		982957D821D3A64600AA0EF3 /* CinemaListingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaListingViewController.swift; sourceTree = "<group>"; };
+		982957DB21D3C68100AA0EF3 /* CinemaListingTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CinemaListingTableViewCell.swift; sourceTree = "<group>"; };
+		982957DD21D3C9FF00AA0EF3 /* Decodable+EmptyString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Decodable+EmptyString.swift"; sourceTree = "<group>"; };
+		982957DF21D3EAD000AA0EF3 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		982957E121D3EADE00AA0EF3 /* MembersViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MembersViewController.swift; sourceTree = "<group>"; };
+		982957E321D3EF8400AA0EF3 /* TempLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempLoadingViewController.swift; sourceTree = "<group>"; };
+		982957E521D40F6100AA0EF3 /* OdeonLuxeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdeonLuxeViewController.swift; sourceTree = "<group>"; };
+		982957E721D4151400AA0EF3 /* UIViewController+Dismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Dismiss.swift"; sourceTree = "<group>"; };
 		9885CE3321C6719B00900C9F /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		9885CE3621C6784800900C9F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		9885CE3921C6785A00900C9F /* OnboardingCountryChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCountryChooserViewController.swift; sourceTree = "<group>"; };
@@ -151,7 +168,6 @@
 		9885CE4121C67A6500900C9F /* Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Storage.swift; sourceTree = "<group>"; };
 		9885CE4321C67B6B00900C9F /* OdeonStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdeonStorage.swift; sourceTree = "<group>"; };
 		9885CE4621C67D8F00900C9F /* Cinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cinema.swift; sourceTree = "<group>"; };
-		9885CE4921C67EFF00900C9F /* ListCinemasResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListCinemasResponse.swift; sourceTree = "<group>"; };
 		9885CE4D21C67FCA00900C9F /* DictionaryStorage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DictionaryStorage.swift; sourceTree = "<group>"; };
 		9885CE4F21C6824E00900C9F /* FilmAttributesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilmAttributesResponse.swift; sourceTree = "<group>"; };
 		9885CE5121C6829400900C9F /* PerformanceAttributesResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PerformanceAttributesResponse.swift; sourceTree = "<group>"; };
@@ -323,9 +339,37 @@
 			path = Layout;
 			sourceTree = "<group>";
 		};
+		982957D421D3A14500AA0EF3 /* Cinema Listing */ = {
+			isa = PBXGroup;
+			children = (
+				982957DA21D3A84900AA0EF3 /* Views */,
+				982957D721D3A63400AA0EF3 /* View Controllers */,
+				982957D521D3A16900AA0EF3 /* CinemaListing.storyboard */,
+			);
+			path = "Cinema Listing";
+			sourceTree = "<group>";
+		};
+		982957D721D3A63400AA0EF3 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				982957D821D3A64600AA0EF3 /* CinemaListingViewController.swift */,
+				982957E521D40F6100AA0EF3 /* OdeonLuxeViewController.swift */,
+			);
+			path = "View Controllers";
+			sourceTree = "<group>";
+		};
+		982957DA21D3A84900AA0EF3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				982957DB21D3C68100AA0EF3 /* CinemaListingTableViewCell.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 		9885CE3121C6713A00900C9F /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				982957D421D3A14500AA0EF3 /* Cinema Listing */,
 				982957BC21D151B000AA0EF3 /* Seat Chooser */,
 				98E883C421D126E70001C019 /* Show Chooser */,
 				98E8838D21CEA3430001C019 /* Home */,
@@ -352,6 +396,7 @@
 			children = (
 				9885CE3821C6784B00900C9F /* Pages */,
 				9885CE3621C6784800900C9F /* OnboardingViewController.swift */,
+				982957E321D3EF8400AA0EF3 /* TempLoadingViewController.swift */,
 			);
 			path = "View Controllers";
 			sourceTree = "<group>";
@@ -399,7 +444,6 @@
 		9885CE4821C67EF500900C9F /* Responses */ = {
 			isa = PBXGroup;
 			children = (
-				9885CE4921C67EFF00900C9F /* ListCinemasResponse.swift */,
 				9885CE4F21C6824E00900C9F /* FilmAttributesResponse.swift */,
 				9885CE5121C6829400900C9F /* PerformanceAttributesResponse.swift */,
 				9885CE5321C682D700900C9F /* ListFilmsResponse.swift */,
@@ -572,6 +616,7 @@
 				982957BA21D14ACE00AA0EF3 /* Array+CompactCast.swift */,
 				982957C421D1794A00AA0EF3 /* Array+Sum.swift */,
 				982957D221D29F7A00AA0EF3 /* Squawk+Error.swift */,
+				982957E721D4151400AA0EF3 /* UIViewController+Dismiss.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -608,6 +653,8 @@
 			children = (
 				98E8838E21CEA34D0001C019 /* Home.storyboard */,
 				98E8839021CEA3A30001C019 /* HomeViewController.swift */,
+				982957DF21D3EAD000AA0EF3 /* SettingsViewController.swift */,
+				982957E121D3EADE00AA0EF3 /* MembersViewController.swift */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -627,6 +674,7 @@
 				98E8839621CEA9E20001C019 /* MoyaProvider+Extensions.swift */,
 				98E883B721CFE9950001C019 /* Decodable+DateWrapper.swift */,
 				982957B321D134D400AA0EF3 /* Decodable+MovieDB.swift */,
+				982957DD21D3C9FF00AA0EF3 /* Decodable+EmptyString.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -872,6 +920,7 @@
 				98E8837821CDA8810001C019 /* Profile.storyboard in Resources */,
 				98F3709121C6705A002D4E7C /* Main.storyboard in Resources */,
 				9885CE3421C6719B00900C9F /* Onboarding.storyboard in Resources */,
+				982957D621D3A16900AA0EF3 /* CinemaListing.storyboard in Resources */,
 				982957BE21D151BA00AA0EF3 /* SeatChooser.storyboard in Resources */,
 				98E8834521CD9F340001C019 /* ProfileReviewTableViewCell.xib in Resources */,
 				98E8835E21CDA2590001C019 /* ProfileButtonTableViewCell.xib in Resources */,
@@ -986,7 +1035,9 @@
 				98E883A421CEC51B0001C019 /* MovieDetails.swift in Sources */,
 				9885CE6021C68B7A00900C9F /* FilmTimes.swift in Sources */,
 				98E883CD21D1296C0001C019 /* TimeSlotChooserViewController.swift in Sources */,
+				982957E421D3EF8400AA0EF3 /* TempLoadingViewController.swift in Sources */,
 				98F3708E21C6705A002D4E7C /* ViewController.swift in Sources */,
+				982957D921D3A64600AA0EF3 /* CinemaListingViewController.swift in Sources */,
 				982957C921D1A93B00AA0EF3 /* ScreenView.swift in Sources */,
 				9885CE6821C6D57200900C9F /* MovieInformationTableViewCell.swift in Sources */,
 				982957C521D1794A00AA0EF3 /* Array+Sum.swift in Sources */,
@@ -1001,10 +1052,12 @@
 				98E8836721CDA2F80001C019 /* GalleryImageCollectionViewCell.swift in Sources */,
 				9885CE3C21C6786400900C9F /* OnboardingLocationServicesViewController.swift in Sources */,
 				98E883B821CFE9950001C019 /* Decodable+DateWrapper.swift in Sources */,
+				982957E021D3EAD000AA0EF3 /* SettingsViewController.swift in Sources */,
 				98E883AC21CFB4510001C019 /* ProfileCopyrightTableViewCell.swift in Sources */,
 				98E8837D21CDBCD60001C019 /* ConfigurableCell.swift in Sources */,
 				98E8834E21CDA10C0001C019 /* ProfileTitleTableViewCell.swift in Sources */,
 				98E8838321CDBF700001C019 /* ProfileReviewViewModel.swift in Sources */,
+				982957E821D4151400AA0EF3 /* UIViewController+Dismiss.swift in Sources */,
 				98E883BE21D022990001C019 /* ProfileStructureMapper.swift in Sources */,
 				98E8837B21CDAD980001C019 /* TransparentNavigationViewController.swift in Sources */,
 				98E883B621CFE1BF0001C019 /* MovieInformationViewModel.swift in Sources */,
@@ -1021,6 +1074,7 @@
 				982957B421D134D400AA0EF3 /* Decodable+MovieDB.swift in Sources */,
 				98E883B121CFB7550001C019 /* ProfileSocialTableViewCell.swift in Sources */,
 				982957D121D297E700AA0EF3 /* SeatChooserCollectionViewLayout.swift in Sources */,
+				982957E621D40F6100AA0EF3 /* OdeonLuxeViewController.swift in Sources */,
 				98F3708C21C6705A002D4E7C /* AppDelegate.swift in Sources */,
 				98E883B421CFDEE70001C019 /* ProfileRatingViewModel.swift in Sources */,
 				98E883CB21D129540001C019 /* DayChooserViewController.swift in Sources */,
@@ -1032,15 +1086,16 @@
 				982957D321D29F7A00AA0EF3 /* Squawk+Error.swift in Sources */,
 				98E8838821CE64DE0001C019 /* ProfileStretchyHeaderView.swift in Sources */,
 				9885CE5821C6840600900C9F /* Offer.swift in Sources */,
+				982957E221D3EADE00AA0EF3 /* MembersViewController.swift in Sources */,
 				9885CE4421C67B6B00900C9F /* OdeonStorage.swift in Sources */,
 				982957B921D1423400AA0EF3 /* PerformanceOptionCollectionViewCell.swift in Sources */,
 				982957B621D13E5C00AA0EF3 /* ScreeningTypeChooserViewController.swift in Sources */,
 				98E8834921CDA0A50001C019 /* ProfileTextTableViewCell.swift in Sources */,
 				98E8835821CDA1DD0001C019 /* ScrollerImageCollectionViewCell.swift in Sources */,
 				98E8838121CDBD3C0001C019 /* GlobalDefinitions.swift in Sources */,
+				982957DE21D3C9FF00AA0EF3 /* Decodable+EmptyString.swift in Sources */,
 				982957CE21D294B300AA0EF3 /* SeatsData.swift in Sources */,
 				98E8838C21CE8D0E0001C019 /* ProfileStretchyHeaderViewModel.swift in Sources */,
-				9885CE4A21C67EFF00900C9F /* ListCinemasResponse.swift in Sources */,
 				98E883A021CEC41A0001C019 /* FilmSearchResult.swift in Sources */,
 				98E8834421CD9F340001C019 /* ProfileReviewTableViewCell.swift in Sources */,
 				98E8839E21CEC3F40001C019 /* ResultsWrapperGenericResponse.swift in Sources */,
@@ -1055,6 +1110,7 @@
 				9885CE5E21C68A7900900C9F /* DataWrapperGenericResponse.swift in Sources */,
 				98E8839721CEA9E20001C019 /* MoyaProvider+Extensions.swift in Sources */,
 				9885CE5A21C684D100900C9F /* Certificate.swift in Sources */,
+				982957DC21D3C68100AA0EF3 /* CinemaListingTableViewCell.swift in Sources */,
 				98E8838521CDC0350001C019 /* ProfileButtonViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

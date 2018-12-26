@@ -17,12 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         if let window = window {
-//            let viewController = ProfileViewController.create()
-//            viewController.structureMapper = TemporaryStructureMapper()
+            let loadingViewController = TempLoadingViewController.create()
+            loadingViewController.onCompletion = { preload in
+                self.switchToMainView(window: window, preload: preload)
+            }
             
-            let viewController = HomeViewController.create()
-            
-            window.rootViewController = TransparentNavigationViewController(rootViewController: viewController)
+            window.rootViewController = loadingViewController
         }
         
         return true
@@ -50,6 +50,60 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    // MARK: - Transition to Main View
+    
+    func switchToMainView(window: UIWindow, preload: OdeonPreloadFetcher.Preload) {
+        // Create Tab Bar Controller
+        let tabBarController = UITabBarController()
+        
+        // Create View Controllers
+        let homeViewController: HomeViewController = {
+            let viewController = HomeViewController.create()
+            viewController.preload = preload
+            
+            return viewController
+        }()
+        
+        let membersViewController = MembersViewController.create()
+        
+        let settingsViewController: SettingsViewController = {
+            let viewController = SettingsViewController.create()
+            viewController.preload = preload
+            
+            return viewController
+        }()
+        
+        // Customise Tab Bar Controller
+        tabBarController.tabBar.barTintColor = .black
+        tabBarController.tabBar.tintColor = UIColor(named: "Profile/StarActive")
+        tabBarController.tabBar.unselectedItemTintColor = UIColor(named: "Profile/SecondaryText")
+        
+        // Set View Controllers
+        let viewControllers = [
+            TransparentNavigationViewController(rootViewController: homeViewController),
+            membersViewController,
+            settingsViewController
+        ]
+        
+        tabBarController.setViewControllers(viewControllers, animated: false)
+        
+        // Transition window's rootViewController, animated if enabled
+        let setWindow: () -> Void = {
+            window.rootViewController = tabBarController
+        }
+        
+        if trueUnlessReduceMotionEnabled {
+            UIView.transition(
+                with: window,
+                duration: 0.5,
+                options: .transitionCrossDissolve,
+                animations: setWindow,
+                completion: nil
+            )
+        } else {
+            setWindow()
+        }
+    }
 
 }
 

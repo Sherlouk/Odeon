@@ -11,37 +11,46 @@ import CoreLocation
 
 struct Cinema: Codable {
     
-    enum CodingKeys: String, CodingKey {
-        case id = "siteId"
-        case name = "siteName"
-        case addressLineOne = "siteAddress1"
-        case addressLineTwo = "siteAddress2"
-        case addressLineThree = "siteAddress3"
-        case addressLineFour = "siteAddress4"
-        case postcode = "sitePostcode"
-        case telephoneNumber = "siteTelephone"
-        case longitude = "siteLongitude"
-        case latitude = "siteLatitude"
-        case isLuxe = "siteIsLuxe"
+    struct Location: Codable {
+        let latitude: Double
+        let longitude: Double
     }
     
-    let id: String
+    struct Address: Codable {
+        let line1: String
+        let line2: EmptyString
+        let line3: EmptyString
+        let line4: EmptyString
+        let postcode: String
+    }
+    
+    struct Information: Codable {
+        let contact: EmptyString
+        let generalManager: EmptyString
+        let location: EmptyString
+        let publicTransport: EmptyString
+        let drivingDirections: EmptyString
+        let localFacilities: EmptyString
+        let cinemaInfo: EmptyString
+        let tickets: EmptyString
+        let auditoriumInfo: EmptyString
+        let gallery: EmptyString
+        let education: EmptyString
+        let disabledFacilities: EmptyString
+        let conference: EmptyString
+        let auditoriumFooter: EmptyString
+        let bookingFee: EmptyString
+        let keywords: EmptyString
+    }
+    
+    let id: Int
     let name: String
-    let addressLineOne: String
-    let addressLineTwo: String
-    let addressLineThree: String?
-    let addressLineFour: String?
-    let postcode: String
-    let telephoneNumber: String
-    let longitude: String
-    let latitude: String
     let isLuxe: Bool
-    
-    var coordinates: CLLocation? {
-        guard let latitude = CLLocationDegrees(latitude) else { return nil }
-        guard let longitude = CLLocationDegrees(longitude) else { return nil }
-        
-        return CLLocation(latitude: latitude, longitude: longitude)
-    }
+    let location: Location
+    let telephone: String
+    let address: Address
+    let bookingMessages: [String]
+    let information: Information
+    let otherLocalCinemas: String
     
 }
