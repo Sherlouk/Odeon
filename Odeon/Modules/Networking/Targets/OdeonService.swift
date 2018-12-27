@@ -49,6 +49,8 @@ enum OdeonService {
     case filmAttributes
     case performanceAttributes
     
+    case filmsForCinema(siteID: String, date: String)
+    
     case newFilms
     case recommendedFilms
     case topFilms
@@ -79,6 +81,7 @@ extension OdeonService: TargetType {
         case .allActiveFilms: return "api/all-current-active-films"
         case .filmAttributes: return "api/film-attributes"
         case .performanceAttributes: return "api/performance-attributes"
+        case .filmsForCinema(let siteID, let date): return "api/films-by-cinema/s/\(siteID)/date/\(date)"
         case .newFilms: return "api/new-films"
         case .recommendedFilms: return "api/recommended-films"
         case .topFilms: return "api/top-films"

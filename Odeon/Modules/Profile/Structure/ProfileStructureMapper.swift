@@ -12,5 +12,8 @@ protocol ProfileStructureMapper {
     
     var stretchyHeaderViewModel: ProfileStretchyHeaderViewModel? { get }
     var structure: [(itemType: ProfileItemType, object: Any?)] { get }
+    var callToActionViewModel: ProfileCallToActionViewModel? { get }
+    var actionHandler: ProfileActionHandler? { get set }
+    var sharableItems: [String]? { get }
     
 }

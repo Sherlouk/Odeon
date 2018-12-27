@@ -18,8 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         if let window = window {
             let loadingViewController = TempLoadingViewController.create()
-            loadingViewController.onCompletion = { preload in
-                self.switchToMainView(window: window, preload: preload)
+            loadingViewController.onCompletion = { preload, homePayload in
+                self.switchToMainView(window: window, preload: preload, payload: homePayload)
             }
             
             window.rootViewController = loadingViewController
@@ -52,21 +52,35 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     // MARK: - Transition to Main View
     
-    func switchToMainView(window: UIWindow, preload: OdeonPreloadFetcher.Preload) {
+    func switchToMainView(window: UIWindow, preload: OdeonPreloadFetcher.Preload, payload: HomeFetcher.Payload) {
         // Create Tab Bar Controller
         let tabBarController = UITabBarController()
         
         // Create View Controllers
-        let homeViewController: HomeViewController = {
-            let viewController = HomeViewController.create()
+        let homeViewController: UIViewController = {
+            let mapper = HomeProfileStructureMapper(payload: payload)
+            
+            let viewController = ProfileViewController.create(with: mapper)
             viewController.preload = preload
+            viewController.tabBarItem = UITabBarItem(
+                title: "Home",
+                image: UIImage(named: "Icons/home"),
+                tag: 0
+            )
+            
+            viewController.tabBarItem.imageInsets = UIEdgeInsets(
+                top: 30,
+                left: 30,
+                bottom: 30,
+                right: 30
+            )
             
             return viewController
         }()
         
         let membersViewController = MembersViewController.create()
         
-        let settingsViewController: SettingsViewController = {
+        let settingsViewController: UIViewController = {
             let viewController = SettingsViewController.create()
             viewController.preload = preload
             

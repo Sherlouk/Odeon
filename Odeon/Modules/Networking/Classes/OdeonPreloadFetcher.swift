@@ -27,9 +27,13 @@ class OdeonPreloadFetcher {
              provider.requestDecodePromise(.allCinemas, type: [Cinema].self),
              provider.requestDecodePromise(.filmAttributes, type: FilmAttributesResponse.self),
              provider.requestDecodePromise(.performanceAttributes, type: PerformanceAttributesResponse.self)
-        ).map({ cinemas, filmAttributes, performanceAttributes in
+        ).map({ cinemas, filmAttributes, performanceAttributes -> Preload in
             
-            Preload(
+            print("[PRELOAD] Found \(cinemas.count) cinemas")
+            print("[PRELOAD] Found the names of \(filmAttributes.data.count) film attributes")
+            print("[PRELOAD] Found the names of \(performanceAttributes.data.count) performance attributes")
+            
+            return Preload(
                 cinemas: cinemas,
                 filmAttributes: filmAttributes.data,
                 performanceAttributes: performanceAttributes.data

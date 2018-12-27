@@ -7,11 +7,13 @@
 //
 
 import UIKit
+import SafariServices
 
 class ProfileViewController: UIViewController {
 
     // MARK: - Variables
     
+    @IBOutlet var ctaToTableViewConstraint: NSLayoutConstraint!
     @IBOutlet var ctaButton: UIButton!
     @IBOutlet var ctaContainerView: UIView!
     @IBOutlet var tableView: UITableView!
@@ -56,7 +58,13 @@ class ProfileViewController: UIViewController {
     
     func setupTableView() {
         tableView.dataSource = self
-        tableView.contentInsetAdjustmentBehavior = .never
+        
+        if structureMapper.stretchyHeaderViewModel == nil {
+            tableView.contentInsetAdjustmentBehavior = .automatic
+        } else {
+            // If we have a stretchy header then we want it to go right to the top of the device
+            tableView.contentInsetAdjustmentBehavior = .never
+        }
     }
     
     func registerCellsInTableView() {
@@ -73,8 +81,13 @@ class ProfileViewController: UIViewController {
             return
         }
         
-        navigationItem.leftBarButtonItem = controller.backButton
-        navigationItem.rightBarButtonItem = controller.shareButton
+        if (navigationController?.viewControllers.count ?? 0) > 1 {
+            navigationItem.leftBarButtonItem = controller.backButton
+        }
+        
+        if let sharableItems = structureMapper.sharableItems, !sharableItems.isEmpty {
+            navigationItem.rightBarButtonItem = controller.shareButton
+        }
         
     }
     
@@ -115,6 +128,15 @@ class ProfileViewController: UIViewController {
     var ctaGradientLayer: CAGradientLayer?
     
     func setupCallToAction() {
+        
+        if structureMapper.callToActionViewModel == nil {
+            ctaToTableViewConstraint.isActive = false
+            ctaContainerView.isHidden = true
+            return
+        }
+        
+        ctaToTableViewConstraint.isActive = true
+        
         let layer = CAGradientLayer()
         layer.frame = ctaContainerView.bounds
         
@@ -143,23 +165,11 @@ class ProfileViewController: UIViewController {
     }
     
     @IBAction func didTapCallToAction() {
-        let viewModel = ShowChooserViewController.ViewModel(
-            siteID: "27", // TEMPORARY
-            preload: preload,
-            film: film
-        )
+        guard let callToActionViewModel = structureMapper.callToActionViewModel else {
+            return
+        }
         
-        let viewController = ShowChooserViewController.create(viewModel: viewModel)
-        navigationController?.pushViewController(viewController, animated: trueUnlessReduceMotionEnabled)
-    }
-    
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        handleAction(action: callToActionViewModel.action)
     }
 
 }
@@ -202,7 +212,51 @@ extension ProfileViewController: ProfileActionHandler {
     func handleAction(action: ProfileAction) {
         switch action {
         case .openURL(let url):
-            print(url)
+            print("[EVENT] Open URL (\(url))")
+            
+            let viewController = SFSafariViewController(url: url)
+            navigationController?.pushViewController(viewController, animated: trueUnlessReduceMotionEnabled)
+            
+        case .openFilmShowChooser(let film):
+            print("[EVENT] Open Film Showings (\(film.movieDetails.title))")
+            
+            let viewModel = ShowChooserViewController.ViewModel(
+                siteID: String(OdeonStorage().userChosenCinema ?? 0),
+                preload: preload,
+                film: film
+            )
+            
+            let viewController = ShowChooserViewController.create(viewModel: viewModel)
+            navigationController?.pushViewController(viewController, animated: trueUnlessReduceMotionEnabled)
+            
+        case .openFilmDetails(let film):
+            print("[EVENT] Open Film Details (\(film.title))")
+            
+            // TODO: Add loading and error handling
+            // Refactor this to use PromiseKit
+            
+            FilmFetcher(film: film).fetch(completion: { result in
+                
+                switch result {
+                case .failure(let error):
+                    print(error)
+
+                case .success(let film2):
+                    let vc = ProfileViewController.create(with: FilmDetailsStructureMapper(film: film2))
+                    vc.film = film2
+                    vc.preload = self.preload
+                    vc.hidesBottomBarWhenPushed = true
+                    self.navigationController?.pushViewController(vc, animated: true)
+
+                }
+
+            })
+            
+        case .openCastMember:
+            print("[EVENT] Open Cast Member")
+            
+        case .openAllCast(let film):
+            print("[EVENT] Open All Cast (\(film.movieDetails.title))")
         }
     }
     

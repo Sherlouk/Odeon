@@ -31,6 +31,10 @@
 		982957E421D3EF8400AA0EF3 /* TempLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957E321D3EF8400AA0EF3 /* TempLoadingViewController.swift */; };
 		982957E621D40F6100AA0EF3 /* OdeonLuxeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957E521D40F6100AA0EF3 /* OdeonLuxeViewController.swift */; };
 		982957E821D4151400AA0EF3 /* UIViewController+Dismiss.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957E721D4151400AA0EF3 /* UIViewController+Dismiss.swift */; };
+		982957EA21D508A000AA0EF3 /* HomeFetcher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957E921D508A000AA0EF3 /* HomeFetcher.swift */; };
+		982957EC21D5167600AA0EF3 /* OdeonFilmInCinema.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957EB21D5167600AA0EF3 /* OdeonFilmInCinema.swift */; };
+		982957EE21D527AD00AA0EF3 /* ProfileCallToActionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957ED21D527AD00AA0EF3 /* ProfileCallToActionViewModel.swift */; };
+		982957F021D5292E00AA0EF3 /* HomeProfileStructureMapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957EF21D5292E00AA0EF3 /* HomeProfileStructureMapper.swift */; };
 		9885CE3421C6719B00900C9F /* Onboarding.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9885CE3321C6719B00900C9F /* Onboarding.storyboard */; };
 		9885CE3721C6784800900C9F /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE3621C6784800900C9F /* OnboardingViewController.swift */; };
 		9885CE3A21C6785A00900C9F /* OnboardingCountryChooserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9885CE3921C6785A00900C9F /* OnboardingCountryChooserViewController.swift */; };
@@ -85,7 +89,6 @@
 		98E8838A21CE65050001C019 /* ProfileStretchyHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 98E8838921CE65050001C019 /* ProfileStretchyHeaderView.xib */; };
 		98E8838C21CE8D0E0001C019 /* ProfileStretchyHeaderViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8838B21CE8D0E0001C019 /* ProfileStretchyHeaderViewModel.swift */; };
 		98E8838F21CEA34D0001C019 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 98E8838E21CEA34D0001C019 /* Home.storyboard */; };
-		98E8839121CEA3A30001C019 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8839021CEA3A30001C019 /* HomeViewController.swift */; };
 		98E8839421CEA4AD0001C019 /* OdeonService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8839321CEA4AD0001C019 /* OdeonService.swift */; };
 		98E8839721CEA9E20001C019 /* MoyaProvider+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8839621CEA9E20001C019 /* MoyaProvider+Extensions.swift */; };
 		98E8839921CEBB700001C019 /* MovieDBService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98E8839821CEBB700001C019 /* MovieDBService.swift */; };
@@ -160,6 +163,10 @@
 		982957E321D3EF8400AA0EF3 /* TempLoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TempLoadingViewController.swift; sourceTree = "<group>"; };
 		982957E521D40F6100AA0EF3 /* OdeonLuxeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdeonLuxeViewController.swift; sourceTree = "<group>"; };
 		982957E721D4151400AA0EF3 /* UIViewController+Dismiss.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Dismiss.swift"; sourceTree = "<group>"; };
+		982957E921D508A000AA0EF3 /* HomeFetcher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeFetcher.swift; sourceTree = "<group>"; };
+		982957EB21D5167600AA0EF3 /* OdeonFilmInCinema.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdeonFilmInCinema.swift; sourceTree = "<group>"; };
+		982957ED21D527AD00AA0EF3 /* ProfileCallToActionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileCallToActionViewModel.swift; sourceTree = "<group>"; };
+		982957EF21D5292E00AA0EF3 /* HomeProfileStructureMapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeProfileStructureMapper.swift; sourceTree = "<group>"; };
 		9885CE3321C6719B00900C9F /* Onboarding.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Onboarding.storyboard; sourceTree = "<group>"; };
 		9885CE3621C6784800900C9F /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		9885CE3921C6785A00900C9F /* OnboardingCountryChooserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingCountryChooserViewController.swift; sourceTree = "<group>"; };
@@ -214,7 +221,6 @@
 		98E8838921CE65050001C019 /* ProfileStretchyHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProfileStretchyHeaderView.xib; sourceTree = "<group>"; };
 		98E8838B21CE8D0E0001C019 /* ProfileStretchyHeaderViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileStretchyHeaderViewModel.swift; sourceTree = "<group>"; };
 		98E8838E21CEA34D0001C019 /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
-		98E8839021CEA3A30001C019 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		98E8839321CEA4AD0001C019 /* OdeonService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OdeonService.swift; sourceTree = "<group>"; };
 		98E8839621CEA9E20001C019 /* MoyaProvider+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MoyaProvider+Extensions.swift"; sourceTree = "<group>"; };
 		98E8839821CEBB700001C019 /* MovieDBService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDBService.swift; sourceTree = "<group>"; };
@@ -652,7 +658,6 @@
 			isa = PBXGroup;
 			children = (
 				98E8838E21CEA34D0001C019 /* Home.storyboard */,
-				98E8839021CEA3A30001C019 /* HomeViewController.swift */,
 				982957DF21D3EAD000AA0EF3 /* SettingsViewController.swift */,
 				982957E121D3EADE00AA0EF3 /* MembersViewController.swift */,
 			);
@@ -684,6 +689,7 @@
 			children = (
 				98E8839B21CEBE6B0001C019 /* FilmFetcher.swift */,
 				98E883C221D0EE760001C019 /* OdeonPreloadFetcher.swift */,
+				982957E921D508A000AA0EF3 /* HomeFetcher.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -700,6 +706,7 @@
 				9885CE6121C68BB200900C9F /* Performance.swift */,
 				982957C221D16D2900AA0EF3 /* BookingInit.swift */,
 				982957CD21D294B300AA0EF3 /* SeatsData.swift */,
+				982957EB21D5167600AA0EF3 /* OdeonFilmInCinema.swift */,
 			);
 			path = ODEON;
 			sourceTree = "<group>";
@@ -737,6 +744,8 @@
 				98E8837121CDA5B70001C019 /* ProfileItemType.swift */,
 				98E8837521CDA62B0001C019 /* FilmDetailsStructureMapper.swift */,
 				98E883BD21D022990001C019 /* ProfileStructureMapper.swift */,
+				982957ED21D527AD00AA0EF3 /* ProfileCallToActionViewModel.swift */,
+				982957EF21D5292E00AA0EF3 /* HomeProfileStructureMapper.swift */,
 			);
 			path = Structure;
 			sourceTree = "<group>";
@@ -1068,9 +1077,9 @@
 				98E8837621CDA62B0001C019 /* FilmDetailsStructureMapper.swift in Sources */,
 				9885CE6221C68BB200900C9F /* Performance.swift in Sources */,
 				9885CE3721C6784800900C9F /* OnboardingViewController.swift in Sources */,
-				98E8839121CEA3A30001C019 /* HomeViewController.swift in Sources */,
 				9885CE5221C6829400900C9F /* PerformanceAttributesResponse.swift in Sources */,
 				9885CE3E21C6786C00900C9F /* OnboardingLoadingViewController.swift in Sources */,
+				982957EC21D5167600AA0EF3 /* OdeonFilmInCinema.swift in Sources */,
 				982957B421D134D400AA0EF3 /* Decodable+MovieDB.swift in Sources */,
 				98E883B121CFB7550001C019 /* ProfileSocialTableViewCell.swift in Sources */,
 				982957D121D297E700AA0EF3 /* SeatChooserCollectionViewLayout.swift in Sources */,
@@ -1097,6 +1106,8 @@
 				982957CE21D294B300AA0EF3 /* SeatsData.swift in Sources */,
 				98E8838C21CE8D0E0001C019 /* ProfileStretchyHeaderViewModel.swift in Sources */,
 				98E883A021CEC41A0001C019 /* FilmSearchResult.swift in Sources */,
+				982957F021D5292E00AA0EF3 /* HomeProfileStructureMapper.swift in Sources */,
+				982957EE21D527AD00AA0EF3 /* ProfileCallToActionViewModel.swift in Sources */,
 				98E8834421CD9F340001C019 /* ProfileReviewTableViewCell.swift in Sources */,
 				98E8839E21CEC3F40001C019 /* ResultsWrapperGenericResponse.swift in Sources */,
 				982957B021D1325A00AA0EF3 /* TimesLoadingViewController.swift in Sources */,
@@ -1108,6 +1119,7 @@
 				9885CE5621C682FB00900C9F /* OdeonFilm.swift in Sources */,
 				98E8837F21CDBD070001C019 /* ProfileTitleViewModel.swift in Sources */,
 				9885CE5E21C68A7900900C9F /* DataWrapperGenericResponse.swift in Sources */,
+				982957EA21D508A000AA0EF3 /* HomeFetcher.swift in Sources */,
 				98E8839721CEA9E20001C019 /* MoyaProvider+Extensions.swift in Sources */,
 				9885CE5A21C684D100900C9F /* Certificate.swift in Sources */,
 				982957DC21D3C68100AA0EF3 /* CinemaListingTableViewCell.swift in Sources */,

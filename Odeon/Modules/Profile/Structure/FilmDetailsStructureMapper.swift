@@ -14,22 +14,39 @@ class FilmDetailsStructureMapper: ProfileStructureMapper {
     
     let film: FilmFetcher.Film
     var cachedStructure: [ItemTypeTuple]?
+    
     var stretchyHeaderViewModel: ProfileStretchyHeaderViewModel?
+    var callToActionViewModel: ProfileCallToActionViewModel?
+    var actionHandler: ProfileActionHandler?
+    var sharableItems: [String]?
     
     init(film: FilmFetcher.Film) {
         self.film = film
         setStretchyHeader()
+        setCallToAction()
+        setSharing()
     }
     
     func setStretchyHeader() {
-        
         stretchyHeaderViewModel = ProfileStretchyHeaderViewModel(
             title: film.movieDetails.title,
             description: "(\(film.movieDetails.release_date.year))",
             imageURL: film.movieDetails.backdrop_path.makeURL()!,
             tags: film.movieDetails.genres.map({ $0.name })
         )
-        
+    }
+    
+    func setCallToAction() {
+        callToActionViewModel = ProfileCallToActionViewModel(
+            action: .openFilmShowChooser(film: film)
+        )
+    }
+    
+    func setSharing() {
+        sharableItems = [
+            film.movieDetails.title,
+            film.odeonFilmDetails.plot
+        ]
     }
     
     var structure: [ItemTypeTuple] {
@@ -81,7 +98,9 @@ class FilmDetailsStructureMapper: ProfileStructureMapper {
             (.rating, ProfileRatingViewModel(reviewCount: film.movieDetails.vote_count, reviewAverage: film.movieDetails.vote_average)),
             (.paragraph, ProfileTextViewModel(title: "Overview", text: description)),
             (.movieInformation, movieInformation),
-            (.title, ProfileTitleViewModel(title: "Cast and Crew", buttonText: "SEE ALL", buttonAction: { })),
+            (.title, ProfileTitleViewModel(title: "Cast and Crew", buttonText: "SEE ALL", buttonAction: {
+                self.actionHandler?.handleAction(action: .openAllCast(film: self.film))
+            })),
             (.scroller, castViewModels),
             (.title, ProfileTitleViewModel(title: "On The Web", buttonText: nil, buttonAction: nil)),
             (.social, nil),

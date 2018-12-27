@@ -35,7 +35,7 @@ class SettingsViewController: UITableViewController, StoryboardLoadable {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = super.tableView(tableView, cellForRowAt: indexPath)
         
-        if indexPath.section == 0 {
+        if indexPath.section == 1 {
             let currentCountry = OdeonBaseURL.current
             
             switch indexPath.item {
@@ -49,6 +49,10 @@ class SettingsViewController: UITableViewController, StoryboardLoadable {
     }
     
     override func tableView(_ tableView: UITableView, willDisplayHeaderView view: UIView, forSection section: Int) {
+        guard section != 0 else {
+            return
+        }
+        
         let header = view as! UITableViewHeaderFooterView
         header.textLabel?.textColor = UIColor(named: "Profile/SecondaryText")
         header.textLabel?.font = UIFont.systemFont(ofSize: 14, weight: .medium)
@@ -56,18 +60,18 @@ class SettingsViewController: UITableViewController, StoryboardLoadable {
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 50
+        return section == 0 ? 0 : 50
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         switch (indexPath.section, indexPath.row) {
             
-        case (0, 0), (0, 1): // Choose your Country
+        case (1, 0), (1, 1): // Choose your Country
             updateCountrySelection(index: indexPath.row)
             tableView.deselectRow(at: indexPath, animated: false)
             return
             
-        case (1, 0): // Choose your Cinema
+        case (2, 0): // Choose your Cinema
             let viewController = CinemaListingViewController.create()
             viewController.cinemas = preload.cinemas
             viewController.onCinemaChange = {
@@ -85,8 +89,8 @@ class SettingsViewController: UITableViewController, StoryboardLoadable {
     }
     
     func updateCountrySelection(index: Int) {
-        let ukCell = tableView.cellForRow(at: IndexPath(item: 0, section: 0))
-        let niCell = tableView.cellForRow(at: IndexPath(item: 1, section: 0))
+        let ukCell = tableView.cellForRow(at: IndexPath(item: 0, section: 1))
+        let niCell = tableView.cellForRow(at: IndexPath(item: 1, section: 1))
         
         ukCell?.accessoryType = index == 0 ? .checkmark : .none
         niCell?.accessoryType = index == 1 ? .checkmark : .none

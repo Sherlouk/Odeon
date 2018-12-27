@@ -25,7 +25,7 @@ class TempLoadingViewController: UIViewController, StoryboardLoadable {
     // MARK: - Variables
     
     @IBOutlet var activityIndicator: UIActivityIndicatorView!
-    var onCompletion: ((OdeonPreloadFetcher.Preload) -> Void)?
+    var onCompletion: ((OdeonPreloadFetcher.Preload, HomeFetcher.Payload) -> Void)?
     
     // MARK: - Lifecycle
     
@@ -37,12 +37,16 @@ class TempLoadingViewController: UIViewController, StoryboardLoadable {
     // MARK: - Loading
     
     func startLoading() {
+        
         firstly {
-            OdeonPreloadFetcher().fetch()
+            when(fulfilled:
+                OdeonPreloadFetcher().fetch(),
+                HomeFetcher().fetch()
+            )
         }.ensure {
             self.activityIndicator.stopAnimating()
-        }.done { preload in
-            self.onCompletion?(preload)
+        }.done { preload, homePayload in
+            self.onCompletion?(preload, homePayload)
         }.catch { error in
             Squawk.shared.showError(error: error)
         }

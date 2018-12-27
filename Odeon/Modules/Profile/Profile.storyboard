@@ -73,6 +73,7 @@
                             <constraint firstItem="NTe-uE-bfH" firstAttribute="leading" secondItem="JNG-da-2Yx" secondAttribute="leading" id="WtX-JX-isA"/>
                             <constraint firstItem="PN3-Il-CxR" firstAttribute="bottom" secondItem="Nqd-LD-76w" secondAttribute="bottom" id="YZF-PK-SyN"/>
                             <constraint firstAttribute="trailing" secondItem="NTe-uE-bfH" secondAttribute="trailing" id="Zbm-cK-wMN"/>
+                            <constraint firstItem="PN3-Il-CxR" firstAttribute="bottom" secondItem="0jq-kR-cz8" secondAttribute="bottom" priority="250" id="avg-K9-duO"/>
                             <constraint firstItem="0jq-kR-cz8" firstAttribute="top" secondItem="JNG-da-2Yx" secondAttribute="top" id="fp3-Nv-mY5"/>
                             <constraint firstItem="NTe-uE-bfH" firstAttribute="top" secondItem="0jq-kR-cz8" secondAttribute="bottom" id="igD-tb-zjB"/>
                             <constraint firstAttribute="bottom" secondItem="NTe-uE-bfH" secondAttribute="bottom" id="v52-iJ-hCR"/>
@@ -83,6 +84,7 @@
                     <connections>
                         <outlet property="ctaButton" destination="Nqd-LD-76w" id="b41-bH-Mjo"/>
                         <outlet property="ctaContainerView" destination="NTe-uE-bfH" id="IJi-Jb-Jj0"/>
+                        <outlet property="ctaToTableViewConstraint" destination="igD-tb-zjB" id="Q87-2g-XxZ"/>
                         <outlet property="tableView" destination="0jq-kR-cz8" id="Dzy-ir-3Kq"/>
                     </connections>
                 </viewController>
