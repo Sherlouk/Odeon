@@ -48,7 +48,10 @@ class CastMemberStructureMapper: ProfileStructureMapper {
                 title: castMember.title,
                 imageURL: castMember.poster_path.makeURL(),
                 aspectRatio: .poster,
-                tapAction: nil
+                tapAction: nil,
+                secondaryText: castMember.character,
+                halfRating: nil,
+                certificate: nil
             )
         })
         

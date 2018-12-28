@@ -19,6 +19,9 @@ protocol LoadableFilm {
 extension OdeonFilmInCinema.Film: LoadableFilm {
     
     var releaseYear: Int {
+        // We do not get the releaseDate through in this response
+        // Without extra network requests for _every_ film we can't get this
+        // ODEON please :'(
         return 2018
     }
     
@@ -27,7 +30,7 @@ extension OdeonFilmInCinema.Film: LoadableFilm {
 extension OdeonFilm: LoadableFilm {
     
     var releaseYear: Int {
-        return 2018
+        return releaseDate.year
     }
     
 }

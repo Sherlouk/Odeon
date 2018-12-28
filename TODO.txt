@@ -1,13 +1,6 @@
 # To Do List
 
-- Home
-  - New, Recommended, Top Movies (API)
-  - Coming Soon
-    - Ordered by date of release, preview should have poster image, title and release day
-- Cast Profiles
-- Search (LOW PRI, Complexity, Unnecessary Day One, Not from ODEON anyway)
-  - Movies
-  - Cast
+- Cast Profiles (Improvements)
 - Cinema Picker
   - From film UI
   - Favourites/Saved Cinemas
@@ -32,6 +25,9 @@
 - Refactoring
   - FilmFetcher is a mess
   - "Profile" is really just a list that can be a number of things
+  - Call To Action code is duplicated multiple times - make this a subclass
+  - Stars Container code is duplicated - move this to a shared location (subclass?)
+- Accessibility
 
 - Checkout the ODEON app, see what else they have
 - Any other data in MovieDB or APIs I'm not using that I could render?
@@ -48,3 +44,6 @@ North Star ideas:
   - "They're watching this show, why not book?"
     - Show seats
 - Tinder-esque Discovery?
+- Search
+  - Movies
+  - Cast

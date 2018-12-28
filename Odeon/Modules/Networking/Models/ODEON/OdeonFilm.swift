@@ -20,7 +20,6 @@ struct OdeonFilm: Codable {
         case releaseDate
         case genre
         case trailerUrl
-        case isRateable
         case attributes
         case offers
     }
@@ -31,10 +30,9 @@ struct OdeonFilm: Codable {
     let posterImageUrl: URL
     let imageUrl: URL
     let certificate: Certificate
-    let releaseDate: String // TODO: Make this date (20181214)
+    let releaseDate: DateWrapper<YearMonthDay>
     let genre: String?
     let trailerUrl: URL?
-    let isRateable: Int // TODO: Turn this into bool (0/1)
     let attributes: String?
     let offers: [Offer]
     

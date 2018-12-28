@@ -51,30 +51,54 @@ class HomeProfileStructureMapper: ProfileStructureMapper {
                 title: $0.title,
                 imageURL: $0.posterImageURL,
                 aspectRatio: .poster,
-                tapAction: .openFilmDetails(film: $0)
+                tapAction: .openFilmDetails(film: $0),
+                secondaryText: nil,
+                halfRating: $0.rating,
+                certificate: $0.certificate
             )
         })
         
+        let now = Date()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "d MMM yyyy"
+        
         let filmToViewModelMapping: (OdeonFilm) -> ScrollerImageViewModel = { film -> ScrollerImageViewModel in
-            ScrollerImageViewModel(
+            var description: String?
+            
+            if film.releaseDate.date > now {
+                description = "OUT " + dateFormatter.string(from: film.releaseDate.date).uppercased()
+            }
+            
+            return ScrollerImageViewModel(
                 title: film.title,
                 imageURL: film.posterImageUrl,
                 aspectRatio: .poster,
-                tapAction: .openFilmDetails(film: film)
+                tapAction: .openFilmDetails(film: film),
+                secondaryText: description,
+                halfRating: film.rating,
+                certificate: film.certificate
             )
         }
         
         let topFilms = payload.topFilms.map(filmToViewModelMapping)
         let newFilms = payload.newFilms.map(filmToViewModelMapping)
         let recommendedFilms = payload.recommendedFilms.map(filmToViewModelMapping)
-        let comingSoonFilms = payload.comingSoonFilms.map(filmToViewModelMapping)
         
-        var smallItemSize = CGSize(height: 260, aspectRatio: .poster)
-        smallItemSize.height += 60
+        // Sort coming soon films by their release date
+        let comingSoonFilms = payload.comingSoonFilms.sorted(by: { (lhs, rhs) -> Bool in
+            lhs.releaseDate.date < rhs.releaseDate.date
+        }).map(filmToViewModelMapping)
         
-        let width = UIScreen.main.bounds.width * 0.6
-        var largeItemSize = CGSize(width: width, aspectRatio: .poster)
-        largeItemSize.height += 60
+        let smallItemWidth = UIScreen.main.bounds.width * 0.4
+        var smallItemSize = CGSize(width: smallItemWidth, aspectRatio: .poster)
+        smallItemSize.height += 115
+        
+        var smallItemWithDescription = smallItemSize
+        smallItemWithDescription.height += 35
+        
+        let largeItemWidth = UIScreen.main.bounds.width * 0.6
+        var largeItemSize = CGSize(width: largeItemWidth, aspectRatio: .poster)
+        largeItemSize.height += 90
         
         let structure: [ItemTypeTuple] = [
             (.title, ProfileTitleViewModel(title: "Movies On Today", buttonText: nil, buttonAction: nil)),
@@ -86,7 +110,7 @@ class HomeProfileStructureMapper: ProfileStructureMapper {
             (.title, ProfileTitleViewModel(title: "Recommended Films", buttonText: nil, buttonAction: nil)),
             (.scroller, HorizontalScrollerViewModel(itemSize: smallItemSize, contents: recommendedFilms)),
             (.title, ProfileTitleViewModel(title: "Coming Soon", buttonText: nil, buttonAction: nil)),
-            (.scroller, HorizontalScrollerViewModel(itemSize: smallItemSize, contents: comingSoonFilms)),
+            (.scroller, HorizontalScrollerViewModel(itemSize: smallItemWithDescription, contents: comingSoonFilms)),
             (.copyright, nil),
         ]
         

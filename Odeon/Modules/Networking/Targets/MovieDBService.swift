@@ -19,8 +19,6 @@ enum MovieDBService {
 
 extension MovieDBService: TargetType {
     
-    // TODO: Pass through device language locale to translate responses?
-    
     var baseURL: URL {
         return URL(string: "https://api.themoviedb.org/3/")!
     }

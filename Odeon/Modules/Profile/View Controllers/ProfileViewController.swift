@@ -137,6 +137,7 @@ class ProfileViewController: UIViewController {
             return
         }
         
+        ctaContainerView.isHidden = false
         ctaToTableViewConstraint.isActive = true
         
         let layer = CAGradientLayer()

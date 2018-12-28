@@ -25,6 +25,13 @@ class HorizontalScrollerTableViewCell: UITableViewCell, ConfigurableCell, Profil
         collectionView.contentInset = UIEdgeInsets(top: 0, left: 20, bottom: 0, right: 20)
     }
     
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        
+        let startPoint = CGPoint(x: -collectionView.contentInset.left, y: 0)
+        collectionView.setContentOffset(startPoint, animated: false)
+    }
+    
     func configure(with object: Any?) {
         
         guard let viewModel = object as? HorizontalScrollerViewModel else {

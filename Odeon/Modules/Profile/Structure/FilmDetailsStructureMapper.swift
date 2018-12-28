@@ -81,13 +81,16 @@ class FilmDetailsStructureMapper: ProfileStructureMapper {
                     title: castMember.name,
                     imageURL: castMember.profile_path.makeURL(),
                     aspectRatio: .headshot,
-                    tapAction: .openCastMember(id: castMember.id)
+                    tapAction: .openCastMember(id: castMember.id),
+                    secondaryText: castMember.character,
+                    halfRating: nil,
+                    certificate: nil
                 )
             })
         }
         
         let movieInformation = MovieInformationViewModel(
-            runningTime: Int(film.odeonFilmDetails.runningTime) ?? 0,
+            runningTime: Int(film.odeonFilmDetails.runningTime ?? "-1") ?? -1,
             language: film.odeonFilmDetails.language,
             releaseDate: film.movieDetails.release_date.date,
             certificate: film.odeonFilmDetails.certificate,

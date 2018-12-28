@@ -11,6 +11,3 @@ import Foundation
 struct DataWrapperGenericResponse<InnerData: Codable>: Codable {
     let data: InnerData
 }
-
-// e.g. DataWrapperGenericResponse<FilmDetails>.self
-// TODO: Replace other responses with this?

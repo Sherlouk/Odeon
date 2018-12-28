@@ -30,6 +30,6 @@ struct Performance: Codable {
     let attributes: String
     let filmAttributes: String
     let status: Status
-    let screenName: String
+    let screenName: String?
     
 }

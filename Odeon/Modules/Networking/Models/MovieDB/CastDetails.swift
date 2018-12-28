@@ -46,7 +46,7 @@ struct CastDetails: Codable {
     
     // https://developers.themoviedb.org/3/people/get-person-details
     
-    let birthday: String? // TODO: Date
+    let birthday: DateWrapper<YearMonthDayDashed>?
     let known_for_department: String
     let name: String
     let gender: Gender

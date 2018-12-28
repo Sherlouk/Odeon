@@ -14,7 +14,7 @@ extension Squawk {
     
     func showError(title: String, protectedView: UIView? = nil) {
         let viewHeight: CGFloat = {
-            if let protectedView = protectedView, protectedView.superview?.isHidden != false {
+            if let protectedView = protectedView, protectedView.superview?.isHidden != true {
                 return protectedView.bounds.height
             }
             

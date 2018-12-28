@@ -47,6 +47,10 @@ class MovieInformationTableViewCell: UITableViewCell, ConfigurableCell, ProfileA
     }
     
     func runningTime(minutes: Int) -> String {
+        if minutes == -1 {
+            return "TBC"
+        }
+        
         let formatter = DateComponentsFormatter()
         formatter.allowedUnits = [.hour, .minute]
         formatter.unitsStyle = .abbreviated

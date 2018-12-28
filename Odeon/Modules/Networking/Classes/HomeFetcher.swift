@@ -37,7 +37,6 @@ class HomeFetcher {
         // TODO: Update this comment once we have onboarding
         let siteID = String(OdeonStorage().userChosenCinema ?? 0)
         
-        // TODO: Allow users to pick a date
         let date = HomeFetcher.dateFormatter.string(from: Date())
         
         return when(fulfilled:

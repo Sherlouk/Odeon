@@ -15,4 +15,8 @@ struct ScrollerImageViewModel {
     let aspectRatio: AspectRatio
     let tapAction: ProfileAction?
     
+    let secondaryText: String?
+    let halfRating: Int?
+    let certificate: Certificate?
+    
 }

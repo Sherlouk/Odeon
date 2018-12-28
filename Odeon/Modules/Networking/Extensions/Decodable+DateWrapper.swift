@@ -54,3 +54,9 @@ struct YearMonthDayDashed: DateFormat {
         return "yyyy-MM-dd"
     }
 }
+
+struct YearMonthDay: DateFormat {
+    static var dateFormat: String {
+        return "yyyyMMdd"
+    }
+}
