@@ -86,7 +86,6 @@ class FilmDetailsStructureMapper: ProfileStructureMapper {
             })
         }
         
-        
         let movieInformation = MovieInformationViewModel(
             runningTime: Int(film.odeonFilmDetails.runningTime) ?? 0,
             language: film.odeonFilmDetails.language,

@@ -24,7 +24,6 @@ class ProfileViewController: UIViewController {
     var structureMapper: ProfileStructureMapper!
     var stretchyHeader: ProfileStretchyHeaderView?
     var preload: OdeonPreloadFetcher.Preload!
-    var film: FilmFetcher.Film! // TEMP
     
     // MARK: - Create
     
@@ -218,7 +217,7 @@ extension ProfileViewController: ProfileActionHandler {
             print("[EVENT] Open URL (\(url))")
             
             let viewController = SFSafariViewController(url: url)
-            navigationController?.pushViewController(viewController, animated: trueUnlessReduceMotionEnabled)
+            present(viewController)
             
         case .openFilmShowChooser(let film):
             print("[EVENT] Open Film Showings (\(film.movieDetails.title))")
@@ -230,7 +229,7 @@ extension ProfileViewController: ProfileActionHandler {
             )
             
             let viewController = ShowChooserViewController.create(viewModel: viewModel)
-            navigationController?.pushViewController(viewController, animated: trueUnlessReduceMotionEnabled)
+            navigationController?.push(viewController)
             
         case .openFilmDetails(let film):
             print("[EVENT] Open Film Details (\(film.title))")
@@ -244,19 +243,34 @@ extension ProfileViewController: ProfileActionHandler {
                 case .failure(let error):
                     Squawk.shared.showError(error: error, protectedView: self.ctaButton)
 
-                case .success(let film2):
-                    let vc = ProfileViewController.create(with: FilmDetailsStructureMapper(film: film2))
-                    vc.film = film2
-                    vc.preload = self.preload
-                    vc.hidesBottomBarWhenPushed = true
-                    self.navigationController?.pushViewController(vc, animated: trueUnlessReduceMotionEnabled)
+                case .success(let filmDetails):
+                    let mapper = FilmDetailsStructureMapper(film: filmDetails)
+                    
+                    let viewController = ProfileViewController.create(with: mapper)
+                    viewController.preload = self.preload
+                    viewController.hidesBottomBarWhenPushed = true
+                    self.navigationController?.push(viewController)
 
                 }
 
             })
             
-        case .openCastMember:
-            print("[EVENT] Open Cast Member")
+        case .openCastMember(let id):
+            print("[EVENT] Open Cast Member (\(id))")
+            
+            let provider = MoyaProvider<MovieDBService>()
+            provider.requestDecodePromise(.getCastDetails(personID: id), type: CastDetails.self).done { payload in
+                print("[EVENT] Loading Cast Member Profile for \(payload.name)")
+                
+                let mapper = CastMemberStructureMapper(payload: payload)
+                
+                let viewController = ProfileViewController.create(with: mapper)
+                viewController.preload = self.preload
+    
+                self.navigationController?.push(viewController)
+            }.catch { error in
+                print(error)
+            }
             
         case .openAllCast(let film):
             print("[EVENT] Open All Cast (\(film.movieDetails.title))")

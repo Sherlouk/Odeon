@@ -15,7 +15,9 @@ struct CastDetails: Codable {
         // https://developers.themoviedb.org/3/people/get-person-movie-credits
         
         struct CastMember: Codable {
-            let character: String
+            let character: String?
+            let title: String
+            let poster_path: MDBImageURL
         }
         
         struct CrewMember: Codable {
@@ -36,11 +38,18 @@ struct CastDetails: Codable {
         let instagram_id: String?
     }
     
+    enum Gender: Int, Codable {
+        case unknown
+        case female
+        case male
+    }
+    
     // https://developers.themoviedb.org/3/people/get-person-details
     
     let birthday: String? // TODO: Date
     let known_for_department: String
     let name: String
+    let gender: Gender
     let biography: String
     let place_of_birth: String?
     let profile_path: MDBImageURL?

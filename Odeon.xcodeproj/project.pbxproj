@@ -6,6 +6,20 @@
 	objectVersion = 51;
 	objects = {
 
+/* Begin PBXAggregateTarget section */
+		982957F921D6720300AA0EF3 /* Periphery */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = 982957FA21D6720300AA0EF3 /* Build configuration list for PBXAggregateTarget "Periphery" */;
+			buildPhases = (
+				982957FD21D6721500AA0EF3 /* Periphery */,
+			);
+			dependencies = (
+			);
+			name = Periphery;
+			productName = Periphery;
+		};
+/* End PBXAggregateTarget section */
+
 /* Begin PBXBuildFile section */
 		982957B021D1325A00AA0EF3 /* TimesLoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957AF21D1325A00AA0EF3 /* TimesLoadingViewController.swift */; };
 		982957B221D1329600AA0EF3 /* UIViewController+Create.swift in Sources */ = {isa = PBXBuildFile; fileRef = 982957B121D1329600AA0EF3 /* UIViewController+Create.swift */; };
@@ -890,6 +904,9 @@
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = Sherlouk;
 				TargetAttributes = {
+					982957F921D6720300AA0EF3 = {
+						CreatedOnToolsVersion = 10.1;
+					};
 					98F3708721C6705A002D4E7C = {
 						CreatedOnToolsVersion = 10.1;
 					};
@@ -914,6 +931,7 @@
 			targets = (
 				98F3708721C6705A002D4E7C /* Odeon */,
 				98F3709B21C6705B002D4E7C /* OdeonTests */,
+				982957F921D6720300AA0EF3 /* Periphery */,
 			);
 		};
 /* End PBXProject section */
@@ -1001,6 +1019,24 @@
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
+		};
+		982957FD21D6721500AA0EF3 /* Periphery */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Periphery;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "periphery scan --project Odeon.xcodeproj --schemes Odeon --targets Odeon --format xcode\n";
 		};
 		B6E4AC377D976948695B7912 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -1182,6 +1218,22 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		982957FB21D6720300AA0EF3 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		982957FC21D6720300AA0EF3 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
 		98F370A321C6705B002D4E7C /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -1383,6 +1435,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		982957FA21D6720300AA0EF3 /* Build configuration list for PBXAggregateTarget "Periphery" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				982957FB21D6720300AA0EF3 /* Debug */,
+				982957FC21D6720300AA0EF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		98F3708321C6705A002D4E7C /* Build configuration list for PBXProject "Odeon" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

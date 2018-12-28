@@ -14,4 +14,16 @@ extension UIViewController {
         dismiss(animated: trueUnlessReduceMotionEnabled, completion: nil)
     }
     
+    func present(_ viewController: UIViewController) {
+        present(viewController, animated: trueUnlessReduceMotionEnabled, completion: nil)
+    }
+    
+}
+
+extension UINavigationController {
+    
+    func push(_ viewController: UIViewController) {
+        pushViewController(viewController, animated: trueUnlessReduceMotionEnabled)
+    }
+    
 }

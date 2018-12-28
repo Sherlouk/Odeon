@@ -12,7 +12,7 @@ struct ProfileStretchyHeaderViewModel {
     
     let title: String
     let description: String?
-    let imageURL: URL
+    let imageURL: URL?
     let tags: [String]
     
 }
