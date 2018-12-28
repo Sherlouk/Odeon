@@ -23,8 +23,8 @@
   - Better loading screens
   - Nicer animations/transitions
 - Refactoring
-  - FilmFetcher is a mess
-  - "Profile" is really just a list that can be a number of things
+  - FilmFetcher needs to be converted to use PromiseKit
+  - The "Profile" module should be renamed as it's now used for Home as well
   - Call To Action code is duplicated multiple times - make this a subclass
   - Stars Container code is duplicated - move this to a shared location (subclass?)
 - Accessibility
@@ -37,6 +37,7 @@
 Known Bugs:
 - Edge Swipe Gesture broken?
 - Some cinema screens are a bit broken (that page needs a lot of work tbh)
+- Quite a few films can't be found on MovieDB and therefore errors when you try to load them
 
 North Star ideas:
 - Facebook Friends

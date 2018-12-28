@@ -1,5 +1,5 @@
 //
-//  TemporaryStructureMapper.swift
+//  FilmDetailsStructureMapper.swift
 //  Odeon
 //
 //  Created by Sherlock, James on 21/12/2018.
@@ -55,23 +55,7 @@ class FilmDetailsStructureMapper: ProfileStructureMapper {
             return cached
         }
         
-//        let reviewOne = ProfileReviewViewModel(
-//            revieweeName: "James Sherlock",
-//            reviewwImageURL: URL(string: "https://google.com/")!,
-//            reviewDate: Date(),
-//            halfRating: 5,
-//            reviewDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar elit ante, sed commodo purus rutrum vitae. Aliquam vel tellus tincidunt, mattis magna consectetur, efficitur ante. Sed neque eros, volutpat eu luctus in, ultricies in lectus."
-//        )
-//
-//        let reviewTwo = ProfileReviewViewModel(
-//            revieweeName: "John Smith",
-//            reviewwImageURL: URL(string: "https://google.com/")!,
-//            reviewDate: Date(),
-//            halfRating: 6,
-//            reviewDescription: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. In pulvinar elit ante, sed commodo purus rutrum vitae. Aliquam vel tellus tincidunt, mattis magna consectetur, efficitur ante. Sed neque eros, volutpat eu luctus in, ultricies in lectus."
-//        )
-
-        let description = film.movieDetails.overview ?? "\(film.odeonFilmDetails.plot)\n\n\(film.odeonFilmDetails.customerAdvice)"
+        let description = film.movieDetails.overview ?? "\(film.odeonFilmDetails.plot)\n\n\(film.odeonFilmDetails.customerAdvice ?? "")"
         
         var castViewModels: [ScrollerImageViewModel]?
         
@@ -108,13 +92,7 @@ class FilmDetailsStructureMapper: ProfileStructureMapper {
             (.scroller, HorizontalScrollerViewModel(itemSize: CGSize(width: 140, height: 260), contents: castViewModels)),
             (.title, ProfileTitleViewModel(title: "On The Web", buttonText: nil, buttonAction: nil)),
             (.social, nil),
-            (.copyright, nil),
-//            (.title, ProfileTitleViewModel(title: "Reviews", buttonText: "SEE ALL", buttonAction: { })),
-//            (.review, reviewOne),
-//            (.review, reviewTwo),
-//            (.button, ProfileButtonViewModel(buttonText: "SEE ALL REVIEWS", buttonAction: { })),
-//            (.title, ProfileTitleViewModel(title: "Photogallery", buttonText: nil, buttonAction: nil)),
-//            (.gallery, nil)
+            (.copyright, nil)
         ]
         
         self.cachedStructure = structure
