@@ -45,6 +45,7 @@
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="collectionView" destination="GTf-wP-COg" id="j8Z-oV-PUc"/>
+                <outlet property="heightConstraint" destination="cCe-Hs-I76" id="8i8-fc-uga"/>
             </connections>
         </tableViewCell>
     </objects>

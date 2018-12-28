@@ -6,7 +6,7 @@
 //  Copyright © 2018 Sherlouk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class HomeProfileStructureMapper: ProfileStructureMapper {
     
@@ -47,36 +47,46 @@ class HomeProfileStructureMapper: ProfileStructureMapper {
         }
         
         let moviesOnToday = Array(payload.cinemaFilms.dropFirst()).map({
-            ScrollerImageViewModel(title: $0.title, imageURL: $0.posterImageURL)
+            ScrollerImageViewModel(
+                title: $0.title,
+                imageURL: $0.posterImageURL,
+                aspectRatio: .poster,
+                tapAction: .openFilmDetails(film: $0)
+            )
         })
         
-        let topFilms = payload.topFilms.map({
-            ScrollerImageViewModel(title: $0.title, imageURL: $0.posterImageUrl)
-        })
+        let filmToViewModelMapping: (OdeonFilm) -> ScrollerImageViewModel = { film -> ScrollerImageViewModel in
+            ScrollerImageViewModel(
+                title: film.title,
+                imageURL: film.posterImageUrl,
+                aspectRatio: .poster,
+                tapAction: .openFilmDetails(film: film)
+            )
+        }
         
-        let newFilms = payload.newFilms.map({
-            ScrollerImageViewModel(title: $0.title, imageURL: $0.posterImageUrl)
-        })
+        let topFilms = payload.topFilms.map(filmToViewModelMapping)
+        let newFilms = payload.newFilms.map(filmToViewModelMapping)
+        let recommendedFilms = payload.recommendedFilms.map(filmToViewModelMapping)
+        let comingSoonFilms = payload.comingSoonFilms.map(filmToViewModelMapping)
         
-        let recommendedFilms = payload.recommendedFilms.map({
-            ScrollerImageViewModel(title: $0.title, imageURL: $0.posterImageUrl)
-        })
+        var smallItemSize = CGSize(height: 260, aspectRatio: .poster)
+        smallItemSize.height += 60
         
-        let comingSoonFilms = payload.comingSoonFilms.map({
-            ScrollerImageViewModel(title: $0.title, imageURL: $0.posterImageUrl)
-        })
+        let width = UIScreen.main.bounds.width * 0.6
+        var largeItemSize = CGSize(width: width, aspectRatio: .poster)
+        largeItemSize.height += 60
         
         let structure: [ItemTypeTuple] = [
             (.title, ProfileTitleViewModel(title: "Movies On Today", buttonText: nil, buttonAction: nil)),
-            (.scroller, moviesOnToday),
+            (.scroller, HorizontalScrollerViewModel(itemSize: largeItemSize, contents: moviesOnToday)),
             (.title, ProfileTitleViewModel(title: "Top Films", buttonText: nil, buttonAction: nil)),
-            (.scroller, topFilms),
+            (.scroller, HorizontalScrollerViewModel(itemSize: smallItemSize, contents: topFilms)),
             (.title, ProfileTitleViewModel(title: "New Films", buttonText: nil, buttonAction: nil)),
-            (.scroller, newFilms),
+            (.scroller, HorizontalScrollerViewModel(itemSize: smallItemSize, contents: newFilms)),
             (.title, ProfileTitleViewModel(title: "Recommended Films", buttonText: nil, buttonAction: nil)),
-            (.scroller, recommendedFilms),
+            (.scroller, HorizontalScrollerViewModel(itemSize: smallItemSize, contents: recommendedFilms)),
             (.title, ProfileTitleViewModel(title: "Coming Soon", buttonText: nil, buttonAction: nil)),
-            (.scroller, comingSoonFilms),
+            (.scroller, HorizontalScrollerViewModel(itemSize: smallItemSize, contents: comingSoonFilms)),
             (.copyright, nil),
         ]
         

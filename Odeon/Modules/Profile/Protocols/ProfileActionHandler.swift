@@ -15,8 +15,8 @@ protocol ProfileActionHandler: class {
 enum ProfileAction {
     case openURL(url: URL)
     case openFilmShowChooser(film: FilmFetcher.Film)
-    case openFilmDetails(film: OdeonFilm)
-    case openCastMember(info: String) // temp param
+    case openFilmDetails(film: LoadableFilm)
+    case openCastMember(id: Int)
     case openAllCast(film: FilmFetcher.Film)
 }
 

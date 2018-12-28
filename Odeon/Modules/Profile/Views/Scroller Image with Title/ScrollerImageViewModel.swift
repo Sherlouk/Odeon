@@ -12,5 +12,7 @@ struct ScrollerImageViewModel {
     
     let title: String
     let imageURL: URL?
+    let aspectRatio: AspectRatio
+    let tapAction: ProfileAction?
     
 }

@@ -14,7 +14,7 @@ struct MovieInformationViewModel {
     let language: String
     let releaseDate: Date
     let certificate: Certificate
-    let director: String
+    let director: String?
     let posterImageURL: URL
     
 }

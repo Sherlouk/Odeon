@@ -23,7 +23,7 @@
                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Se-NK-yBZ">
                         <rect key="frame" x="0.0" y="0.0" width="150" height="187.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" secondItem="2Se-NK-yBZ" secondAttribute="height" multiplier="2:2.5" id="5R6-T6-tto"/>
+                            <constraint firstAttribute="width" secondItem="2Se-NK-yBZ" secondAttribute="height" multiplier="2:2.5" placeholder="YES" id="5R6-T6-tto"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">

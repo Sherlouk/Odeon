@@ -13,10 +13,18 @@ import class Moya.Response
 extension Squawk {
     
     func showError(title: String, protectedView: UIView? = nil) {
+        let viewHeight: CGFloat = {
+            if let protectedView = protectedView, protectedView.superview?.isHidden != false {
+                return protectedView.bounds.height
+            }
+            
+            return 0
+        }()
+        
         show(config: Squawk.Configuration(
             text: title,
             backgroundColor: UIColor.red.withAlphaComponent(0.4),
-            bottomPadding: (protectedView?.bounds.height ?? 0) + 16
+            bottomPadding: viewHeight + 16
         ))
     }
     

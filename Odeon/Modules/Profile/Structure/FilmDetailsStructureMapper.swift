@@ -6,7 +6,7 @@
 //  Copyright © 2018 Sherlouk. All rights reserved.
 //
 
-import Foundation
+import UIKit
 
 class FilmDetailsStructureMapper: ProfileStructureMapper {
     
@@ -76,10 +76,12 @@ class FilmDetailsStructureMapper: ProfileStructureMapper {
         var castViewModels: [ScrollerImageViewModel]?
         
         if let initialCast = film.movieDetails.credits?.cast.prefix(10) {
-            castViewModels = Array(initialCast).map({
+            castViewModels = Array(initialCast).map({ castMember in
                 ScrollerImageViewModel(
-                    title: $0.name,
-                    imageURL: $0.profile_path.makeURL()
+                    title: castMember.name,
+                    imageURL: castMember.profile_path.makeURL(),
+                    aspectRatio: .headshot,
+                    tapAction: .openCastMember(id: castMember.id)
                 )
             })
         }
@@ -101,7 +103,7 @@ class FilmDetailsStructureMapper: ProfileStructureMapper {
             (.title, ProfileTitleViewModel(title: "Cast and Crew", buttonText: "SEE ALL", buttonAction: {
                 self.actionHandler?.handleAction(action: .openAllCast(film: self.film))
             })),
-            (.scroller, castViewModels),
+            (.scroller, HorizontalScrollerViewModel(itemSize: CGSize(width: 140, height: 260), contents: castViewModels)),
             (.title, ProfileTitleViewModel(title: "On The Web", buttonText: nil, buttonAction: nil)),
             (.social, nil),
             (.copyright, nil),

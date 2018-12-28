@@ -8,10 +8,13 @@
 
 import UIKit
 
-class HorizontalScrollerTableViewCell: UITableViewCell, ConfigurableCell {
-
+class HorizontalScrollerTableViewCell: UITableViewCell, ConfigurableCell, ProfileActionTrigger {
+    
+    @IBOutlet var heightConstraint: NSLayoutConstraint!
     @IBOutlet var collectionView: UICollectionView!
+    
     var viewModels: [ScrollerImageViewModel]?
+    var actionHandler: ProfileActionHandler?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,12 +27,23 @@ class HorizontalScrollerTableViewCell: UITableViewCell, ConfigurableCell {
     
     func configure(with object: Any?) {
         
-        guard let viewModels = object as? [ScrollerImageViewModel] else {
+        guard let viewModel = object as? HorizontalScrollerViewModel else {
             assertionFailure("Object could not be cast to correct view model")
             return
         }
         
-        self.viewModels = viewModels
+        guard let contents = viewModel.contents as? [ScrollerImageViewModel] else {
+            assertionFailure("Could not cast contents to known view model")
+            return
+        }
+        
+        self.viewModels = contents
+        heightConstraint.constant = viewModel.itemSize.height
+        
+        if let layout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
+            layout.itemSize = viewModel.itemSize
+        }
+        
         collectionView.reloadData()
     }
     
@@ -47,12 +61,14 @@ extension HorizontalScrollerTableViewCell: UICollectionViewDataSource, UICollect
         return cell
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: 140, height: 260)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        print("Selected Cell \(indexPath.item)")
+        
+        guard let viewModel = viewModels?[indexPath.item], let action = viewModel.tapAction else {
+            return
+        }
+        
+        actionHandler?.handleAction(action: action)
+        
     }
     
 }

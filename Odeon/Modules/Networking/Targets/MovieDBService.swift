@@ -13,6 +13,7 @@ enum MovieDBService {
     
     case searchMovie(query: String, year: Int)
     case getMovieDetails(movieID: Int)
+    case getCastDetails(personID: Int)
     
 }
 
@@ -28,6 +29,7 @@ extension MovieDBService: TargetType {
         switch self {
         case .searchMovie: return "search/movie"
         case .getMovieDetails(let movieID): return "movie/\(movieID)"
+        case .getCastDetails(let personID): return "person/\(personID)"
         }
     }
     
@@ -54,6 +56,11 @@ extension MovieDBService: TargetType {
             return .requestParameters(parameters: [
                 "api_key": apiKey,
                 "append_to_response": ["credits", "external_ids"].joined(separator: ",")
+            ], encoding: URLEncoding.queryString)
+        case .getCastDetails:
+            return .requestParameters(parameters: [
+                "api_key": apiKey,
+                "append_to_response": ["movie_credits", "external_ids"].joined(separator: ",")
             ], encoding: URLEncoding.queryString)
         }
     }

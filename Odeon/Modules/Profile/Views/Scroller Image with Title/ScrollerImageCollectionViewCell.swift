@@ -10,6 +10,7 @@ import UIKit
 
 class ScrollerImageCollectionViewCell: UICollectionViewCell, ConfigurableCell {
     
+    var aspectRatioConstraint: NSLayoutConstraint?
     @IBOutlet var titleLabel: UILabel!
     @IBOutlet var mainImageView: UIImageView!
     
@@ -23,6 +24,17 @@ class ScrollerImageCollectionViewCell: UICollectionViewCell, ConfigurableCell {
         titleLabel.text = viewModel.title
         mainImageView.kf.setImage(with: viewModel.imageURL)
         
+        let aspectRatio = viewModel.aspectRatio.size.asAspectRatioDecimal
+        if aspectRatio != (aspectRatioConstraint?.multiplier ?? 0) {
+            aspectRatioConstraint?.isActive = false
+            
+            aspectRatioConstraint = mainImageView.heightAnchor.constraint(
+                equalTo: mainImageView.widthAnchor,
+                multiplier: aspectRatio
+            )
+            
+            aspectRatioConstraint?.isActive = true
+        }
     }
 
 }

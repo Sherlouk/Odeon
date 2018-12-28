@@ -8,6 +8,9 @@
 
 import UIKit
 import SafariServices
+import Squawk
+import PromiseKit
+import Moya
 
 class ProfileViewController: UIViewController {
 
@@ -239,14 +242,14 @@ extension ProfileViewController: ProfileActionHandler {
                 
                 switch result {
                 case .failure(let error):
-                    print(error)
+                    Squawk.shared.showError(error: error, protectedView: self.ctaButton)
 
                 case .success(let film2):
                     let vc = ProfileViewController.create(with: FilmDetailsStructureMapper(film: film2))
                     vc.film = film2
                     vc.preload = self.preload
                     vc.hidesBottomBarWhenPushed = true
-                    self.navigationController?.pushViewController(vc, animated: true)
+                    self.navigationController?.pushViewController(vc, animated: trueUnlessReduceMotionEnabled)
 
                 }
 

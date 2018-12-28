@@ -10,6 +10,28 @@ import Foundation
 import Moya
 import Result
 
+protocol LoadableFilm {
+    var title: String { get }
+    var id: Int { get }
+    var releaseYear: Int { get }
+}
+
+extension OdeonFilmInCinema.Film: LoadableFilm {
+    
+    var releaseYear: Int {
+        return 2018
+    }
+    
+}
+
+extension OdeonFilm: LoadableFilm {
+    
+    var releaseYear: Int {
+        return 2018
+    }
+    
+}
+
 class FilmFetcher: Cancellable {
     
     struct Film {
@@ -28,10 +50,10 @@ class FilmFetcher: Cancellable {
     
     var cancellable: Cancellable?
     
-    init(film: OdeonFilm) {
+    init(film: LoadableFilm) {
         filmTitle = film.title
         odeonFilmID = String(film.id)
-        releaseYear = 2018 // TODO: make this dynamic
+        releaseYear = film.releaseYear
     }
     
     // MARK: - Fetch

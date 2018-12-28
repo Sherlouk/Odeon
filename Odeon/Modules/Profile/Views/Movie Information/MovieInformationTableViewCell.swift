@@ -32,7 +32,14 @@ class MovieInformationTableViewCell: UITableViewCell, ConfigurableCell, ProfileA
         languageLabel.text = viewModel.language
         releaseDateLabel.text = releaseDate(date: viewModel.releaseDate)
         certificateImageView.image = viewModel.certificate.image
-        directorLabel.text = viewModel.director
+        
+        if let director = viewModel.director {
+            directorLabel.text = director
+            directorLabel.superview?.isHidden = false
+        } else {
+            directorLabel.superview?.isHidden = true
+        }
+        
         posterImageView.kf.setImage(with: viewModel.posterImageURL)
         
         self.certificate = viewModel.certificate

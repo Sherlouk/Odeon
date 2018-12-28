@@ -50,7 +50,7 @@
                 <view contentMode="scaleToFill" verticalCompressionResistancePriority="1000" translatesAutoresizingMaskIntoConstraints="NO" id="OcX-U8-tNk">
                     <rect key="frame" x="20" y="281.5" width="176" height="33.5"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Film Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcq-f4-M9f">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Film Name" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vcq-f4-M9f">
                             <rect key="frame" x="0.0" y="0.0" width="128" height="33.5"/>
                             <fontDescription key="fontDescription" type="system" pointSize="28"/>
                             <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -83,6 +83,7 @@
                 <constraint firstItem="TcK-IE-f6D" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="Poq-XZ-4jV"/>
                 <constraint firstItem="gaA-ZZ-64R" firstAttribute="top" secondItem="OcX-U8-tNk" secondAttribute="bottom" constant="10" id="QSP-bm-tpu"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="gaA-ZZ-64R" secondAttribute="bottom" constant="20" id="S0g-0G-lJp"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="OcX-U8-tNk" secondAttribute="trailing" constant="20" id="V5A-x6-ae2"/>
                 <constraint firstAttribute="bottom" secondItem="qHY-1n-o3h" secondAttribute="bottom" id="a8c-18-rws"/>
                 <constraint firstAttribute="trailing" secondItem="qHY-1n-o3h" secondAttribute="trailing" id="dUr-4I-yKa"/>
                 <constraint firstItem="qHY-1n-o3h" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="fXM-Gb-7VC"/>

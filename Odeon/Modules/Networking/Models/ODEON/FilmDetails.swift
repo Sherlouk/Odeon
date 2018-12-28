@@ -14,8 +14,8 @@ struct FilmDetails: Codable {
     
     let plot: String
     let customerAdvice: String
-    let director: String
-    let casts: String
+    let director: String?
+    let casts: String?
     let runningTime: String
     let language: String
     let country: String
