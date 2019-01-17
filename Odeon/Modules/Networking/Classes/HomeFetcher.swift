@@ -35,7 +35,7 @@ class HomeFetcher {
         // Defaulting to "0" is actually the same as the 1st Party app, fun fact.
         // Should never happen once we have onboarding implemented
         // TODO: Update this comment once we have onboarding
-        let siteID = String(OdeonStorage().userChosenCinema ?? 0)
+        let siteID = String(OdeonStorage().userChosenCinema ?? 181)
         
         let date = HomeFetcher.dateFormatter.string(from: Date())
         
