@@ -10,7 +10,7 @@ Part of this project was breaking down the ODEON app and beginning to understand
 internal APIs, business logic and apps behaviour in order to mimic.
 
 In the end I made use of many ODEON APIs as well as [TheMovieDB APIs](https://www.themoviedb.org/)
-in order to create a valuable experience for users.
+in order to create a valuable experience for users. The full guide on my project can be read in [a Medium article](https://medium.com/flawless-app-stories/a-christmas-challenge-a-cinema-app-in-just-7-days-1c9aa998e765).
 
 ## Running the Project
 
