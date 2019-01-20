@@ -35,7 +35,7 @@ class HomeProfileStructureMapper: ProfileStructureMapper {
             title: film.title,
             description: nil,
             imageURL: film.imageURL,
-            tags: [ film.genre ]
+            tags: [ film.genre ].compactMap({ $0 })
         )
         
     }

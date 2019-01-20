@@ -23,7 +23,7 @@ struct OdeonFilmInCinema: Codable {
         let id: Int
         let title: String
         let certificate: Certificate
-        let genre: String
+        let genre: String?
         let rating: Int
         let posterImageURL: URL
         let imageURL: URL
